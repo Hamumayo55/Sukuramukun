@@ -1,24 +1,11 @@
-# README
+# enPiT2019 WebApp班
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## チーム名 
+WebStory 
 
-Things you may want to cover:
+## サービス名 
+スラムマスター支援ツール：**スクラムくん** 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 実行環境 
+- Ruby：2.6.3
+- Rails：5.2.3
