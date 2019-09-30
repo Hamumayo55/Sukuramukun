@@ -1,4 +1,4 @@
-# enPiT2019 WebApp班
+# スクラムくん
 
 ## チーム名 
 WeB STORY 
@@ -14,5 +14,5 @@ WeB STORY
 https://trello.com/b/jTdiNbiy/webstory-todoリスト仮  
 
 
-## サービスURL  
+## アプリURL  
 https://sukuramukun.herokuapp.com/
