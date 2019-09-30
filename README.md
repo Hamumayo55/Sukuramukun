@@ -8,4 +8,4 @@ WebStory
 
 ## 実行環境 
 - Ruby：2.6.3
-- Rails：6.0.0
+- Rails：5.2.3
