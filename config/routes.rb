@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-root 'application#hello'
+ get '/watch',to: 'top_pages#watch'
+ root 'top_pages#home'
 end

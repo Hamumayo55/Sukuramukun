@@ -1,0 +1,374 @@
+<center>
+<h1>STOP WATCH</h1>
+<form name="form_sw">
+	<input name="counter" type="text" class="number" id="counter" value="00:00:00" size="12">
+	<input name="bstart" type="button" value="スタート" onClick="start_count()">
+	<input name="blap" type="button"value=" ラップ " onClick="lap()" disabled="disabled">
+  <input name="breset" type="button" value="リセット" onClick="reset_form()">
+</form>
+
+<div id="status"></div>
+<div id="sw_table"></div>
+<center>
+
+<script language="javascript">
+//初期値
+
+//タイトル
+d_title = "STOP WATCH";
+//document.title = d_title;
+//動作間隔設定(n^10/1000秒単位、小数点以下の桁数)
+sw_move = 1;
+sw_move1 = Math.pow(10,sw_move);
+sw_move2 = 1000 / sw_move1;
+//ストップウォッチの動作状況（0=停止/1=動作中）
+sw_status = 0;
+
+//記録名
+kiroku_name = "_def_";
+//cookieの有効期限日数
+c_kigen = 30;
+document.getElementById("cookie_kigen").innerHTML = c_kigen;
+
+//テーブルリストの初期化
+time_list = new Array(10);
+reset_table();
+
+//期限の表示
+document.getElementById("kigen").innerHTML = c_kigen;
+
+//cookie読込
+load_cookie(0);
+
+//フォームの初期化
+reset_form();
+
+//キー入力の監視
+getCtrl = false;
+window.document.onkeydown = checkKeyDown; 
+window.document.onkeyup = checkKeyUp; 
+
+function reset_table() {
+	for (n=0; n<10; n++) {
+		time_list[n] = "";
+	}
+}
+
+function reset_form() {
+	//計測停止
+	if (sw_status == 2) {lap();}
+	if (sw_status == 1) {start_count();}
+	//初期化
+	timer = 0;
+	sTime = 0;
+	document.form_sw.counter.value = count_format(0,sw_move);
+	document.getElementById("status").innerHTML = "";
+	document.title = d_title;
+}
+
+function start_count() {
+	if (sw_status == 0) {
+		//スタート
+		document.form_sw.bstart.value = "[ストップ]";
+		document.form_sw.blap.disabled = false;
+    sw_status = 1;
+      //初期化
+    timer = 0;
+    sTime = 0;
+    document.form_sw.counter.value = count_format(0,sw_move);
+    document.getElementById("status").innerHTML = "";
+    document.title = d_title;
+    
+    //始動時刻記録
+		if (sTime == 0) {
+			sTime = new Date();
+		}
+		timerID = setInterval("count_up()",sw_move2); 
+	} else {
+		//ラップ中
+		if (sw_status == 2) lap();
+		//ストップ
+		document.form_sw.bstart.value = "スタート";
+		document.form_sw.blap.disabled = true;
+		sw_status = 0;
+		clearInterval(timerID);
+		var t = timer / sw_move1;
+		document.form_sw.counter.value = count_format(t,sw_move);
+	}
+	//動作状況の表示
+	status_view();
+}
+
+
+function count_up() {
+	timer++;
+	var t = timer / sw_move1;
+	if (sw_status < 2) {
+		document.form_sw.counter.value = count_format(t,sw_move);
+	}
+	document.title = "SW " + count_format(Math.floor(t),0);
+}
+
+function lap() {
+	if (sw_status == 1) {
+		sw_status = 2;
+		laptime = timer;
+		document.form_sw.blap.value = "[解除]";
+		status_view();
+	} else if (sw_status == 2) {
+		sw_status = 1;
+		laptime = 0;
+		document.form_sw.blap.value = " ラップ ";
+		status_view();
+	}
+}
+
+function count_format(sec,fix) {
+	//sec=秒数 fix=小数桁数
+	var s,n,ts,tm,th,ts2;
+	ts = Math.floor(sec); //小数点以下の調整
+	tm = Math.floor(ts / 60); //秒数切り捨て
+	ts = ts % 60; //60秒未満の秒数
+	th = Math.floor(tm / 60); //分の切り捨て
+	tm = tm % 60; //60分未満の分数
+	//小数点以下の0を出力
+	//ts = Math.floor(ts);
+	ts2 = "";
+	if (fix > 0) {
+		s = "" + sec;
+		n = s.length;
+		ts2 = "." + s.substr(n-fix,fix);
+	}
+	//整形後出力
+	return format_num2(th) + ":" + format_num2(tm) + ":" + format_num2(ts) + ts2;
+}
+
+function memory_save() {
+	//現在時刻
+	//var n_date = new Date();
+	
+	//Ctrlキー押下時はcookieを削除。
+	if (getCtrl) {
+		//削除対象のデータを作成
+		kiroku_name = document.form_sw.kiroku.value;
+		document.cookie = "swn_" + kiroku_name + "=nodata; path=/;";
+		document.getElementById("status").innerHTML = "<font color='#ff0000'>cookie削除</font>";
+	} else {
+		//cookieの有効期限
+		var c_date = new Date();
+		var n = c_date.getTime() + 1000*60*60*24*c_kigen;
+		c_date.setTime(n);
+		kigen = c_date.toGMTString();
+
+		//cookie保存(1)
+		kiroku_name = document.form_sw.kiroku.value;
+		document.cookie = "sw_name=" + kiroku_name + "; path=/; expires=" + kigen;
+
+		//タイマーが動作したか確認
+		if (timer > 0) {
+			if (sw_status == 2) {
+				//ラップタイム
+				var s = sTime + "," + (laptime / sw_move1); // + "," + n_date;
+			} else {
+				//動作中・停止中
+				var s = sTime + "," + (timer / sw_move1); // + "," + n_date;
+				//document.getElementById("status").innerHTML = sTime + "/n_date=" + n_date;
+			}
+			
+			//開始時刻が異なる場合にデータを追加
+			line = time_list[0].split(",");
+			if (sTime != line[0]) {
+				//ローテーション
+				for (n=9; n>0; n--) {
+					time_list[n] = time_list[n-1];
+				}
+			}
+	
+			//最新記録更新
+			time_list[0] = s;
+		
+			//表示
+			table_view();
+		
+			//cookie保存(2)
+			s = "";
+			for (n=0;n<10;n++) {
+				s += time_list[n] + "//";
+			}
+			document.cookie = "swn_" + kiroku_name + "=" + s + "; path=/; expires=" + kigen;
+		} else {
+			//load_cookie(1);
+			table_view();
+		}
+	}
+}
+
+function table_view() {
+	//記録の表示
+	
+	var s = "";
+	//ヘッダ背景色
+	var c0 = "#ececec";
+	//Count文字色
+	var c1 = "#0000ff";
+	//Graph文字色
+	var c2 = "#006600";
+	
+	var line = new Array();
+	//最大値取得
+	var nmax = 0;
+	for (n=0; n<10; n++) {
+		if (time_list[n] != "") {
+			line = time_list[n].split(",");
+			var m = eval(line[1]);
+			if (m > nmax) nmax = m;
+		}
+	}
+	//ヘッダ
+	s += "<tr bgcolor='" + c0 + "'><td>Date</td><td>Time</td><td><font color='" + c1 + "'>Count</font></td><td><font color='" + c2 + "'>Graph</font></td></tr>";
+	//テーブル作成
+	for (n=0; n<10; n++) {
+		if (time_list[n] != "") {
+			line = time_list[n].split(",");
+			var s1 = format_date(line[0]);
+			var s2 = format_time(line[0]);
+			m = eval(line[1]);
+			var s3 = count_format(m,sw_move);
+			var s4 = "";
+			if (nmax > 0) {
+				var par = Math.floor(m / nmax * 100);
+				for (m=0; m<par; m++) {
+					s4 += "I";
+				}
+			} else {
+				var par = 0;
+			}
+			//var s5 = format_date(line[2]);
+			//var s6 = format_time(line[2]);
+			//テスト
+			//s += "<tr><td>" + line[0] + "</td><td>" + line[1] + "</td><td>" + par + "/" + nmax + "</td></tr>";
+			s += "<tr><td align='center'>" + s1 + "</td><td align='right'>" + s2 + "</td><td align='right'><font color='" + c1 + "'>" + s3 + "</font></td><td><font color='" + c2 + "'>" + s4 + "</font></td></tr>";
+		}
+	}
+	s = "<table border='2'>"+ s +"</table>";
+	//テスト
+	document.getElementById("sw_table").innerHTML = s;
+}
+
+function format_date(num) {
+	var m,s,nDate;
+	if (num == null) return ""; 
+	nDate = new Date(num);
+	s = nDate.getFullYear() + "/" + format_num2(nDate.getMonth() + 1) + "/" + format_num2(nDate.getDate());
+	return s;
+}
+
+function format_time(num) {
+	var m,s,nDate;
+	if (num == null) return ""; 
+	nDate = new Date(num);
+	s = nDate.getHours() + ":" + format_num2(nDate.getMinutes()) + ":" + format_num2(nDate.getSeconds());
+	return s;
+}
+
+function format_num2(num) {
+	var s = "";
+	if (num < 10) s = "0";
+	return s + num;
+}
+
+
+function load_cookie(num) {
+	//num:0=保存名取得を実行/1=リストの読込のみ
+	var s,t,cn,m,n,c;
+	//cookie読込
+	s = document.cookie;
+	
+	if (num == 0) {
+		//保存名の取得
+		cn = "sw_name=";
+		n = s.indexOf(cn,0);
+		if (n!=-1) {
+			m = s.indexOf(";",n+cn.length);
+			if (m==-1) m=s.length;
+			kiroku_name = s.substring(n+cn.length,m);
+		}
+	}
+	
+	//リストの取得
+	cn = "swn_" + kiroku_name + "=";
+	n = s.indexOf(cn,0);
+	if (n!=-1) {
+		m = s.indexOf(";",n+cn.length);
+		if (m==-1) m=s.length;
+		c = s.substring(n+cn.length,m);
+	} else {
+		c = "";
+	}
+	
+		//記録名表示
+		n = 0;
+		m = 2;
+		do {
+			n = s.indexOf("swn_",n);
+			//テスト
+			//document.getElementById("status").innerHTML = s+"<br>"+c+"<br>n="+n+"/m="+m;
+			if (n > -1) {
+				n = n + 4;
+				t = s.substring(n,s.indexOf("=",n));
+				if (t != "_def_") { //標準は除外
+					m++;
+					//追加
+					document.form_sw.kiroku.length = m;
+					//変更
+					document.form_sw.kiroku[m-1].text = t;
+					document.form_sw.kiroku[m-1].value = t;
+					//if (m > 1) {
+						if (kiroku_name == t) {
+							document.form_sw.kiroku[m-1].selected = true;
+						}
+					//}
+				}
+				n++;
+			}
+			//if (m > n) n = -1;
+		} while(n>-1)
+
+		//テスト
+		//document.getElementById("status").innerHTML = s+"<br>"+c+"<br>n="+n+"/m="+m+"/kiroku_name="+kiroku_name;
+	
+	if (c != "") {
+		if (c == "nodata") {
+			//削除対象のデータが残っていた場合
+			document.getElementById("sw_table").innerHTML = "";
+		} else {
+			//リストへ代入
+			for (n=0; n<10; n++) {
+				time_list = c.split("//");
+			}
+			//テーブル表示
+			table_view();
+		}
+	}
+}
+
+function checkKeyDown(e) {
+	//ブラウザを判別して処理
+	if (document.uniqueID && event.ctrlKey) {
+		//IE用
+		//document.title = "CtrlKeyDown";
+		getCtrl = true; 
+	} 
+	if (e && e.ctrlKey) { 
+		//Firefox用
+		//document.title = "CtrlKeyDown";
+		getCtrl = true; 
+	} 
+} 
+
+function checkKeyUp(e) { 
+		//document.title = "KeyUp";
+		getCtrl = false; 
+} 
+
+</script>
