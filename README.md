@@ -1,7 +1,7 @@
 # enPiT2019 WebApp班
 
 ## チーム名 
-WebStory 
+WeB STORY 
 
 ## サービス名 
 スラムマスター支援ツール：**スクラムくん** 
