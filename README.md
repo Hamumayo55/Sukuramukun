@@ -8,4 +8,11 @@ WebStory
 
 ## 実行環境 
 - Ruby：2.6.3
-- Rails：5.2.3
+- Rails：5.2.3  
+
+## タスク管理ツール
+https://trello.com/b/jTdiNbiy/webstory-todoリスト仮  
+
+
+## サービスURL  
+https://sukuramukun.herokuapp.com/
