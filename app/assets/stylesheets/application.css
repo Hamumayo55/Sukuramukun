@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body { font-size:62.5%; }
+
+ header {
+     display: flex;
+     width: 100vw;
+     background-color: coral;
+     position: fixed;
+ }
+
+ header p {
+    font-size: 2em;
+    font-weight: 600;
+    padding-left: 2vw;
+ }
+
+ header a {
+    font-size: 2em;
+    font-weight: 600;
+    padding-left: 2vw;
+ }
