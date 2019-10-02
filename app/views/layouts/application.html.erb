@@ -11,9 +11,16 @@
 
   <body>
     <header>
-      <p>スクラムくん〜さよなら人類、ようこそ機械〜</p>
-      <a href="https://www.scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-Japanese.pdf">Wikipedia</a>
-      <%= link_to 'STOP WATCH','/watch' %> 
+      <div id="header-content">
+        <div id="header-left">
+          <a href="#">スクラムくん</a>
+          <p>〜さよなら人類、ようこそ機械〜</p>
+        </div>
+        <div id="header-right">
+          <a href="https://www.scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-Japanese.pdf">Wikipedia</a>
+          <%= link_to 'STOP WATCH','/watch' %> 
+        </div>
+      </div>
     </header>
 
     <%= yield %>

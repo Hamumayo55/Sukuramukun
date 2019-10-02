@@ -22,9 +22,9 @@
 body { font-size:62.5%; }
 
  header {
-     display: flex;
      width: 100vw;
-     background-color: coral;
+     height: 7vh;
+     background-color: #ff4500;
      position: fixed;
  }
 
@@ -32,10 +32,32 @@ body { font-size:62.5%; }
     font-size: 2em;
     font-weight: 600;
     padding-left: 2vw;
+    color: #ffffff;
  }
 
  header a {
+    text-decoration: none;
+    color: #ffffff;
     font-size: 2em;
     font-weight: 600;
     padding-left: 2vw;
  }
+ header a:hover{
+    text-decoration: underline;
+    color: aqua;
+ }
+
+header #header-content{
+    line-height: 7vh;
+    display: flex;
+}
+
+ header #header-left {
+    display: flex;
+ }
+
+ header #header-right {        
+     margin-left: 55vw;
+ }
+
+ 
