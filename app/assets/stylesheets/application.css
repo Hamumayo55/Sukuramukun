@@ -15,32 +15,33 @@
  */
 
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: auto;
+    padding: auto;
 }
 
-body { font-size:62.5%; }
+body { font-size:100%; }
 
  header {
-     width: 100vw;
-     height: 7vh;
+     width: 100%;
+     height: auto;
      background-color: #ff4500;
      position: fixed;
  }
 
  header p {
-    font-size: 2em;
-    font-weight: 600;
-    padding-left: 2vw;
+    font-size: auto;
+    font-weight: auto;
+    padding-left: auto;
+    margin-right: auto;
     color: #ffffff;
  }
 
  header a {
     text-decoration: none;
     color: #ffffff;
-    font-size: 2em;
-    font-weight: 600;
-    padding-left: 2vw;
+    font-size: auto;
+    font-weight: auto;
+    padding-left: auto;
  }
  header a:hover{
     text-decoration: underline;
