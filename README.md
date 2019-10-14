@@ -25,4 +25,8 @@ https://sukuramukun.herokuapp.com/
 ## 実行環境 
 - Ruby：2.6.3
 - Rails：5.2.3  
-- MacOS Mojave 10.14.6
+- MacOS Mojave 10.14.6  
+
+## コアタイム 
+- 土曜日：9:00 ~ 12:00  
+- 火曜日：2限,3限
