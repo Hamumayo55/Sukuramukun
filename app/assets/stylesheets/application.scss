@@ -14,54 +14,43 @@
  *= require_self
  */
 
-@import "bootstrap";
+ @import "bootstrap";
 
-* {
-    margin: auto;
-    padding: auto;
-}
-
-body { font-size:100%; }
-
- header {
-     width: 100%;
-     height: auto;
-     background-color: #ff4500;
-     position: fixed;
-     z-index: 10;
+ * {
+     margin: auto;
+     padding: auto;
  }
-
- header p {
-    font-size: auto;
-    font-weight: auto;
-    padding-left: auto;
-    margin-right: auto;
-    color: #ffffff;
- }
-
- header a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: auto;
-    font-weight: auto;
-    padding-left: auto;
- }
- header a:hover{
-    text-decoration: underline;
-    color: aqua;
- }
-
-header #header-content{
-    line-height: 7vh;
+ 
+ body { font-size:100%; }
+ 
+header{
+    font-size: 1.5em;
     display: flex;
+    width: 100vw;
+    height: 10vw;
+    z-index: 10;
+    background-color: #426E86;
+    border-bottom: solid 1em #f9ba32;
+
+    #scrumguide{
+        color:#ffffff;
+    }
+    #stopwatch{
+        margin-left: 1vw;
+        color:#ffffff;
+    }
+    #header-img{
+        margin: 0;
+        padding-bottom: 1em;
+        width: 60vw;
+        height: 10vw;
+    }
+
+    #header-right{
+        margin-right: 1vw;
+        margin-bottom: 0;
+        // padding-left: 10vw;
+    }
 }
-
- header #header-left {
-    display: flex;
- }
-
- header #header-right {        
-     margin-left: 55vw;
- }
-
+ 
  
