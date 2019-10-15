@@ -1,21 +1,14 @@
-<style type="text/css">
-#counter {
-	font-size: 50pt;
-}
-</style>
-
-<center>
-<h1>STOP WATCH</h1>
-<form name="form_sw">
-	<input name="counter" type="text" class="number" id="counter" value="00:00:00" size="12">
-	<input name="bstart" type="button" value="スタート" onClick="start_count()">
-	<input name="blap" type="button"value=" ラップ " onClick="lap()" disabled="disabled">
-  <input name="breset" type="button" value="リセット" onClick="reset_form()">
-</form>
-
-<div id="status"></div>
-<div id="sw_table"></div>
-<center>
+<div id="watch">
+	<h1>STOP WATCH</h1>
+	<form name="form_sw">
+		<input name="counter" type="text" class="number" id="counter" value="00:00:00" size="12">
+		<input name="bstart" type="button" value="スタート" onClick="start_count()">
+		<input name="blap" type="button"value=" ラップ " onClick="lap()" disabled="disabled">
+		<input name="breset" type="button" value="リセット" onClick="reset_form()">
+	</form>
+	<div id="status"></div>
+	<div id="sw_table"></div>
+</div>
 
 <script language="javascript">
 //初期値
