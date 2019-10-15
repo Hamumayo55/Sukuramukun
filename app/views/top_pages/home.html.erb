@@ -1,12 +1,8 @@
 <div id="home">
   <p id="sub">スプリントの流れ</p>
-  <p>
-  <input type="button" value="スタート" onclick="changeBoxColor('#232F3E');">
-  </p>
-
   <ul class="stepflow">
     <li>
-      <div class="stepflow-white"></div>
+      <div class="stepflow-black"></div>
       <div class="stepflow_label">STEP1</div>
       <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#sprintRunning" aria-expanded="false" aria-controls="sprintRunning">
         1.スプリントプランニング
@@ -98,9 +94,3 @@
     </li>
   </ul>
 </div>
-
-<script>
-function changeBoxColor( newColor ) {
-    document.getElementByClassName("stepflow-white").style.backgroundColor = newColor;
-}
-</script>
