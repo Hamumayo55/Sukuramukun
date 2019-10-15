@@ -11,17 +11,11 @@
 
   <body>
     <header>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-4">
-            <a href="/">スクラムくん 〜さよなら人類、ようこそ機械〜</a>
-          </div>
-          <div class="col-md-4 offset-md-4 text-right">
-            <a href="https://www.scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-Japanese.pdf">ScrumGuide</a>
-            <%= link_to 'STOP WATCH','/watch' %> 
-          </div>
+        <%= image_tag "header.png", id: "header-img" %>
+        <div id="header-right" class="text-right">
+          <a id="scrumguide" href="https://www.scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-Japanese.pdf">ScrumGuide</a>
+          <%= link_to 'StopWatch','/watch' ,id: "stopwatch"%> 
         </div>
-      </div>
     </header>
 
     <%= yield %>
