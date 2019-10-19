@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Sukuramukun</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    <head>
+        <title>Sukuramukun</title>
+        <%= csrf_meta_tags %>
+        <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
 
-  <body>
-    <header>
-        <%= image_tag "header.png", id: "header-img" %>
-        <div id="header-right" class="text-right">
-          <a id="scrumguide" href="https://www.scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-Japanese.pdf">ScrumGuide</a>
-          <%= link_to 'StopWatch','/watch' ,id: "stopwatch"%> 
-        </div>
-    </header>
+    <body>
+        <header>
+            <a href="/" class="m-0"><%= image_tag "header.png", id: "header-img" %></a>
+            <div id="header-right" class="text-right">
+                <a id="scrumguide" href="https://www.scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-Japanese.pdf">ScrumGuide</a>
+                <%= link_to 'StopWatch','/watch' ,id: "stopwatch"%>
+            </div>
+        </header>
 
-    <%= yield %>
-  </body>
+        <%= yield %>
+    </body>
 </html>

@@ -3,17 +3,41 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #home {
+    // border-left: solid 15vw #dfdbec;
+    // border-right: solid 15vw #dfdbec;
     padding-top: 10vh;
-    height: 130vh;
+    height: 300vh;
+    #side{
+        background: rgb(125, 132, 139);
+        height: 300vh;
+        #footer-img{
+            padding-bottom: 1em;
+            width: 0vw;
+            height: 0vw;
+        }
+    }
+    .col-md-6{
+        margin: 3vh 0vh 0vh 0vh;
+    }
     #sub{
         font-size: 2em;
-	}
+    }
     button{
         font-size: 1.5em;
     }
 }
 
 #watch {
+    #side{
+        background: rgb(125, 132, 139);
+        height: 130vh;
+    }
+    .col-md-6{
+        margin: 3vh 0vh 0vh 0vh;
+    }
+    height: 130vh;
+    // border-left: solid 15vw #dfdbec;
+    // border-right: solid 15vw #dfdbec;
 	font-size: 1.3em;
 	text-align: center;
 	padding-top: 10vh;
@@ -21,71 +45,56 @@
 
 /*ステップフローのCSS*/
 ul.stepflow {
-	border: none;
-	margin: 1em 0.5em;
-	padding: 0;
-	list-style: none;
+    border: none;
+    margin: 1em 0.5em;
+    padding: 0;
+    list-style: none;
 }
 ul.stepflow > li:before, ol.stepflow > li:before {
-	background-color:#cccccc!important;
+    background-color:#cccccc!important;
 }
 .stepflow li {
     position: relative;
     padding: 0 0 1.5em 1.8em;
 }
 .stepflow>li:before {
-	content: "";
-	width: 3px;
-	background: #cccccc;
-	display: block;
-	position: absolute;
-	top: 28px;
-	bottom: 0;
-	left: 5px;
+    content: "";
+    width: 3px;
+    background: #cccccc;
+    display: block;
+    position: absolute;
+    top: 28px;
+    bottom: 0;
+    left: 5px;
 }
 .stepflow-white {
-	content: '';
-	display: inline-block;
-	position: absolute;
-	top: 5px;
-	left: 0;
-	width: 14px;
-	height: 14px;
-	border-radius: 50%;
-	border: solid 3px #232F3E;
+    // content: '';
+    // display: inline-block;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: solid 3px #232F3E;
 }
 .stepflow-black {
-	content: '';
-	display: inline-block;
-	position: absolute;
-	top: 5px;
-	left: 0;
-	width: 14px;
-	height: 14px;
-	border-radius: 50%;
-	border: solid 3px #232F3E;
-	background-color: #232F3E;
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: solid 3px #232F3E;
+    background-color: #232F3E;
 }
 .stepflow_label {
-	padding: 3px 0px 8px 0px;
-	margin-bottom:8px;
-	color: #999999;
-	font-size: .8em;
-	font-weight: bold;
+    padding: 3px 0px 8px 0px;
+    margin-bottom:8px;
+    color: #999999;
+    font-size: .8em;
+    font-weight: bold;
 }
-.stepflow_title {
-	font-size: 1.2em;
-	font-weight: bold;
-	line-height: 1.5;
-	margin-bottom:15px;
-}
-.stepflow_content {
-	font-size: .9em;
-	line-height: 1.5;
-	margin-top: .5em;
-	padding: 0 0 1.5em;
-	border-bottom: dashed 1px #cccccc;
-}
-
 /*ステップフローのCSSここまで*/
-

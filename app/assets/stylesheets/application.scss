@@ -14,15 +14,15 @@
  *= require_self
  */
 
- @import "bootstrap";
+@import "bootstrap";
 
  * {
-     margin: auto;
-     padding: auto;
- }
- 
- body { font-size:100%; }
- 
+    margin: auto;
+    padding: auto;
+}
+
+body { font-size:100%; }
+
 header{
     font-size: 1.5em;
     display: flex;
@@ -42,7 +42,7 @@ header{
     #header-img{
         margin: 0;
         padding-bottom: 1em;
-        width: 60vw;
+        width: 50vw;
         height: 10vw;
     }
 
@@ -52,5 +52,3 @@ header{
         // padding-left: 10vw;
     }
 }
- 
- 
