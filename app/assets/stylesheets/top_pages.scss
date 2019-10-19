@@ -8,19 +8,23 @@
     padding-top: 10vh;
     height: 300vh;
     #side{
-        background: rgb(125, 132, 139);
+        background: #eeeeee;
         height: 300vh;
-        #footer-img{
-            padding-bottom: 1em;
-            width: 0vw;
-            height: 0vw;
-        }
+    }
+    #footer-img{
+        width: 13vw;
+        height: 20vw;
+        position: fixed;
+        bottom: 1vw;
+        right: 2vw;
+
     }
     .col-md-6{
         margin: 3vh 0vh 0vh 0vh;
     }
     #sub{
         font-size: 2em;
+        text-align: center;
     }
     button{
         font-size: 1.5em;
