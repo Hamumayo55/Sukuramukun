@@ -4,9 +4,12 @@
         </div>
         <div class="col-md-6">
             <p id="sub">スプリントの流れ</p>
+            <div class="app">
+                <p>進捗: <button id="up">進める</button> <button id="down">戻す</button></p>
+            </div>
             <ul class="stepflow">
                 <li>
-                    <div class="stepflow-black"></div>
+                    <div class="stepflow-white" id="color1"></div>
                     <div class="stepflow_label">STEP1</div>
                     <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#sprintRunning" aria-expanded="false" aria-controls="sprintRunning">
                         1.スプリントプランニング
@@ -22,7 +25,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="stepflow-white"></div>
+                    <div class="stepflow-white"  id="color2"></div>
                     <div class="stepflow_label">STEP2</div>
                     <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#dailyScrum" aria-expanded="false" aria-controls="dailyScrum">
                         2.デイリースクラム
@@ -44,7 +47,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="stepflow-white"></div>
+                    <div class="stepflow-white" id="color3"></div>
                     <div class="stepflow_label">STEP3</div>
                     <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#developWork" aria-expanded="false" aria-controls="developWork">
                         3.開発作業
@@ -56,7 +59,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="stepflow-white"></div>
+                    <div class="stepflow-white" id="color4"></div>
                     <div class="stepflow_label">STEP４</div>
                     <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#sprintReview" aria-expanded="false" aria-controls="sprintReview">
                         4.スプリントレビュー
@@ -77,7 +80,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="stepflow-white"></div>
+                    <div class="stepflow-white" id="color5"></div>
                     <div class="stepflow_label">STEP５</div>
                     <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#sprintRetrospective" aria-expanded="false" aria-controls="sprintRetrospective">
                         5.スプリントレトロスペクティブ
@@ -103,3 +106,40 @@
         </div>
     </div>
 </div>
+
+<script>
+var cnt=0;
+document.getElementById("up").onclick = function() {
+    if (cnt<=4){
+        cnt+=1;
+    }else{
+    }
+
+    switch(cnt){
+        case 0 :
+            document.getElementById("color-change").classList.value = "stepflow-black";
+                break
+
+        case 1 :
+            document.getElementById("color1").classList.value = "stepflow-black";
+                break
+        
+        case 2 :
+            document.getElementById("color2").classList.value = "stepflow-black";
+                break
+        case 3 :
+            document.getElementById("color3").classList.value = "stepflow-black";
+                break
+        case 4 :
+            document.getElementById("color4").classList.value = "stepflow-black";
+                break
+        case 5 :
+            document.getElementById("color5").classList.value = "stepflow-black";
+                break
+    }
+
+
+        
+};
+
+</script>

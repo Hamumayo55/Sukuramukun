@@ -19,6 +19,8 @@
         right: 2vw;
 
     }
+  
+
     .col-md-6{
         margin: 3vh 0vh 0vh 0vh;
     }
@@ -91,9 +93,10 @@ ul.stepflow > li:before, ol.stepflow > li:before {
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    border: solid 3px #232F3E;
-    background-color: #232F3E;
+    border: solid 3px #CC0000;
+    background-color: #CC0000;
 }
+
 .stepflow_label {
     padding: 3px 0px 8px 0px;
     margin-bottom:8px;
