@@ -22,7 +22,7 @@ https://trello.com/b/jTdiNbiy/webstory-todoリスト仮
 ## アプリURL  
 https://sukuramukun.herokuapp.com/
   
-## 実行環境 
+## 開発環境 
 - Ruby：2.6.3
 - Rails：5.2.3  
 - MacOS Mojave 10.14.6  
