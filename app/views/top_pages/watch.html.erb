@@ -5,8 +5,8 @@
         <div class="col-md-6">
             <h1>カウントダウンタイマー</h1>
             <form name="timer">
-                <input type="text" value="">分
-                <input type="text" value="">秒<br>
+                <input type="text" value=0 style="text-align:right">分
+                <input type="text" value=0 style="text-align:right">秒<br>
                 <input type="button" value="スタート" onclick="cntStart()">
                 <input type="button" value="ストップ" onclick="cntStop()">
             </form>
@@ -43,7 +43,7 @@ function countDown()
     var min=document.timer.elements[0].value;
     var sec=document.timer.elements[1].value;
 
-    if( (min=="") && (sec=="") )
+    if( (min==0) && (sec==0) )
     {
         alert("時刻を設定してください！");
         reSet();
