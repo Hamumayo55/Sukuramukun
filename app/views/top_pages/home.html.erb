@@ -105,6 +105,9 @@
             <%= image_tag "footer.png",id: "footer-img" %>
         </div>
     </div>
+    <% if user_signed_in? %>
+    <%= render 'shared/chat', {micropost: @micropost, micropost_new: @micropost_new} %>
+    <% end %>
 </div>
 
 <script>

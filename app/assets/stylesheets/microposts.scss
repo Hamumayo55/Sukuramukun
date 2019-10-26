@@ -1,0 +1,14 @@
+#micropost-div {
+    text-align: center;
+    .micropost-a {
+        color: #414141;
+        text-decoration: none;
+    }
+    .micropost-a:hover {
+        color: #333333;
+        text-decoration: underline;
+    }
+    #micropost-form {
+        display: flex;
+    }
+}

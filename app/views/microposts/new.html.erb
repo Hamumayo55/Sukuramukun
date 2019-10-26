@@ -1,0 +1,4 @@
+<%= form_with model: @micropost, local: true do |form| %>
+  <%= form.text_field :content %>
+  <%= form.submit 'Add' %>
+<% end %>
