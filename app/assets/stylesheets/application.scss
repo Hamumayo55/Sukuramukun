@@ -21,7 +21,24 @@
     padding: auto;
 }
 
-body { font-size:100%; }
+body { 
+    font-size:100%; 
+    .notice {
+        background-color: #3cb371;
+        text-align: center;
+        color: #ffffff;
+        height: 1.5em;
+      }
+      
+      .alert {
+        background-color: #ff6347;
+        text-align: center;
+        color: #ffffff;
+        margin: 0;
+        padding: 0;
+        height: 1.5em;
+      }
+}
 
 header{
     font-size: 1.5em;
