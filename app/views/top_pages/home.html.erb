@@ -5,7 +5,7 @@
         <div class="col-md-6">
             <p id="sub">スプリントの流れ</p>
             <div class="app">
-                <p><button class="btn btn-outline-info" id="up">UP</button> <button class="btn btn-outline-info" id="down">DOWN</button></p>
+                <p><button class="btn btn-outline-info" id="up" onclick="up_step()">UP</button> <button class="btn btn-outline-info" id="down" onclick="down_step()">DOWN</button></p>
             </div>
             <ul class="stepflow">
                 <li>
@@ -109,21 +109,24 @@
 
 <script>
 var cnt=0;
-document.getElementById("up").onclick = function() {
-    if (cnt<=5){
+
+function up_step()
+{
+    if (cnt<=5){
         cnt+=1;
         colorChange(cnt)
     }else{
-    }       
-};
+    }
+}
 
-document.getElementById("down").onclick = function() {
-    if (cnt>=1){
+function down_step()
+{
+    if (cnt>=1){
         cnt-=1;
         colorChange(cnt)
     }else{
-    }        
-};
+    }
+}
 
 
 
