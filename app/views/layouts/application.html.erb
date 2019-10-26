@@ -10,6 +10,11 @@
     </head>
 
     <body>
+        <!-- ここから追加 -->
+        <% flash.each do |key, value| %>
+          <%= content_tag(:div, value, class: "#{key}") %>
+        <% end %>
+      <!-- ここまで追加 -->     
         <header>
             <a href="/" class="m-0"><%= image_tag "header.png", id: "header-img" %></a>
             <div id="header-right" class="text-right">
@@ -24,6 +29,7 @@
         </header>
         <div id="msg">
         </div>
+      
         <%= yield %>
     </body>
 </html>
