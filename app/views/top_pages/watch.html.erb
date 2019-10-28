@@ -4,6 +4,9 @@
         </div>
         <div class="col-md-6">
             <h1>カウントダウンタイマー</h1>
+            <p id="timeDisplay">00:00</p>
+            <div id="status"></div>
+            <div id="sw_table"></div>
             <form name="timer">
                 <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
                 <%= select_tag :second, options_for_select((0..59).to_a), id:"second" %>秒 <br>
@@ -11,11 +14,9 @@
                 <input type="button" value="ストップ" onclick="cntStop()">
                 <input type="button" value="リセット" onclick="reSet()">
             </form>
-            <p id="timeDisplay">00:00</p>
-            <div id="status"></div>
-            <div id="sw_table"></div>
         </div>
         <div id="side" class="col-md-3">
+            <%= image_tag "footer.png",id: "footer-img" %>
         </div>
     </div>
 </div>
