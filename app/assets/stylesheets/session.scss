@@ -1,0 +1,23 @@
+#session {
+    // border-left: solid 15vw #dfdbec;
+    // border-right: solid 15vw #dfdbec;
+    padding-top: 10vh;
+    height: 300vh;
+    #side{
+        background: #eeeeee;
+        height: 300vh;
+    }
+    #footer-img{
+        width: 13vw;
+        height: 20vw;
+        position: fixed;
+        bottom: 1vw;
+        right: 2vw;
+
+    }
+  
+
+    .col-md-6{
+        margin: 3vh 0vh 0vh 0vh;
+    }
+}

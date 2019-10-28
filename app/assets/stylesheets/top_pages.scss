@@ -38,8 +38,19 @@
         background: #eeeeee;
         height: 130vh;
     }
+    #footer-img{
+        width: 13vw;
+        height: 20vw;
+        position: fixed;
+        bottom: 1vw;
+        right: 2vw;
+
+    }
     .col-md-6{
         margin: 3vh 0vh 0vh 0vh;
+    }
+    #timeDisplay{
+        font-size: 5em;
     }
     height: 130vh;
     // border-left: solid 15vw #dfdbec;
