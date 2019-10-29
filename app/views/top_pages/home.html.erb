@@ -8,7 +8,7 @@
                 <p><button class="btn btn-outline-info" id="up" onclick="up_step()">UP</button> <button class="btn btn-outline-info" id="down" onclick="down_step()">DOWN</button></p>
             </div>
             <ul class="stepflow">
-                <li>
+                <li class="bar-white" id="list1">
                     <div class="stepflow-white" id="color1"></div>
                     <div class="stepflow_label">STEP1</div>
                     <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#sprintRunning" aria-expanded="false" aria-controls="sprintRunning">
@@ -24,7 +24,7 @@
                         </div>
                     </div>
                 </li>
-                <li>
+                <li class="bar-white" id="list2">
                     <div class="stepflow-white"  id="color2"></div>
                     <div class="stepflow_label">STEP2</div>
                     <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#dailyScrum" aria-expanded="false" aria-controls="dailyScrum">
@@ -46,7 +46,7 @@
                         </div>
                     </div>
                 </li>
-                <li>
+                <li class="bar-white" id="list3">
                     <div class="stepflow-white" id="color3"></div>
                     <div class="stepflow_label">STEP3</div>
                     <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#developWork" aria-expanded="false" aria-controls="developWork">
@@ -58,7 +58,7 @@
                         </div>
                     </div>
                 </li>
-                <li>
+                <li class="bar-white" id="list4">
                     <div class="stepflow-white" id="color4"></div>
                     <div class="stepflow_label">STEP４</div>
                     <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#sprintReview" aria-expanded="false" aria-controls="sprintReview">
@@ -79,7 +79,7 @@
                         </div>
                     </div>
                 </li>
-                <li>
+                <li class="bar-white" id="list5">
                     <div class="stepflow-white" id="color5"></div>
                     <div class="stepflow_label">STEP５</div>
                     <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#sprintRetrospective" aria-expanded="false" aria-controls="sprintRetrospective">
@@ -143,29 +143,39 @@ function colorChange(num){
         case 1 :
             document.getElementById("color1").classList.value = "stepflow-red";
             document.getElementById("color2").classList.value = "stepflow-white";
+            document.getElementById("list1").classList.value = "bar-white";
                 break
         
         case 2 :
             document.getElementById("color1").classList.value = "stepflow-black";
             document.getElementById("color2").classList.value = "stepflow-red";
             document.getElementById("color3").classList.value = "stepflow-white";
+            document.getElementById("list1").classList.value = "bar-red";
+            document.getElementById("list2").classList.value = "bar-white";
                 break
         case 3 :
             document.getElementById("color2").classList.value = "stepflow-black";
             document.getElementById("color3").classList.value = "stepflow-red";
             document.getElementById("color4").classList.value = "stepflow-white";
+            document.getElementById("list2").classList.value = "bar-red";
+            document.getElementById("list3").classList.value = "bar-white";
                 break
         case 4 :
             document.getElementById("color3").classList.value = "stepflow-black";
             document.getElementById("color4").classList.value = "stepflow-red";
             document.getElementById("color5").classList.value = "stepflow-white";
+            document.getElementById("list3").classList.value = "bar-red";
+            document.getElementById("list4").classList.value = "bar-white";
                 break
         case 5 :
             document.getElementById("color4").classList.value = "stepflow-black";
             document.getElementById("color5").classList.value = "stepflow-red";
+            document.getElementById("list4").classList.value = "bar-red";
+            document.getElementById("list5").classList.value = "bar-white";
                 break
         case 6 :
             document.getElementById("color5").classList.value = "stepflow-black";
+            document.getElementById("list5").classList.value = "bar-red";
                 break
     }
 }

@@ -67,17 +67,30 @@ ul.stepflow {
     padding: 0;
     list-style: none;
 }
-ul.stepflow > li:before, ol.stepflow > li:before {
-    background-color:#cccccc!important;
-}
+
+
+
+
+
 .stepflow li {
     position: relative;
     padding: 0 0 1.5em 1.8em;
 }
-.stepflow>li:before {
+.stepflow>li.bar-white:before {
     content: "";
     width: 3px;
     background: #cccccc;
+    display: block;
+    position: absolute;
+    top: 28px;
+    bottom: 0;
+    left: 5px;
+}
+
+.stepflow>li.bar-red:before {
+    content: "";
+    width: 3px;
+    background: #CC0000;
     display: block;
     position: absolute;
     top: 28px;
