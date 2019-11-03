@@ -1,13 +1,15 @@
 <div id='micropost-div'>
   <p>Chat</p>
     <% micropost.each do |mp| %>
-      <div>
+      <div class='micropost'>
+        <p><%= mp.username %></p>
         <a href='/microposts/<%=mp.id%>' class="micropost-a"><%= mp.content %></a>
       </div>
     <% end %>
   <div id='micropost-form'>
     <%= form_with model: micropost_new, local: true do |form| %>
       <%= form.text_field :content %>
+      <%= form.hidden_field :username, :value => @username %>
       <%= form.submit 'Add' %>
     <% end %>
   </div>

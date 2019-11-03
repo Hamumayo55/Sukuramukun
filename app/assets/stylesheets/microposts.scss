@@ -1,5 +1,8 @@
 #micropost-div {
     text-align: center;
+    .micropost {
+        display: flex;
+    }
     .micropost-a {
         color: #414141;
         text-decoration: none;

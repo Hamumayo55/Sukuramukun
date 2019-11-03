@@ -2,6 +2,7 @@ class MicropostsController < ApplicationController
   def index
     @micropost = Micropost.all
     @micropost_new = Micropost.new
+    @username = current_user.username
   end
 
   def show
@@ -10,6 +11,7 @@ class MicropostsController < ApplicationController
 
   def new
     @micropost = Micropost.new
+    @usename = current_user.username
   end
 
   def edit
@@ -18,24 +20,24 @@ class MicropostsController < ApplicationController
 
   def create
     Micropost.create(micropost_params)
-    redirect_to '/'
+    redirect_to microposts_path
   end
 
   def update
     micropost = Micropost.find(params[:id])
     micropost.update(micropost_params)
-    redirect_to '/'
+    redirect_to microposts_path
   end
 
   def destroy
     @micropost = Micropost.find(params[:id])
     @micropost.destroy
-    redirect_to '/'
+    redirect_to microposts_path
   end
 
   private
   
   def micropost_params
-    params.require(:micropost).permit(:content)
+    params.require(:micropost).permit(:content, :username)
   end
 end

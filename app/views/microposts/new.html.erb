@@ -1,4 +1,5 @@
 <%= form_with model: @micropost, local: true do |form| %>
   <%= form.text_field :content %>
+  <%= form.hidden_field :username, :value => @username %>
   <%= form.submit 'Add' %>
 <% end %>
