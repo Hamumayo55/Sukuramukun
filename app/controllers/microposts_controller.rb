@@ -1,12 +1,9 @@
 class MicropostsController < ApplicationController
+  before_action :authenticate_user!
   def index
-    if user_signed_in?
-      @micropost = Micropost.all
-      @micropost_new = Micropost.new
-      @username = current_user.username
-    else
-      redirect_to '/'
-    end
+    @micropost = Micropost.all
+    @micropost_new = Micropost.new
+    @username = current_user.username
   end
 
   def show
