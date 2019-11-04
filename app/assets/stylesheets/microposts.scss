@@ -1,8 +1,8 @@
 #micropost-div {
-    text-align: center;
-    .micropost {
-        display: flex;
-    }
+    // text-align: center;
+    // .micropost {
+    //     display: flex;
+    // }
     .micropost-a {
         color: #414141;
         text-decoration: none;
@@ -11,7 +11,34 @@
         color: #333333;
         text-decoration: underline;
     }
-    #micropost-form {
-        display: flex;
+    // #micropost-form {
+    //     position: fixed;
+    //     bottom: 1vw;
+    //     background-color: #426E86;
+    // }
+    #side{
+        background: #eeeeee;
+        height: 130vh;
+    }
+    #footer-img{
+        width: 13vw;
+        height: 20vw;
+        position: fixed;
+        bottom: 1vw;
+        right: 2vw;
+    }
+    .col-md-6{
+        margin: 3vh 0vh 0vh 0vh;
+    }
+    #Username{
+        background-color: rgba(192, 196, 199, 0.603);
+        font-size: 1.2em;
+    }
+    #sendTime{
+        font-size: 0.8em;
+    }#footer{
+        position: fixed;
+        bottom: 1vw;
+        background-color: #426E86;
     }
 }
