@@ -4,7 +4,7 @@ class MicropostsController < ApplicationController
       @micropost = Micropost.all
       @micropost_new = Micropost.new
       @username = current_user.username
-    else 
+    else
       redirect_to '/'
     end
   end
