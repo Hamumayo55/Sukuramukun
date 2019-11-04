@@ -1,5 +1,7 @@
 <%= @micropost.content %>
-
-<%= link_to 'Edit', edit_micropost_path(@micropost.id) %>
-<%= button_to 'Delete', micropost_path(@micropost.id), method: :delete %>
 <%= link_to 'Home', '/' %>
+<%= @micropost.username %>
+<% if @micropost.username == current_user.username %>
+  <%= link_to 'Edit', edit_micropost_path(@micropost.id) %>
+  <%= button_to 'Delete', micropost_path(@micropost.id), method: :delete %>
+<% end %>

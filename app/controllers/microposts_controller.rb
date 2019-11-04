@@ -1,8 +1,12 @@
 class MicropostsController < ApplicationController
   def index
-    @micropost = Micropost.all
-    @micropost_new = Micropost.new
-    @username = current_user.username
+    if user_signed_in?
+      @micropost = Micropost.all
+      @micropost_new = Micropost.new
+      @username = current_user.username
+    else 
+      redirect_to '/'
+    end
   end
 
   def show
@@ -11,7 +15,7 @@ class MicropostsController < ApplicationController
 
   def new
     @micropost = Micropost.new
-    @usename = current_user.username
+    @username = current_user.username
   end
 
   def edit
@@ -31,6 +35,7 @@ class MicropostsController < ApplicationController
 
   def destroy
     @micropost = Micropost.find(params[:id])
+    logger.debug(@micropost)
     @micropost.destroy
     redirect_to microposts_path
   end
