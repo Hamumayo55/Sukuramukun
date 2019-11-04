@@ -1,0 +1,45 @@
+#qa{
+
+    #qa-title{
+        font-size: 2em;
+        text-align: center;
+        color:rgb(34, 67, 85);
+    }
+
+    #side{
+        background: #eeeeee;
+        height: 300vh;
+    }
+    .col-md-6{
+        margin: 3vh 0vh 0vh 0vh;
+    }
+    #footer-img{
+        width: 13vw;
+        height: 20vw;
+        position: fixed;
+        bottom: 1vw;
+        right: 2vw;
+
+    }
+    
+    ul.cp_list {
+        border: none;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
+        list-style: none;
+        width:80%;
+        
+    }
+    ul.cp_list li {
+        padding: 0.5em;
+        margin-bottom: 5px;
+        line-height: 1.5;
+        border-left: 6px solid #426E86;
+        border-bottom: 2px solid rgb(160, 194, 214);
+        background: rgb(163, 193, 211);
+        color:rgb(34, 67, 85);
+    }
+
+
+}
