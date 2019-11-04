@@ -1,7 +1,18 @@
-<%= @micropost.content %>
-<%= link_to 'Home', '/' %>
-<%= @micropost.username %>
-<% if @micropost.username == current_user.username %>
-  <%= link_to 'Edit', edit_micropost_path(@micropost.id) %>
-  <%= button_to 'Delete', micropost_path(@micropost.id), method: :delete %>
-<% end %>
+<div id="watch" class="container-fluid p-0">
+    <div class="row">
+        <div id="side" class="col-md-3">
+        </div>
+        <div class="col-md-6">
+          <%= @micropost.content %>
+          <%= link_to 'Home', '/' %>
+          <%= @micropost.username %>
+          <% if @micropost.username == current_user.username %><br>
+            <%= link_to '投稿を編集する', edit_micropost_path(@micropost.id) %>
+            <%= button_to '投稿を削除する', micropost_path(@micropost.id), method: :delete %>
+          <% end %>
+        </div>
+        <div id="side" class="col-md-3">
+            <%= image_tag "footer.png",id: "footer-img" %>
+        </div>
+    </div>
+</div>
