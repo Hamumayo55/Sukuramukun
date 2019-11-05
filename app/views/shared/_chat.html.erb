@@ -7,24 +7,25 @@
       <% micropost.each do |mp| %>
         <div class='micropost mb-3'>
           <div class="border">
-            <p id="Username" class="m-0"><%= mp.username %></p>
+            <p class="Username m-0"><%= mp.username %></p>
             <a href='/microposts/<%=mp.id%>' class="micropost-a"><%= mp.content %></a>
           </div>
-          <p id="sendTime" class="text-right"><%= mp.created_at%></p>
+          <p class="sendTime text-right"><%= mp.created_at%></p>
         </div>
       <% end %>
-      <footer>
-        <div id='micropost-form'>
-          <%= form_with model: micropost_new, local: true do |form| %>
-            <%= form.text_field :content %>
-            <%= form.hidden_field :username, :value => @username %>
-            <%= form.submit '投稿' %>
-          <% end %>
-        </div>
-      </footer>
     </div>
     <div id="side" class="col-md-3">
       <%= image_tag "footer.png",id: "footer-img" %>
     </div>
-    </div>
+  </div>
 </div>
+
+<footer>
+  <div id='micropost-form'>
+    <%= form_with model: micropost_new, local: true do |form| %>
+      <%= form.text_field :content %>
+      <%= form.hidden_field :username, :value => @username %>
+      <%= form.submit '投稿', class:"btn btn-outline-info", role:"button" %>
+    <% end %>
+  </div>
+</footer>
