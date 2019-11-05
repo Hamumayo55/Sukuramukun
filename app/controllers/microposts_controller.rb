@@ -7,7 +7,7 @@ class MicropostsController < ApplicationController
   end
 
   def show
-    @micropost = Micropost.find_by(params[:id])
+    @micropost = Micropost.find_by(id: params[:id])
     if @micropost.nil?
       redirect_to '/'
     end
