@@ -21,11 +21,11 @@
                 <%= link_to 'Timer','/watch', class: "header-itmes"%>
                 <%= link_to 'Q&A','/q_and_a', class: "header-itmes"%>
                 <% if user_signed_in? %>
-                    <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"header-itmes" %>
                     <%= link_to 'Chat', microposts_path, class:"header-itmes" %>
+                    <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"header-itmes" %>
                 <% else %>
-                    <%= link_to 'Login', new_user_session_path, class:"header-itmes"%>
                     <%= link_to 'Sign up', new_user_registration_path, class:"header-itmes"%>
+                    <%= link_to 'Login', new_user_session_path, class:"header-itmes"%>
                 <% end %>
             </div>
         </header>

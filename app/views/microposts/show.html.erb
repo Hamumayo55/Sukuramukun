@@ -10,6 +10,7 @@
           <% if @micropost.username == current_user.username %><br>
             <%= link_to '投稿を編集する', edit_micropost_path(@micropost.id), class:"btn btn-outline-info", role:"button" %>
             <%= link_to '投稿を削除する', micropost_path(@micropost.id), class:"btn btn-outline-info", role:"button", method: :delete %>
+            <%= link_to 'チャット一覧に戻る', microposts_path, class:"btn btn-outline-info", role:"button" %>
           <% end %>
         </div>
         <div id="side" class="col-md-3">
