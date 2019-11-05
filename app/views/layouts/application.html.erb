@@ -17,14 +17,14 @@
         <header>
             <a href="/" class="m-0"><%= image_tag "header.png", id: "header-img" %></a>
             <div id="header-right" class="text-right">
-                <a id="scrumguide" href="https://www.scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-Japanese.pdf">ScrumGuide</a>
-                <%= link_to 'Timer','/watch' ,id: "stopwatch"%>
+                <a id="header-items" href="https://www.scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-Japanese.pdf">ScrumGuide</a>
+                <%= link_to 'Timer','/watch' ,id: "header-items"%>
                 <% if user_signed_in? %>
-                    <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-                    <%= link_to 'Chat', microposts_path %>
+                    <%= link_to 'Logout', destroy_user_session_path, id: "header-items", method: :delete %>
+                    <%= link_to 'Chat', microposts_path, id: "header-items" %>
                 <% else %>
-                    <%= link_to 'Login', new_user_session_path %>
-                    <%= link_to 'Sign up', new_user_registration_path %>
+                    <%= link_to 'Login', new_user_session_path, id: "header-items" %>
+                    <%= link_to 'Sign up', new_user_registration_path, id: "header-items" %>
                 <% end %>
             </div>
         </header>

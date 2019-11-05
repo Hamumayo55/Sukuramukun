@@ -11,11 +11,6 @@
         color: #333333;
         text-decoration: underline;
     }
-    // #micropost-form {
-    //     position: fixed;
-    //     bottom: 1vw;
-    //     background-color: #426E86;
-    // }
     #side{
         background: #eeeeee;
         height: 130vh;
@@ -26,6 +21,7 @@
         position: fixed;
         bottom: 1vw;
         right: 2vw;
+        z-index: 10;
     }
     .col-md-6{
         margin: 3vh 0vh 0vh 0vh;
@@ -36,9 +32,21 @@
     }
     #sendTime{
         font-size: 0.8em;
-    }#footer{
-        position: fixed;
-        bottom: 1vw;
-        background-color: #426E86;
+    }
+}
+
+footer{
+    position: relative;
+    width: 100vw;
+    height: 8vw;
+    position: fixed;
+    bottom: 0vw;
+    background-color: rgba(192, 196, 199, 0.603);
+    #micropost-form{
+        position: absolute;
+        top: 50%;
+        margin-top: -0.7em;
+        left: 50%;
+        margin-left: -7em;
     }
 }
