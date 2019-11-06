@@ -1,5 +1,6 @@
 class MicropostsController < ApplicationController
   before_action :authenticate_user!
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
   def index
     @micropost = Micropost.all
     @micropost_new = Micropost.new
@@ -28,14 +29,11 @@ class MicropostsController < ApplicationController
   end
 
   def update
-    micropost = Micropost.find(params[:id])
-    micropost.update(micropost_params)
+    @micropost.update(micropost_params)
     redirect_to microposts_path
   end
 
   def destroy
-    @micropost = Micropost.find(params[:id])
-    logger.debug(@micropost)
     @micropost.destroy
     redirect_to microposts_path
   end
@@ -45,4 +43,13 @@ class MicropostsController < ApplicationController
   def micropost_params
     params.require(:micropost).permit(:content, :username)
   end
+
+  def ensure_correct_user
+    @micropost = Micropost.find(params[:id])
+    if @micropost.username != current_user.username
+      flash[:notice] = "権限がありません"
+      redirect_to microposts_path
+    end
+  end
+
 end
