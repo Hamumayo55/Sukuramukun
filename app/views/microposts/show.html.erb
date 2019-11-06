@@ -5,6 +5,7 @@
         <div class="col-md-6">
           <div class="border">
             <p class="Username m-0"><%= @micropost.username %></p>
+            <%= flash[:notice] %>
             <%= @micropost.content %>
           </div>
           <% if @micropost.username == current_user.username %><br>
