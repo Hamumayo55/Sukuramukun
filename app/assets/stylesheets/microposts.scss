@@ -1,4 +1,4 @@
-#micropost-div {
+.micropost-div {
     .micropost-a {
         color: #414141;
         text-decoration: none;
@@ -7,11 +7,11 @@
         color: #333333;
         text-decoration: underline;
     }
-    #side{
+    .side{
         background: #eeeeee;
         height: 130vh;
     }
-    #footer-img{
+    .footer-img{
         width: 13vw;
         height: 20vw;
         position: fixed;
