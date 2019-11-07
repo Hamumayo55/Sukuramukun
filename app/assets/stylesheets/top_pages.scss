@@ -7,11 +7,11 @@
     // border-right: solid 15vw #dfdbec;
     padding-top: 10vh;
     height: 300vh;
-    #side{
+    .side{
         background: #eeeeee;
         height: 300vh;
     }
-    #footer-img{
+    .footer-img{
         width: 13vw;
         height: 20vw;
         position: fixed;
@@ -20,7 +20,7 @@
 
     }
 
-    #footer-msg{
+    .footer-msg{
         width: 22vw;
         height: 8vw;
         position: fixed;
@@ -84,11 +84,11 @@
 }
 
 #watch {
-    #side{
+    .side{
         background: #eeeeee;
         height: 130vh;
     }
-    #footer-img{
+    .footer-img{
         width: 13vw;
         height: 20vw;
         position: fixed;
