@@ -1,21 +1,12 @@
-<div class="micropost-div container-fluid p-0">
-    <div class="row">
-        <div class="side col-md-3">
-        </div>
-        <div class="col-md-6">
-          <div class="border">
-            <p class="Username m-0"><%= @micropost.username %></p>
-            <%= flash[:notice] %>
-            <%= @micropost.content %>
-          </div>
-          <% if @micropost.username == current_user.username %><br>
-            <%= link_to '投稿を編集する', edit_micropost_path(@micropost.id), class:"btn btn-outline-info", role:"button" %>
-            <%= link_to '投稿を削除する', micropost_path(@micropost.id), class:"btn btn-outline-info", role:"button", method: :delete %>
-          <% end %>
-          <%= link_to 'チャット一覧に戻る', microposts_path, class:"btn btn-outline-info", role:"button" %>
-        </div>
-        <div class="side col-md-3">
-            <%= image_tag "footer.png",class: "footer-img" %>
-        </div>
-    </div>
+<div class="micropost-div">
+  <div class="border">
+    <p class="Username m-0"><%= @micropost.username %></p>
+    <%= flash[:notice] %>
+    <%= @micropost.content %>
+  </div>
+  <% if @micropost.username == current_user.username %><br>
+    <%= link_to '投稿を編集する', edit_micropost_path(@micropost.id), class:"btn btn-outline-info", role:"button" %>
+    <%= link_to '投稿を削除する', micropost_path(@micropost.id), class:"btn btn-outline-info", role:"button", method: :delete %>
+  <% end %>
+  <%= link_to 'チャット一覧に戻る', microposts_path, class:"btn btn-outline-info", role:"button" %>
 </div>

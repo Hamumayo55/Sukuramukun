@@ -1,15 +1,6 @@
-<div class="micropost-div container-fluid p-0">
-  <div class="row">
-    <div class="side col-md-3">
-    </div>
-    <div class="col-md-6">
-      <%= form_with model: @micropost, class:"text-center" ,local: true do |form| %>
-        <%= form.text_field :content %>
-        <%= form.submit '保存', class:"btn btn-outline-info", role:"button" %>
-      <% end %>
-    </div>
-    <div class="side col-md-3">
-      <%= image_tag "footer.png",class: "footer-img" %>
-    </div>
-  </div>
+<div class="micropost-div">
+  <%= form_with model: @micropost, class:"text-center" ,local: true do |form| %>
+    <%= form.text_field :content %>
+    <%= form.submit '保存', class:"btn btn-outline-info", role:"button" %>
+  <% end %>
 </div>

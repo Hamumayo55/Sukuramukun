@@ -67,3 +67,72 @@ header{
         // padding-left: 10vw;
     }
 }
+
+
+#grid_system{
+    .side{
+        background: #eeeeee;
+        height: 300vh;
+    }
+    .footer-img{
+        width: 13vw;
+        height: 20vw;
+        position: fixed;
+        bottom: 1vw;
+        right: 2vw;
+    }
+    .footer-msg{
+        width: 22vw;
+        height: 8vw;
+        position: fixed;
+        bottom: 21vw;
+        right: 2.5vw;
+
+    }
+    .default-msg{
+        font-size: 1.3vw;
+        position: fixed;
+        bottom: 23.5vw;
+        right: 8.5vw;
+    }
+
+    .hello-msg{
+        font-size:0;
+    }
+    .hello-msg:before {
+        font-size: 1.3vw;
+        position: fixed;
+        bottom: 24.5vw;
+        right: 11vw;
+
+        content: "こんniちは!!!";
+    }
+
+    .haraheri-msg{
+        font-size:0;
+    }
+    .haraheri-msg:before {
+        font-size: 1.3vw;
+        position: fixed;
+        bottom: 24.5vw;
+        right: 9vw;
+
+        content: "お腹すいてない？";
+    }
+
+    .daijoubu-msg{
+        font-size:0;
+    }
+    .daijoubu-msg:before {
+        font-size: 1.3vw;
+        position: fixed;
+        bottom: 24.5vw;
+        right: 11vw;
+
+        content: "元気してる？";
+    }
+
+    .col-md-6{
+        margin: 3vh 0vh 0vh 0vh;
+    }
+}
