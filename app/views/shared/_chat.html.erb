@@ -1,4 +1,6 @@
-<div class="micropost-div">
+<div class="side col-md-3">
+</div>
+<div class="micropost-div col-md-6">
   <h1 class="text-center mb-5">教えてスクラムマスター!!</h1>
   <% micropost.each do |mp| %>
     <div class='micropost mb-3'>
@@ -9,14 +11,16 @@
       <p class="sendTime text-right"><%= mp.created_at%></p>
     </div>
   <% end %>
-</div>
 
-<footer>
-  <div id='micropost-form'>
-    <%= form_with model: micropost_new, local: true do |form| %>
-      <%= form.text_field :content %>
-      <%= form.hidden_field :username, :value => @username %>
-      <%= form.submit '投稿', class:"btn btn-outline-info", role:"button" %>
-    <% end %>
-  </div>
-</footer>
+
+  <footer>
+    <div id='micropost-form'>
+      <%= form_with model: micropost_new, local: true do |form| %>
+        <%= form.text_field :content %>
+        <%= form.hidden_field :username, :value => @username %>
+        <%= form.submit '投稿', class:"btn btn-outline-info", role:"button" %>
+      <% end %>
+    </div>
+  </footer>
+
+</div>

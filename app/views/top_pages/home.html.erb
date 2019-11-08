@@ -1,5 +1,5 @@
-<div id="home">
-  <p id="sub">スプリントの流れ</p>
+<div class="side col-md-3">
+<p id="sub">スプリントの流れ</p>
   <div class="app">
     <p><button class="btn btn-outline-info" id="up" onclick="upStep()">Stepを進める</button> <button class="btn btn-outline-info" id="down" onclick="downStep()">Stepを戻す</button> </p>
   </div>
@@ -7,115 +7,75 @@
     <li class="bar-white" id="list1">
       <div class="stepflow-white" id="color1"></div>
       <div class="stepflow_label">STEP1</div>
-      <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#sprintRunning" aria-expanded="false" aria-controls="sprintRunning">
+      <button type="button" class="btn btn-light text-left" id="item1" onclick="selectItem(id)">
         1.スプリントプランニング
       </button>
-      <div class="collapse m-0" id="sprintRunning">
-        <div class="card card-body">
-          <center>詳細 </center> <br>
-          スプリントの作業はスプリントプランニングで計画する。これはスクラムチームの共同作業である。
-          スプリントが 1 か月の場合、スプリントプランニングのタイムボックスは最大で 8 時間である。スプリ
-          ントの期間が短ければ、スプリントプランニングの時間も短くすることが多い。スクラムマスターは、
-          参加者に目的を理解してもらうようにする。スクラムマスターは、スクラムチームにタイムボックスを
-          守るように伝える。
-          <hr>
-          <center>アドバイス</center> <br>
-          ベロシティの決め方には、[S,M,L]と決める方法以外にもフィボナッチ数列[1,2,3,5...]で決める方法もあるよ。
-
-
-        </div>
-      </div>
     </li>
     <li class="bar-white" id="list2">
       <div class="stepflow-white"  id="color2"></div>
       <div class="stepflow_label">STEP2</div>
-      <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#dailyScrum" aria-expanded="false" aria-controls="dailyScrum">
+      <button type="button" class="btn btn-light text-left" id="item2" onclick="selectItem(id)">
         2.デイリースクラム
       </button>
-      <div class="collapse m-0" id="dailyScrum">
-        <div class="card card-body">
-        <center>詳細 </center> <br>
-          コデイリースクラムとは、開発チームのための 15 分間のタイムボックスのイベントである。スプリントで
-          は、毎日デイリースクラムを開催する。開発チームは、次の 24 時間の作業を計画する。前回のデ
-          イリースクラムから行なった作業の検査と今後のスプリント作業の予想をすることで、チームのコラ
-          ボレーションやパフォーマンスを最適化するのである。デイリースクラムは毎日、同じ時間・場所で
-          開催し、複雑にならないようにする。
-          開発チームはデイリースクラムを使って、スプリントゴールとスプリントバックログの進捗を検査する。
-          デイリースクラムは、開発チームがスプリントゴールを達成する可能性を最適化する。開発チーム
-          は、自己組織化チームとしてスプリントゴールを達成し、スプリント終了までに期待されるインクリメ
-          ントを作成できるかを毎日把握しなければいけない。
-          デイリースクラムの構成は、開発チームが設定する。スプリントゴールを目指している限り、他のや
-          り方で行なっても構わない。質問を使うチームもあれば、議論ベースで進めるチームもある。
-          <hr>
-          <center>アドバイス</center> <br>
-          メンバー全員の進捗状況が把握できるようにしよう。
-        </div>
-      </div>
     </li>
     <li class="bar-white" id="list3">
         <div class="stepflow-white" id="color3"></div>
         <div class="stepflow_label">STEP3</div>
-        <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#developWork" aria-expanded="false" aria-controls="developWork">
+        <button type="button" class="btn btn-light text-left" id="item3" onclick="selectItem(id)">
             3.開発作業
         </button>
-        <div class="collapse m-0" id="developWork">
-            <div class="card card-body">
-              <center>詳細 </center> <br>
-                開発しよう 
-                <hr>
-                <center>アドバイス</center> <br>
-                開発のスタイルでTDDやモブプロ,ペアプロといった手法もあるので活用してみよう。また、スクラムマスターは、振り返りのTRYができているかを確認してみよう。
-            </div>
-        </div>
     </li>
     <li class="bar-white" id="list4">
       <div class="stepflow-white" id="color4"></div>
       <div class="stepflow_label">STEP４</div>
-      <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#sprintReview" aria-expanded="false" aria-controls="sprintReview">
+      <button type="button" class="btn btn-light text-left" id="item4" onclick="selectItem(id)">
         4.スプリントレビュー
       </button>
-      <div class="collapse m-0" id="sprintReview">
-        <div class="card card-body">
-        <center>詳細 </center> <br>
-          スプリントレビューとは、スプリントの終了時にインクリメントの検査と、必要であればプロダクトバック
-          ログの適応を行うものである。スプリントレビューでは、スクラムチームとステークホルダーがスプリン
-          トの成果をレビューする。スプリントの成果とプロダクトバックログの変更を参考にして、価値を最適
-          化するために次に何ができるかを参加者全員で話し合う。これはステータスミーティングではなく、
-          略式のミーティングである。インクリメントを提示することで、フィードバックや協力を引き出すことを
-          目的とする。
-          スプリントが 1 か月の場合、スプリントレビューは最大 4 時間である。スプリントの期間が短ければ、
-          スプリントレビューの時間も短くすることが多い。スクラムマスターはスプリントレビューが確実に開
-          催されるようにして、参加者には目的を理解してもらうようにする。スクラムマスターは関係者全員
-          にタイムボックスを守るように伝える。
-        </div>
-      </div>
     </li>
     <li class="bar-white" id="list5">
       <div class="stepflow-white" id="color5"></div>
       <div class="stepflow_label">STEP５</div>
-      <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#sprintRetrospective" aria-expanded="false" aria-controls="sprintRetrospective">
+      <button type="button" class="btn btn-light text-left" id="item5" onclick="selectItem(id)">
         5.スプリントレトロスペクティブ
       </button>
-      <div class="collapse m-0" id="sprintRetrospective">
-        <div class="card card-body">
-        <center>詳細 </center> <br>
-          スプリントレトロスペクティブは、スクラムチームの検査と次のスプリントの改善計画を作成する機会
-          である。
-          スプリントレトロスペクティブは、スプリントレビューが終わって、次のスプリントプランニングが始まる
-          前に行う。スプリントが 1 か月の場合、スプリントレトロスペクティブは最大 3 時間である。スプリント
-          の期間が短ければ、スプリントレトロスペクティブの時間も短くすることが多い。スクラムマスターは、
-          このイベントが確実に開催されるようにする。また、参加者に目的を理解してもらうようにする。
-          スクラムマスターは、このミーティングがポジティブで生産的になるようにする。スクラムマスターは、
-          全員にタイムボックスを守るように伝える。スクラムマスターは、スクラムのプロセスを説明するため
-          に、チームメンバーとして参加する。
-          <hr>
-          <center>アドバイス</center> <br>
-          振り返りの手法としてKPTやYWTなどがあるので活用してみよう。
-        </div>
-      </div>
     </li>
   </ul>
 </div>
+
+<div id="home" class="col-md-6">
+  <button type="button" class="btn btn-light text-left" id="itemDisplay" data-toggle="collapse" data-target="#sprintRunning" aria-expanded="false" aria-controls="sprintRunning">
+    1.スプリントプランニング
+  </button>
+  <div class="collapse m-0" id="sprintRunning">
+    <div class="card card-body">
+      <center>詳細 </center> <br>
+      <p id="detailDisplay">
+        スプリントの作業はスプリントプランニングで計画する。これはスクラムチームの共同作業である。
+        スプリントが 1 か月の場合、スプリントプランニングのタイムボックスは最大で 8 時間である。スプリ
+        ントの期間が短ければ、スプリントプランニングの時間も短くすることが多い。スクラムマスターは、
+        参加者に目的を理解してもらうようにする。スクラムマスターは、スクラムチームにタイムボックスを
+        守るように伝える。
+      </p>
+      <hr>
+        <center>アドバイス</center> <br>
+        <p id="adviceDisplay">
+          ベロシティの決め方には、[S,M,L]と決める方法以外にもフィボナッチ数列[1,2,3,5...]で決める方法もあるよ。
+        </p>
+    </div>
+  </div>
+  <div id="watch">
+    <h1>カウントダウンタイマー</h1>
+    <p id="timeDisplay">00:00</p>
+    <div id="status"></div>
+    <div id="sw_table"></div>
+    <form name="timer">
+      <input type="button" value="スタート" onclick="cntStart()">
+      <input type="button" value="ストップ" onclick="cntStop()">
+    </form>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/1.0.9/push.min.js"></script>
 
 <script>
     var cnt=0;
@@ -145,7 +105,7 @@
         switch(num){
             case 0 :
                 document.getElementById("color1").classList.value = "stepflow-white";
-                    break
+                    break;
 
             case 1 :
                 document.getElementById("color1").classList.value = "stepflow-red";
@@ -184,63 +144,112 @@
         }
     }
 
+    function selectItem(itemIndex){
+      switch(itemIndex){
+        case "item1" :
+          document.getElementById("itemDisplay").innerHTML="1.スプリントプランニング";
+          document.getElementById("detailDisplay").innerHTML="スプリントの作業はスプリントプランニングで計画する。これはスクラムチームの共同作業である。スプリントが 1 か月の場合、スプリントプランニングのタイムボックスは最大で 8 時間である。スプリントの期間が短ければ、スプリントプランニングの時間も短くすることが多い。スクラムマスターは、参加者に目的を理解してもらうようにする。スクラムマスターは、スクラムチームにタイムボックスを守るように伝える。";
+          document.getElementById("adviceDisplay").innerHTML="ベロシティの決め方には、[S,M,L]と決める方法以外にもフィボナッチ数列[1,2,3,5...]で決める方法もあるよ。";
+          break;
+        case "item2" :
+          document.getElementById("itemDisplay").innerHTML="2.デイリースクラム";
+          document.getElementById("detailDisplay").innerHTML="デイリースクラムとは、開発チームのための 15 分間のタイムボックスのイベントである。スプリントでは、毎日デイリースクラムを開催する。開発チームは、次の 24 時間の作業を計画する。前回のデイリースクラムから行なった作業の検査と今後のスプリント作業の予想をすることで、チームのコラボレーションやパフォーマンスを最適化するのである。デイリースクラムは毎日、同じ時間・場所で開催し、複雑にならないようにする。<br>開発チームはデイリースクラムを使って、スプリントゴールとスプリントバックログの進捗を検査する。デイリースクラムは、開発チームがスプリントゴールを達成する可能性を最適化する。開発チームは、自己組織化チームとしてスプリントゴールを達成し、スプリント終了までに期待されるインクリメントを作成できるかを毎日把握しなければいけない。<br>デイリースクラムの構成は、開発チームが設定する。スプリントゴールを目指している限り、他のやり方で行なっても構わない。質問を使うチームもあれば、議論ベースで進めるチームもある。";
+          document.getElementById("adviceDisplay").innerHTML="メンバー全員の進捗状況が把握できるようにしよう。";
+          break;
+        case "item3" :
+          document.getElementById("itemDisplay").innerHTML="3.開発作業";
+          document.getElementById("detailDisplay").innerHTML="開発しよう";
+          document.getElementById("adviceDisplay").innerHTML="開発のスタイルでTDDやモブプロ,ペアプロといった手法もあるので活用してみよう。また、スクラムマスターは、振り返りのTRYができているかを確認してみよう。";
+          break;
+        case "item4" :
+          document.getElementById("itemDisplay").innerHTML="4.スプリントレビュー";
+          document.getElementById("detailDisplay").innerHTML="スプリントレビューとは、スプリントの終了時にインクリメントの検査と、必要であればプロダクトバックログの適応を行うものである。スプリントレビューでは、スクラムチームとステークホルダーがスプリントの成果をレビューする。スプリントの成果とプロダクトバックログの変更を参考にして、価値を最適化するために次に何ができるかを参加者全員で話し合う。これはステータスミーティングではなく、略式のミーティングである。インクリメントを提示することで、フィードバックや協力を引き出すことを目的とする。<br>スプリントが 1 か月の場合、スプリントレビューは最大 4 時間である。スプリントの期間が短ければ、スプリントレビューの時間も短くすることが多い。スクラムマスターはスプリントレビューが確実に開催されるようにして、参加者には目的を理解してもらうようにする。スクラムマスターは関係者全員にタイムボックスを守るように伝える。";
+          document.getElementById("adviceDisplay").innerHTML="";
+          break;
+        case "item5" :
+          document.getElementById("itemDisplay").innerHTML="5.スプリントレトロスペクティブ";
+          document.getElementById("detailDisplay").innerHTML="スプリントレトロスペクティブは、スクラムチームの検査と次のスプリントの改善計画を作成する機会である。<br>スプリントレトロスペクティブは、スプリントレビューが終わって、次のスプリントプランニングが始まる前に行う。スプリントが 1 か月の場合、スプリントレトロスペクティブは最大 3 時間である。スプリントの期間が短ければ、スプリントレトロスペクティブの時間も短くすることが多い。スクラムマスターは、このイベントが確実に開催されるようにする。また、参加者に目的を理解してもらうようにする。<br>スクラムマスターは、このミーティングがポジティブで生産的になるようにする。スクラムマスターは、全員にタイムボックスを守るように伝える。スクラムマスターは、スクラムのプロセスを説明するために、チームメンバーとして参加する。";
+          document.getElementById("adviceDisplay").innerHTML="振り返りの手法としてKPTやYWTなどがあるので活用してみよう。";
+          break;
+      }
+    }
 
-    var timer2; //タイマーを格納する変数（タイマーID）の宣言
-    var autoMinute = [0,0,0,0,0,0];
-    var autoSecond = [1,3,1,3,1,3];
-    var minuteData;
-    var secondData;
-    var index = 0;
+    // select要素の取得
+    var selectMinute = document.timer.minute;
+    var selectSecond = document.timer.second;
 
-
+    var indexMinute =  selectMinute.selectedIndex;
+    var indexSecond =  selectSecond.selectedIndex;
+    var minuteData = selectMinute.options[ indexMinute ].innerHTML;
+    var secondData = selectSecond.options[ indexSecond ].innerHTML;
+    //select要素のchangeイベントの登録
+    selectMinute.addEventListener('change', function(){
+            //選択されたoption番号を取得
+            indexMinute =  this.selectedIndex;
+            minuteData = this.options[ indexMinute ].innerHTML;
+    });
+    selectSecond.addEventListener('change', function(){
+            //選択されたoption番号を取得
+            indexSecond =  this.selectedIndex;
+            secondData = this.options[ indexSecond ].innerHTML;
+    });
+    var timer1; //タイマーを格納する変数（タイマーID）の宣言
     //カウントダウン関数を1000ミリ秒毎に呼び出す関数
-    function autoStart()
+    function cntStart()
     {
-        if (index < autoMinute.length){
-            minuteData = autoMinute[index];
-            secondData = autoSecond[index];
-            index += 1;
-            timer2 = setInterval("autoCountDown()",1000);
+        document.timer.elements[0].disabled=true;
+        document.timer.elements[1].disabled=true;
+        document.timer.elements[2].disabled=true;
+        document.timer.elements[4].disabled=true;
+        if (minuteData < 10 && secondData < 10) {
+            document.getElementById('timeDisplay').innerHTML = "0" + String(minuteData) + ":" + "0" + String(secondData);
+        }else if (minuteData < 10) {
+            document.getElementById('timeDisplay').innerHTML = "0" + String(minuteData) + ":" + String(secondData);
+        }else if (secondData < 10) {
+            document.getElementById('timeDisplay').innerHTML = String(minuteData) + ":" + "0" + String(secondData);
+        }else{
+            document.getElementById('timeDisplay').innerHTML = String(minuteData) + ":" + String(secondData);
         }
+        timer1=setInterval("countDown()",1000);
     }
-
     //タイマー停止関数
-    function autoStop()
+    function cntStop()
     {
-        clearInterval(timer2);
+        document.timer.elements[2].disabled=false;
+        document.timer.elements[4].disabled=false;
+        clearInterval(timer1);
     }
-
     //カウントダウン関数
-    function autoCountDown()
+    function countDown()
     {
-        min=minuteData;
-        sec=secondData;
-
+        var min=minuteData;
+        var sec=secondData;
         if( (min==0) && (sec==0) )
         {
             alert("時刻を設定してください！");
-            autoReSet();
+            reSet();
         }
         else
         {
             if (min=="") min=0;
             min=parseInt(min);
-
             if (sec=="") sec=0;
             sec=parseInt(sec);
-
-            autoTmWrite(min*60+sec-1);
+            tmWrite(min*60+sec-1);
         }
     }
-
     //残り時間を書き出す関数
-    function autoTmWrite(int)
+    function tmWrite(int)
     {
         int=parseInt(int);
-
         if (int<=0)
         {
-            autoReSet();
+            document.getElementById('timeDisplay').innerHTML = "00:00"
+            reSet();
+            if (document.getElementById('timeDisplay').innerHTML == "00:00")
+            {
+                Push.create("時間です！！");
+            }
         }
         else
         {
@@ -248,15 +257,104 @@
             minuteData=Math.floor(int/60);
             //残り秒数はintを60で割った余り
             secondData=int % 60;
+            if (minuteData < 10 && secondData < 10) {
+                document.getElementById('timeDisplay').innerHTML = "0" + String(minuteData) + ":" + "0" + String(secondData);
+            }else if (minuteData < 10) {
+                document.getElementById('timeDisplay').innerHTML = "0" + String(minuteData) + ":" + String(secondData);
+            }else if (secondData < 10) {
+                document.getElementById('timeDisplay').innerHTML = String(minuteData) + ":" + "0" + String(secondData);
+            }else{
+                document.getElementById('timeDisplay').innerHTML = String(minuteData) + ":" + String(secondData);
+            }
         }
     }
-
     //フォームを初期状態に戻す（リセット）関数
-    function autoReSet()
+    function reSet()
     {
-        clearInterval(timer2);
-        upStep();
-        autoStart()
+        document.timer.elements[0].disabled=false;
+        document.timer.elements[1].disabled=false;
+        document.timer.elements[2].disabled=false;
+        document.timer.elements[4].disabled=false;
+        indexMinute = selectMinute.selectedIndex;
+        minuteData = selectMinute.options[ indexMinute ].innerHTML;
+        indexSecond =  selectSecond.selectedIndex;
+        secondData = selectSecond.options[ indexSecond ].innerHTML;
+        clearInterval(timer1);
     }
+
+
+    // var timer2; //タイマーを格納する変数（タイマーID）の宣言
+    // var autoMinute = [0,0,0,0,0,0];
+    // var autoSecond = [1,3,1,3,1,3];
+    // var minuteData;
+    // var secondData;
+    // var index = 0;
+
+
+    // //カウントダウン関数を1000ミリ秒毎に呼び出す関数
+    // function autoStart()
+    // {
+    //     if (index < autoMinute.length){
+    //         minuteData = autoMinute[index];
+    //         secondData = autoSecond[index];
+    //         index += 1;
+    //         timer2 = setInterval("autoCountDown()",1000);
+    //     }
+    // }
+
+    // //タイマー停止関数
+    // function autoStop()
+    // {
+    //     clearInterval(timer2);
+    // }
+
+    // //カウントダウン関数
+    // function autoCountDown()
+    // {
+    //     min=minuteData;
+    //     sec=secondData;
+
+    //     if( (min==0) && (sec==0) )
+    //     {
+    //         alert("時刻を設定してください！");
+    //         autoReSet();
+    //     }
+    //     else
+    //     {
+    //         if (min=="") min=0;
+    //         min=parseInt(min);
+
+    //         if (sec=="") sec=0;
+    //         sec=parseInt(sec);
+
+    //         autoTmWrite(min*60+sec-1);
+    //     }
+    // }
+
+    // //残り時間を書き出す関数
+    // function autoTmWrite(int)
+    // {
+    //     int=parseInt(int);
+
+    //     if (int<=0)
+    //     {
+    //         autoReSet();
+    //     }
+    //     else
+    //     {
+    //         //残り分数はintを60で割って切り捨てる
+    //         minuteData=Math.floor(int/60);
+    //         //残り秒数はintを60で割った余り
+    //         secondData=int % 60;
+    //     }
+    // }
+
+    // //フォームを初期状態に戻す（リセット）関数
+    // function autoReSet()
+    // {
+    //     clearInterval(timer2);
+    //     upStep();
+    //     autoStart()
+    // }
 
 </script>

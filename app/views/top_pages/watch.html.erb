@@ -1,4 +1,6 @@
-<div id="watch">
+<div class="side col-md-3">
+</div>
+<div id="watch" class="col-md-6">
     <h1>カウントダウンタイマー</h1>
     <p id="timeDisplay">00:00</p>
     <div id="status"></div>
@@ -11,6 +13,8 @@
         <input type="button" value="リセット" onclick="reSet()">
     </form>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/1.0.9/push.min.js"></script>
 
 <script>
     // select要素の取得
@@ -40,6 +44,15 @@
         document.timer.elements[1].disabled=true;
         document.timer.elements[2].disabled=true;
         document.timer.elements[4].disabled=true;
+        if (minuteData < 10 && secondData < 10) {
+            document.getElementById('timeDisplay').innerHTML = "0" + String(minuteData) + ":" + "0" + String(secondData);
+        }else if (minuteData < 10) {
+            document.getElementById('timeDisplay').innerHTML = "0" + String(minuteData) + ":" + String(secondData);
+        }else if (secondData < 10) {
+            document.getElementById('timeDisplay').innerHTML = String(minuteData) + ":" + "0" + String(secondData);
+        }else{
+            document.getElementById('timeDisplay').innerHTML = String(minuteData) + ":" + String(secondData);
+        }
         timer1=setInterval("countDown()",1000);
     }
     //タイマー停止関数
@@ -74,8 +87,12 @@
         int=parseInt(int);
         if (int<=0)
         {
+            document.getElementById('timeDisplay').innerHTML = "00:00"
             reSet();
-            alert("時間です！");
+            if (document.getElementById('timeDisplay').innerHTML == "00:00")
+            {
+                Push.create("時間です！！");
+            }
         }
         else
         {
@@ -101,11 +118,10 @@
         document.timer.elements[1].disabled=false;
         document.timer.elements[2].disabled=false;
         document.timer.elements[4].disabled=false;
-        document.getElementById('timeDisplay').innerHTML = "00:00" ;
         indexMinute = selectMinute.selectedIndex;
         minuteData = selectMinute.options[ indexMinute ].innerHTML;
         indexSecond =  selectSecond.selectedIndex;
-        secondData = secondData = selectSecond.options[ indexSecond ].innerHTML;
+        secondData = selectSecond.options[ indexSecond ].innerHTML;
         clearInterval(timer1);
     }
 </script>
