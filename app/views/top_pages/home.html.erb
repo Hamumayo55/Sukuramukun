@@ -82,9 +82,12 @@
 
     function upStep()
     {
-        if (cnt<=5){
+        if (cnt<=6){
             cnt+=1;
             colorChange(cnt)
+            if (cnt == 7){
+              cnt = 0
+            }
         }else{
         }
     }
@@ -107,40 +110,37 @@
             case 1 :
                 document.getElementById("color1").classList.value = "stepflow-red";
                 document.getElementById("color2").classList.value = "stepflow-white";
-                document.getElementById("list1").classList.value = "bar-white";
-                    break;
+                    break
             
             case 2 :
                 document.getElementById("color1").classList.value = "stepflow-black";
                 document.getElementById("color2").classList.value = "stepflow-red";
                 document.getElementById("color3").classList.value = "stepflow-white";
-                document.getElementById("list1").classList.value = "bar-red";
-                document.getElementById("list2").classList.value = "bar-white";
-                    break;
+                    break
             case 3 :
                 document.getElementById("color2").classList.value = "stepflow-black";
                 document.getElementById("color3").classList.value = "stepflow-red";
                 document.getElementById("color4").classList.value = "stepflow-white";
-                document.getElementById("list2").classList.value = "bar-red";
-                document.getElementById("list3").classList.value = "bar-white";
-                    break;
+                    break
             case 4 :
                 document.getElementById("color3").classList.value = "stepflow-black";
                 document.getElementById("color4").classList.value = "stepflow-red";
                 document.getElementById("color5").classList.value = "stepflow-white";
-                document.getElementById("list3").classList.value = "bar-red";
-                document.getElementById("list4").classList.value = "bar-white";
-                    break;
+                    break
             case 5 :
                 document.getElementById("color4").classList.value = "stepflow-black";
                 document.getElementById("color5").classList.value = "stepflow-red";
-                document.getElementById("list4").classList.value = "bar-red";
-                document.getElementById("list5").classList.value = "bar-white";
-                    break;
+                    break
             case 6 :
                 document.getElementById("color5").classList.value = "stepflow-black";
-                document.getElementById("list5").classList.value = "bar-red";
-                    break;
+                    break
+            case 7 :
+                document.getElementById("color1").classList.value = "stepflow-white";
+                document.getElementById("color2").classList.value = "stepflow-white";
+                document.getElementById("color3").classList.value = "stepflow-white";
+                document.getElementById("color4").classList.value = "stepflow-white";
+                document.getElementById("color5").classList.value = "stepflow-white";
+                    break
         }
     }
 
