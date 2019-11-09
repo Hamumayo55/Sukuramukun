@@ -47,8 +47,22 @@
     1.スプリントプランニング
   </button>
   <form name="minute_second">
-    <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
-    <%= select_tag :second, options_for_select((0..59).to_a,5), id:"second" %>秒
+    <% if cookies["step"] == "1" %>
+      <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
+      <%= select_tag :second, options_for_select((0..59).to_a,5), id:"second" %>秒
+    <% elsif cookies["step"] == "2" %>
+      <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
+      <%= select_tag :second, options_for_select((0..59).to_a,10), id:"second" %>秒
+    <% elsif cookies["step"] == "3" %>
+      <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
+      <%= select_tag :second, options_for_select((0..59).to_a,3), id:"second" %>秒
+    <% elsif cookies["step"] == "4" %>
+      <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
+      <%= select_tag :second, options_for_select((0..59).to_a,7), id:"second" %>秒
+    <% elsif cookies["step"] == "5" %>
+      <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
+      <%= select_tag :second, options_for_select((0..59).to_a,7), id:"second" %>秒
+    <% end %>
   </form>
   <div class="collapse m-0" id="sprintRunning">
     <div class="card card-body">
@@ -83,7 +97,18 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/1.0.9/push.min.js"></script>
 
 <script>
-    var cnt=0;
+
+    var cookies=document.cookie;
+    var cnt=cookies.split("=")[1];
+    cnt=parseInt(cnt);
+    if (!cnt){
+      cnt=0;
+    }
+    console.log(cnt);
+
+    for (var i=0; i<cnt; i++){
+        colorChange(cnt);
+    }
 
     function upStep()
     {
@@ -93,7 +118,7 @@
             if (cnt == 7){
               cnt = 0
             }
-        }else{
+            location.reload();
         }
     }
 
@@ -110,12 +135,14 @@
         switch(num){
             case 0 :
                 document.getElementById("color1").classList.value = "stepflow-white";
+                document.cookie="step=0";
                 break;
 
             case 1 :
                 document.getElementById("color1").classList.value = "stepflow-red";
                 document.getElementById("color2").classList.value = "stepflow-white";
                 selectItem("item1");
+                document.cookie="step=1";
                 break;
             
             case 2 :
@@ -123,26 +150,31 @@
                 document.getElementById("color2").classList.value = "stepflow-red";
                 document.getElementById("color3").classList.value = "stepflow-white";
                 selectItem("item2");
+                document.cookie="step=2";
                 break;
             case 3 :
                 document.getElementById("color2").classList.value = "stepflow-black";
                 document.getElementById("color3").classList.value = "stepflow-red";
                 document.getElementById("color4").classList.value = "stepflow-white";
                 selectItem("item3");
+                document.cookie="step=3";
                 break;
             case 4 :
                 document.getElementById("color3").classList.value = "stepflow-black";
                 document.getElementById("color4").classList.value = "stepflow-red";
                 document.getElementById("color5").classList.value = "stepflow-white";
                 selectItem("item4");
+                document.cookie="step=4";
                 break;
             case 5 :
                 document.getElementById("color4").classList.value = "stepflow-black";
                 document.getElementById("color5").classList.value = "stepflow-red";
                 selectItem("item5");
+                document.cookie="step=5";
                 break;
             case 6 :
                 document.getElementById("color5").classList.value = "stepflow-black";
+                document.cookie="step=6";
                 break;
             case 7 :
                 document.getElementById("color1").classList.value = "stepflow-white";
@@ -150,6 +182,7 @@
                 document.getElementById("color3").classList.value = "stepflow-white";
                 document.getElementById("color4").classList.value = "stepflow-white";
                 document.getElementById("color5").classList.value = "stepflow-white";
+                document.cookie="step=7";
                 break;
         }
     }
