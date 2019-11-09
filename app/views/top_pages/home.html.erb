@@ -1,5 +1,5 @@
 <div class="side col-md-3">
-<p id="sub">スプリントの流れ</p>
+  <p id="sub">スプリントの流れ</p>
   <div class="app">
     <p><button class="btn btn-outline-info" id="up" onclick="upStep()">Stepを進める</button> <button class="btn btn-outline-info" id="down" onclick="downStep()">Stepを戻す</button> </p>
   </div>
@@ -110,42 +110,47 @@
         switch(num){
             case 0 :
                 document.getElementById("color1").classList.value = "stepflow-white";
-                    break;
+                break;
 
             case 1 :
                 document.getElementById("color1").classList.value = "stepflow-red";
                 document.getElementById("color2").classList.value = "stepflow-white";
-                    break
+                selectItem("item1");
+                break;
             
             case 2 :
                 document.getElementById("color1").classList.value = "stepflow-black";
                 document.getElementById("color2").classList.value = "stepflow-red";
                 document.getElementById("color3").classList.value = "stepflow-white";
-                    break
+                selectItem("item2");
+                break;
             case 3 :
                 document.getElementById("color2").classList.value = "stepflow-black";
                 document.getElementById("color3").classList.value = "stepflow-red";
                 document.getElementById("color4").classList.value = "stepflow-white";
-                    break
+                selectItem("item3");
+                break;
             case 4 :
                 document.getElementById("color3").classList.value = "stepflow-black";
                 document.getElementById("color4").classList.value = "stepflow-red";
                 document.getElementById("color5").classList.value = "stepflow-white";
-                    break
+                selectItem("item4");
+                break;
             case 5 :
                 document.getElementById("color4").classList.value = "stepflow-black";
                 document.getElementById("color5").classList.value = "stepflow-red";
-                    break
+                selectItem("item5");
+                break;
             case 6 :
                 document.getElementById("color5").classList.value = "stepflow-black";
-                    break
+                break;
             case 7 :
                 document.getElementById("color1").classList.value = "stepflow-white";
                 document.getElementById("color2").classList.value = "stepflow-white";
                 document.getElementById("color3").classList.value = "stepflow-white";
                 document.getElementById("color4").classList.value = "stepflow-white";
                 document.getElementById("color5").classList.value = "stepflow-white";
-                    break
+                break;
         }
     }
 
