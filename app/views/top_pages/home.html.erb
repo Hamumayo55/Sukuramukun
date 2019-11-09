@@ -46,6 +46,10 @@
   <button type="button" class="btn btn-light text-left" id="itemDisplay" data-toggle="collapse" data-target="#sprintRunning" aria-expanded="false" aria-controls="sprintRunning">
     1.スプリントプランニング
   </button>
+  <form name="minute_second">
+    <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
+    <%= select_tag :second, options_for_select((0..59).to_a,5), id:"second" %>秒
+  </form>
   <div class="collapse m-0" id="sprintRunning">
     <div class="card card-body">
       <center>詳細 </center> <br>
@@ -68,9 +72,10 @@
     <p id="timeDisplay">00:00</p>
     <div id="status"></div>
     <div id="sw_table"></div>
-    <form name="timer">
-      <input type="button" value="スタート" onclick="cntStart()">
-      <input type="button" value="ストップ" onclick="cntStop()">
+    <form name="timerButton">
+        <input type="button" value="スタート" onclick="cntStart()">
+        <input type="button" value="ストップ" onclick="cntStop()">
+        <input type="button" value="リセット" onclick="reSet()">
     </form>
   </div>
 </div>
@@ -175,8 +180,8 @@
     }
 
     // select要素の取得
-    var selectMinute = document.timer.minute;
-    var selectSecond = document.timer.second;
+    var selectMinute = document.minute_second.minute;
+    var selectSecond = document.minute_second.second;
 
     var indexMinute =  selectMinute.selectedIndex;
     var indexSecond =  selectSecond.selectedIndex;
@@ -197,10 +202,12 @@
     //カウントダウン関数を1000ミリ秒毎に呼び出す関数
     function cntStart()
     {
-        document.timer.elements[0].disabled=true;
-        document.timer.elements[1].disabled=true;
-        document.timer.elements[2].disabled=true;
-        document.timer.elements[4].disabled=true;
+        document.minute_second.elements[0].disabled=true;
+        document.minute_second.elements[1].disabled=true;
+        document.timerButton.elements[0].disabled=true;
+        document.timerButton.elements[2].disabled=true;
+        document.getElementById("up").disabled=true;
+        document.getElementById("down").disabled=true;
         if (minuteData < 10 && secondData < 10) {
             document.getElementById('timeDisplay').innerHTML = "0" + String(minuteData) + ":" + "0" + String(secondData);
         }else if (minuteData < 10) {
@@ -215,8 +222,8 @@
     //タイマー停止関数
     function cntStop()
     {
-        document.timer.elements[2].disabled=false;
-        document.timer.elements[4].disabled=false;
+        document.timerButton.elements[0].disabled=false;
+        document.timerButton.elements[2].disabled=false;
         clearInterval(timer1);
     }
     //カウントダウン関数
@@ -244,12 +251,10 @@
         int=parseInt(int);
         if (int<=0)
         {
-            document.getElementById('timeDisplay').innerHTML = "00:00"
             reSet();
-            if (document.getElementById('timeDisplay').innerHTML == "00:00")
-            {
-                Push.create("時間です！！");
-            }
+            Push.create("時間です！！");
+            upStep();
+            cntStart();
         }
         else
         {
@@ -271,10 +276,13 @@
     //フォームを初期状態に戻す（リセット）関数
     function reSet()
     {
-        document.timer.elements[0].disabled=false;
-        document.timer.elements[1].disabled=false;
-        document.timer.elements[2].disabled=false;
-        document.timer.elements[4].disabled=false;
+        document.minute_second.elements[0].disabled=false;
+        document.minute_second.elements[1].disabled=false;
+        document.timerButton.elements[0].disabled=false;
+        document.timerButton.elements[2].disabled=false;
+        document.getElementById("up").disabled=false;
+        document.getElementById("down").disabled=false;
+        document.getElementById('timeDisplay').innerHTML = "00:00"
         indexMinute = selectMinute.selectedIndex;
         minuteData = selectMinute.options[ indexMinute ].innerHTML;
         indexSecond =  selectSecond.selectedIndex;
