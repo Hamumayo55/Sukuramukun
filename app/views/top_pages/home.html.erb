@@ -47,21 +47,22 @@
     1.スプリントプランニング
   </button>
   <form name="minute_second">
-    <% if cookies["step"] == "1" %>
+    <% case cookies["step"] %>
+    <% when "1" then %>
       <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
       <%= select_tag :second, options_for_select((0..59).to_a,5), id:"second" %>秒
-    <% elsif cookies["step"] == "2" %>
+    <% when "2" then %>
       <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
       <%= select_tag :second, options_for_select((0..59).to_a,10), id:"second" %>秒
-    <% elsif cookies["step"] == "3" %>
+    <% when "3" then %>
       <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
       <%= select_tag :second, options_for_select((0..59).to_a,3), id:"second" %>秒
-    <% elsif cookies["step"] == "4" %>
+    <% when "4" then %>
       <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
       <%= select_tag :second, options_for_select((0..59).to_a,7), id:"second" %>秒
-    <% elsif cookies["step"] == "5" %>
+    <% when "5" then %>
       <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
-      <%= select_tag :second, options_for_select((0..59).to_a,7), id:"second" %>秒
+      <%= select_tag :second, options_for_select((0..59).to_a,9), id:"second" %>秒
     <% end %>
   </form>
   <div class="collapse m-0" id="sprintRunning">
@@ -112,10 +113,10 @@
     {
         if (cnt<=6){
             cnt+=1;
-            colorChange(cnt)
             if (cnt == 7){
               cnt = 0
             }
+            setCookie(cnt);
             location.reload();
         }
     }
@@ -124,17 +125,25 @@
     {
         if (cnt>=1){
             cnt-=1;
-            colorChange(cnt)
+            setCookie(cnt);
             location.reload();
         }
-        
+    }
+
+    function setCookie(num)
+    {
+      num=String(num);
+      document.cookie="step="+num;
     }
 
     function colorChange(num){
         switch(num){
             case 0 :
                 document.getElementById("color1").classList.value = "stepflow-white";
-                document.cookie="step=0";
+                document.getElementById("color2").classList.value = "stepflow-white";
+                document.getElementById("color3").classList.value = "stepflow-white";
+                document.getElementById("color4").classList.value = "stepflow-white";
+                document.getElementById("color5").classList.value = "stepflow-white";
                 break;
 
             case 1 :
@@ -144,7 +153,6 @@
                 document.getElementById("color4").classList.value = "stepflow-white";
                 document.getElementById("color5").classList.value = "stepflow-white";
                 selectItem("item1");
-                document.cookie="step=1";
                 break;
             
             case 2 :
@@ -154,8 +162,8 @@
                 document.getElementById("color4").classList.value = "stepflow-white";
                 document.getElementById("color5").classList.value = "stepflow-white";
                 selectItem("item2");
-                document.cookie="step=2";
                 break;
+
             case 3 :
                 document.getElementById("color1").classList.value = "stepflow-black";
                 document.getElementById("color2").classList.value = "stepflow-black";
@@ -163,8 +171,8 @@
                 document.getElementById("color4").classList.value = "stepflow-white";
                 document.getElementById("color5").classList.value = "stepflow-white";
                 selectItem("item3");
-                document.cookie="step=3";
                 break;
+
             case 4 :
                 document.getElementById("color1").classList.value = "stepflow-black";
                 document.getElementById("color2").classList.value = "stepflow-black";
@@ -172,32 +180,23 @@
                 document.getElementById("color4").classList.value = "stepflow-red";
                 document.getElementById("color5").classList.value = "stepflow-white";
                 selectItem("item4");
-                document.cookie="step=4";
                 break;
+
             case 5 :
-              document.getElementById("color1").classList.value = "stepflow-black";
-              document.getElementById("color2").classList.value = "stepflow-black";
-              document.getElementById("color3").classList.value = "stepflow-black";
-              document.getElementById("color4").classList.value = "stepflow-black";
-              document.getElementById("color5").classList.value = "stepflow-red";
-              selectItem("item5");
-              document.cookie="step=5";
-              break;
+                document.getElementById("color1").classList.value = "stepflow-black";
+                document.getElementById("color2").classList.value = "stepflow-black";
+                document.getElementById("color3").classList.value = "stepflow-black";
+                document.getElementById("color4").classList.value = "stepflow-black";
+                document.getElementById("color5").classList.value = "stepflow-red";
+                selectItem("item5");
+                break;
+
             case 6 :
-              document.getElementById("color1").classList.value = "stepflow-black";
-              document.getElementById("color2").classList.value = "stepflow-black";
-              document.getElementById("color3").classList.value = "stepflow-black";
-              document.getElementById("color4").classList.value = "stepflow-black";
-              document.getElementById("color5").classList.value = "stepflow-red";
-              document.cookie="step=6";
-              break;
-            case 7 :
-                document.getElementById("color1").classList.value = "stepflow-white";
-                document.getElementById("color2").classList.value = "stepflow-white";
-                document.getElementById("color3").classList.value = "stepflow-white";
-                document.getElementById("color4").classList.value = "stepflow-white";
-                document.getElementById("color5").classList.value = "stepflow-white";
-                document.cookie="step=7";
+                document.getElementById("color1").classList.value = "stepflow-black";
+                document.getElementById("color2").classList.value = "stepflow-black";
+                document.getElementById("color3").classList.value = "stepflow-black";
+                document.getElementById("color4").classList.value = "stepflow-black";
+                document.getElementById("color5").classList.value = "stepflow-black";
                 break;
         }
     }
@@ -240,6 +239,7 @@
     var indexSecond =  selectSecond.selectedIndex;
     var minuteData = selectMinute.options[ indexMinute ].innerHTML;
     var secondData = selectSecond.options[ indexSecond ].innerHTML;
+
     //select要素のchangeイベントの登録
     selectMinute.addEventListener('change', function(){
             //選択されたoption番号を取得
@@ -251,6 +251,7 @@
             indexSecond =  this.selectedIndex;
             secondData = this.options[ indexSecond ].innerHTML;
     });
+
     var timer1; //タイマーを格納する変数（タイマーID）の宣言
     //カウントダウン関数を1000ミリ秒毎に呼び出す関数
     function cntStart()
@@ -307,7 +308,6 @@
             reSet();
             Push.create("時間です！！");
             upStep();
-            cntStart();
         }
         else
         {
@@ -342,80 +342,5 @@
         secondData = selectSecond.options[ indexSecond ].innerHTML;
         clearInterval(timer1);
     }
-
-
-    // var timer2; //タイマーを格納する変数（タイマーID）の宣言
-    // var autoMinute = [0,0,0,0,0,0];
-    // var autoSecond = [1,3,1,3,1,3];
-    // var minuteData;
-    // var secondData;
-    // var index = 0;
-
-
-    // //カウントダウン関数を1000ミリ秒毎に呼び出す関数
-    // function autoStart()
-    // {
-    //     if (index < autoMinute.length){
-    //         minuteData = autoMinute[index];
-    //         secondData = autoSecond[index];
-    //         index += 1;
-    //         timer2 = setInterval("autoCountDown()",1000);
-    //     }
-    // }
-
-    // //タイマー停止関数
-    // function autoStop()
-    // {
-    //     clearInterval(timer2);
-    // }
-
-    // //カウントダウン関数
-    // function autoCountDown()
-    // {
-    //     min=minuteData;
-    //     sec=secondData;
-
-    //     if( (min==0) && (sec==0) )
-    //     {
-    //         alert("時刻を設定してください！");
-    //         autoReSet();
-    //     }
-    //     else
-    //     {
-    //         if (min=="") min=0;
-    //         min=parseInt(min);
-
-    //         if (sec=="") sec=0;
-    //         sec=parseInt(sec);
-
-    //         autoTmWrite(min*60+sec-1);
-    //     }
-    // }
-
-    // //残り時間を書き出す関数
-    // function autoTmWrite(int)
-    // {
-    //     int=parseInt(int);
-
-    //     if (int<=0)
-    //     {
-    //         autoReSet();
-    //     }
-    //     else
-    //     {
-    //         //残り分数はintを60で割って切り捨てる
-    //         minuteData=Math.floor(int/60);
-    //         //残り秒数はintを60で割った余り
-    //         secondData=int % 60;
-    //     }
-    // }
-
-    // //フォームを初期状態に戻す（リセット）関数
-    // function autoReSet()
-    // {
-    //     clearInterval(timer2);
-    //     upStep();
-    //     autoStart()
-    // }
 
 </script>
