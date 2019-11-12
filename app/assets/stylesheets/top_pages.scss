@@ -2,14 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#home{
-    #sub{
-        font-size: 2em;
-        text-align: center;
-    }
-    button{
-        font-size: 1.5em;
-    }
+
+#sub{
+    font-size: 1.5em;
+    text-align: center;
+}
+#button{
+    font-size: 1.5em;
 }
 
 #watch {
@@ -106,3 +105,6 @@ ul.stepflow {
     font-weight: bold;
 }
 /*ステップフローのCSSここまで*/
+#itemDisplay{
+    font-size: 1.5em;
+}
