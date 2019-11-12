@@ -15,21 +15,21 @@
       <div class="stepflow-white"  id="color2"></div>
       <div class="stepflow_label">STEP2</div>
       <button type="button" class="btn btn-light text-left" id="item2" onclick="selectItem(id)">
-        2.デイリースクラム
+        2.開発作業
       </button>
     </li>
     <li class="bar-white" id="list3">
         <div class="stepflow-white" id="color3"></div>
         <div class="stepflow_label">STEP3</div>
         <button type="button" class="btn btn-light text-left" id="item3" onclick="selectItem(id)">
-            3.開発作業
+            3.スプリントレビュー
         </button>
     </li>
     <li class="bar-white" id="list4">
       <div class="stepflow-white" id="color4"></div>
       <div class="stepflow_label">STEP４</div>
       <button type="button" class="btn btn-light text-left" id="item4" onclick="selectItem(id)">
-        4.スプリントレビュー
+        4.バックログリファイメント
       </button>
     </li>
     <li class="bar-white" id="list5">
@@ -194,18 +194,18 @@
           document.getElementById("adviceDisplay").innerHTML="ベロシティの決め方には、[S,M,L]と決める方法以外にもフィボナッチ数列[1,2,3,5...]で決める方法もあるよ。";
           break;
         case "item2" :
-          document.getElementById("itemDisplay").innerHTML="2.デイリースクラム";
-          document.getElementById("detailDisplay").innerHTML="デイリースクラムとは、開発チームのための 15 分間のタイムボックスのイベントである。スプリントでは、毎日デイリースクラムを開催する。開発チームは、次の 24 時間の作業を計画する。前回のデイリースクラムから行なった作業の検査と今後のスプリント作業の予想をすることで、チームのコラボレーションやパフォーマンスを最適化するのである。デイリースクラムは毎日、同じ時間・場所で開催し、複雑にならないようにする。<br>開発チームはデイリースクラムを使って、スプリントゴールとスプリントバックログの進捗を検査する。デイリースクラムは、開発チームがスプリントゴールを達成する可能性を最適化する。開発チームは、自己組織化チームとしてスプリントゴールを達成し、スプリント終了までに期待されるインクリメントを作成できるかを毎日把握しなければいけない。<br>デイリースクラムの構成は、開発チームが設定する。スプリントゴールを目指している限り、他のやり方で行なっても構わない。質問を使うチームもあれば、議論ベースで進めるチームもある。";
-          document.getElementById("adviceDisplay").innerHTML="メンバー全員の進捗状況が把握できるようにしよう。";
-          break;
-        case "item3" :
-          document.getElementById("itemDisplay").innerHTML="3.開発作業";
+          document.getElementById("itemDisplay").innerHTML="2.開発作業";
           document.getElementById("detailDisplay").innerHTML="開発しよう";
           document.getElementById("adviceDisplay").innerHTML="開発のスタイルでTDDやモブプロ,ペアプロといった手法もあるので活用してみよう。また、スクラムマスターは、振り返りのTRYができているかを確認してみよう。";
           break;
-        case "item4" :
-          document.getElementById("itemDisplay").innerHTML="4.スプリントレビュー";
+        case "item3" :
+          document.getElementById("itemDisplay").innerHTML="3.スプリントレビュー";
           document.getElementById("detailDisplay").innerHTML="スプリントレビューとは、スプリントの終了時にインクリメントの検査と、必要であればプロダクトバックログの適応を行うものである。スプリントレビューでは、スクラムチームとステークホルダーがスプリントの成果をレビューする。スプリントの成果とプロダクトバックログの変更を参考にして、価値を最適化するために次に何ができるかを参加者全員で話し合う。これはステータスミーティングではなく、略式のミーティングである。インクリメントを提示することで、フィードバックや協力を引き出すことを目的とする。<br>スプリントが 1 か月の場合、スプリントレビューは最大 4 時間である。スプリントの期間が短ければ、スプリントレビューの時間も短くすることが多い。スクラムマスターはスプリントレビューが確実に開催されるようにして、参加者には目的を理解してもらうようにする。スクラムマスターは関係者全員にタイムボックスを守るように伝える。";
+          document.getElementById("adviceDisplay").innerHTML="";
+          break;
+        case "item4" :
+          document.getElementById("itemDisplay").innerHTML="4.バックログリファイメント";
+          document.getElementById("detailDisplay").innerHTML="プロダクトバックログに含まれるアイテムに対して、詳細の追加、見積り、並び替えをする。";
           document.getElementById("adviceDisplay").innerHTML="";
           break;
         case "item5" :
