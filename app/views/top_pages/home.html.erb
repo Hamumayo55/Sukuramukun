@@ -103,7 +103,7 @@
     var cnt=cookies.split("=")[1];
     cnt=parseInt(cnt);
     if (!cnt){
-      cnt=0;
+      cnt=1;
     }
     console.log(cnt);
 
@@ -111,10 +111,10 @@
 
     function upStep()
     {
-        if (cnt<=6){
+        if (cnt<=5){
             cnt+=1;
-            if (cnt == 7){
-              cnt = 0
+            if (cnt == 6){
+              cnt = 1
             }
             setCookie(cnt);
             location.reload();
@@ -123,7 +123,7 @@
 
     function downStep()
     {
-        if (cnt>=1){
+        if (cnt>=2){
             cnt-=1;
             setCookie(cnt);
             location.reload();
@@ -138,14 +138,6 @@
 
     function colorChange(num){
         switch(num){
-            case 0 :
-                document.getElementById("color1").classList.value = "stepflow-white";
-                document.getElementById("color2").classList.value = "stepflow-white";
-                document.getElementById("color3").classList.value = "stepflow-white";
-                document.getElementById("color4").classList.value = "stepflow-white";
-                document.getElementById("color5").classList.value = "stepflow-white";
-                break;
-
             case 1 :
                 document.getElementById("color1").classList.value = "stepflow-red";
                 document.getElementById("color2").classList.value = "stepflow-white";
@@ -191,13 +183,6 @@
                 selectItem("item5");
                 break;
 
-            case 6 :
-                document.getElementById("color1").classList.value = "stepflow-black";
-                document.getElementById("color2").classList.value = "stepflow-black";
-                document.getElementById("color3").classList.value = "stepflow-black";
-                document.getElementById("color4").classList.value = "stepflow-black";
-                document.getElementById("color5").classList.value = "stepflow-black";
-                break;
         }
     }
 
