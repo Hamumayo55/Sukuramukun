@@ -7,46 +7,123 @@
     <li class="bar-white" id="list1">
       <div class="stepflow-white" id="color1"></div>
       <div class="stepflow_label">STEP1</div>
-      <button type="button" class="btn btn-light text-left" id="item1" onclick="selectItem(id)">
+      <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#sprintPlanning" aria-expanded="false" aria-controls="sprintPlanning">
         1.スプリントプランニング
       </button>
+      <div class="collapse m-0" id="sprintPlanning">
+        <div class="card card-body">
+          <center>詳細 </center> <br>
+            スプリントの作業はスプリントプランニングで計画する。これはスクラムチームの共同作業である。
+            スプリントが 1 か月の場合、スプリントプランニングのタイムボックスは最大で 8 時間である。スプリ
+            ントの期間が短ければ、スプリントプランニングの時間も短くすることが多い。スクラムマスターは、
+            参加者に目的を理解してもらうようにする。スクラムマスターは、スクラムチームにタイムボックスを
+            守るように伝える。
+          <hr>
+            <center>アドバイス</center> <br>
+              ベロシティの決め方には、[S,M,L]と決める方法以外にもフィボナッチ数列[1,2,3,5...]で決める方法もあるよ。
+        </div>
+      </div>
     </li>
     <li class="bar-white" id="list2">
       <div class="stepflow-white"  id="color2"></div>
       <div class="stepflow_label">STEP2</div>
-      <button type="button" class="btn btn-light text-left" id="item2" onclick="selectItem(id)">
+      <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#developWork" aria-expanded="false" aria-controls="developWork">
         2.開発作業
-      </button>
+        </button>
+        <div class="collapse m-0" id="developWork">
+            <div class="card card-body">
+             <center>詳細 </center> <br>
+                開発しよう 
+                <hr>
+                <center>アドバイス</center> <br>
+                開発のスタイルでモブプロやペアプロといった手法もあるので活用してみよう。
+                開発のスタイルでTDDやモブプロ,ペアプロといった手法もあるので活用してみよう。また、スクラムマスターは、振り返りのTRYができているかを確認してみよう。
+        </div>
+      </div>
     </li>
     <li class="bar-white" id="list3">
         <div class="stepflow-white" id="color3"></div>
         <div class="stepflow_label">STEP3</div>
-        <button type="button" class="btn btn-light text-left" id="item3" onclick="selectItem(id)">
-            3.スプリントレビュー
+        <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#sprintReview" aria-expanded="false" aria-controls="sprintReview">
+          3.スプリントレビュー
         </button>
+        <div class="collapse m-0" id="sprintReview">
+          <div class="card card-body">
+            <center>詳細 </center> <br>
+              スプリントレビューとは、スプリントの終了時にインクリメントの検査と、必要であればプロダクトバック
+              ログの適応を行うものである。スプリントレビューでは、スクラムチームとステークホルダーがスプリン
+              トの成果をレビューする。スプリントの成果とプロダクトバックログの変更を参考にして、価値を最適
+              化するために次に何ができるかを参加者全員で話し合う。これはステータスミーティングではなく、
+              略式のミーティングである。インクリメントを提示することで、フィードバックや協力を引き出すことを
+              目的とする。
+              スプリントが 1 か月の場合、スプリントレビューは最大 4 時間である。スプリントの期間が短ければ、
+              スプリントレビューの時間も短くすることが多い。スクラムマスターはスプリントレビューが確実に開
+              催されるようにして、参加者には目的を理解してもらうようにする。スクラムマスターは関係者全員
+              にタイムボックスを守るように伝える。  
+          </div>
+        </div>
     </li>
     <li class="bar-white" id="list4">
       <div class="stepflow-white" id="color4"></div>
       <div class="stepflow_label">STEP４</div>
-      <button type="button" class="btn btn-light text-left" id="item4" onclick="selectItem(id)">
+      <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#BacklogRefinement" aria-expanded="false" aria-controls="BacklogRefinement">
         4.バックログリファイメント
       </button>
+      <div class="collapse m-0" id="BacklogRefinement">
+      <div class="card card-body">
+      <center>詳細 </center> <br>
+          プロダクトバックログに含まれるアイテムに対して、詳細の追加、見積り、並び替えをする。
+          <hr>      
     </li>
     <li class="bar-white" id="list5">
       <div class="stepflow-white" id="color5"></div>
       <div class="stepflow_label">STEP５</div>
-      <button type="button" class="btn btn-light text-left" id="item5" onclick="selectItem(id)">
-        5.スプリントレトロスペクティブ
+      <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#retroSpective" aria-expanded="false" aria-controls="retroSpective">
+        5.スプリントプランニング
       </button>
+      <div class="collapse m-0" id="retroSpective">
+        <div class="card card-body">
+          <center>詳細 </center> <br>
+            スプリントの作業はスプリントプランニングで計画する。これはスクラムチームの共同作業である。
+            スプリントが 1 か月の場合、スプリントプランニングのタイムボックスは最大で 8 時間である。スプリ
+            ントの期間が短ければ、スプリントプランニングの時間も短くすることが多い。スクラムマスターは、
+            参加者に目的を理解してもらうようにする。スクラムマスターは、スクラムチームにタイムボックスを
+            守るように伝える。
+          <hr>
+            <center>アドバイス</center> <br>
+              ベロシティの決め方には、[S,M,L]と決める方法以外にもフィボナッチ数列[1,2,3,5...]で決める方法もあるよ。
+        </div>
+      </div>
     </li>
   </ul>
 </div>
 
 <div id="home" class="col-md-6">
-  <button type="button" class="btn btn-light text-left" id="itemDisplay" data-toggle="collapse" data-target="#sprintRunning" aria-expanded="false" aria-controls="sprintRunning">
+  <button type="button" class="btn btn-light text-left" id="itemDisplay" data-toggle="collapse" data-target="#stepName" aria-expanded="false" aria-controls="stepName">
     1.スプリントプランニング
   </button>
-  <form name="minute_second">
+  <div class="collapse m-0" id="stepName">
+    <div class="card card-body">
+      <center>詳細 </center> <br>
+      <p id="detailDisplay">
+        スプリントの作業はスプリントプランニングで計画する。これはスクラムチームの共同作業である。
+        スプリントが 1 か月の場合、スプリントプランニングのタイムボックスは最大で 8 時間である。スプリ
+        ントの期間が短ければ、スプリントプランニングの時間も短くすることが多い。スクラムマスターは、
+        参加者に目的を理解してもらうようにする。スクラムマスターは、スクラムチームにタイムボックスを
+        守るように伝える。
+      </p>
+      <hr>
+      <center>アドバイス</center> <br>
+      <p id="adviceDisplay">
+        ベロシティの決め方には、[S,M,L]と決める方法以外にもフィボナッチ数列[1,2,3,5...]で決める方法もあるよ。
+      </p>
+    </div>
+  </div>
+  <div id="watch">
+    <p id="timeDisplay">00:00</p>
+    <div id="status"></div>
+    <div id="sw_table"></div>
+    <form name="minute_second">
     <% case cookies["step"] %>
     <% when "1" then %>
       <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
@@ -65,28 +142,6 @@
       <%= select_tag :second, options_for_select((0..59).to_a,9), id:"second" %>秒
     <% end %>
   </form>
-  <div class="collapse m-0" id="sprintRunning">
-    <div class="card card-body">
-      <center>詳細 </center> <br>
-      <p id="detailDisplay">
-        スプリントの作業はスプリントプランニングで計画する。これはスクラムチームの共同作業である。
-        スプリントが 1 か月の場合、スプリントプランニングのタイムボックスは最大で 8 時間である。スプリ
-        ントの期間が短ければ、スプリントプランニングの時間も短くすることが多い。スクラムマスターは、
-        参加者に目的を理解してもらうようにする。スクラムマスターは、スクラムチームにタイムボックスを
-        守るように伝える。
-      </p>
-      <hr>
-        <center>アドバイス</center> <br>
-        <p id="adviceDisplay">
-          ベロシティの決め方には、[S,M,L]と決める方法以外にもフィボナッチ数列[1,2,3,5...]で決める方法もあるよ。
-        </p>
-    </div>
-  </div>
-  <div id="watch">
-    <h1>カウントダウンタイマー</h1>
-    <p id="timeDisplay">00:00</p>
-    <div id="status"></div>
-    <div id="sw_table"></div>
     <form name="timerButton">
         <input type="button" value="スタート" onclick="cntStart()">
         <input type="button" value="ストップ" onclick="cntStop()">
@@ -104,6 +159,8 @@
     cnt=parseInt(cnt);
     if (!cnt){
       cnt=1;
+      setCookie(cnt);
+      location.reload();
     }
     console.log(cnt);
 
@@ -144,7 +201,9 @@
                 document.getElementById("color3").classList.value = "stepflow-white";
                 document.getElementById("color4").classList.value = "stepflow-white";
                 document.getElementById("color5").classList.value = "stepflow-white";
-                selectItem("item1");
+                document.getElementById("itemDisplay").innerHTML="1.スプリントプランニング";
+                document.getElementById("detailDisplay").innerHTML="スプリントの作業はスプリントプランニングで計画する。これはスクラムチームの共同作業である。スプリントが 1 か月の場合、スプリントプランニングのタイムボックスは最大で 8 時間である。スプリントの期間が短ければ、スプリントプランニングの時間も短くすることが多い。スクラムマスターは、参加者に目的を理解してもらうようにする。スクラムマスターは、スクラムチームにタイムボックスを守るように伝える。";
+                document.getElementById("adviceDisplay").innerHTML="ベロシティの決め方には、[S,M,L]と決める方法以外にもフィボナッチ数列[1,2,3,5...]で決める方法もあるよ。";
                 break;
             
             case 2 :
@@ -153,7 +212,9 @@
                 document.getElementById("color3").classList.value = "stepflow-white";
                 document.getElementById("color4").classList.value = "stepflow-white";
                 document.getElementById("color5").classList.value = "stepflow-white";
-                selectItem("item2");
+                document.getElementById("itemDisplay").innerHTML="2.開発作業";
+                document.getElementById("detailDisplay").innerHTML="開発しよう";
+                document.getElementById("adviceDisplay").innerHTML="開発のスタイルでTDDやモブプロ,ペアプロといった手法もあるので活用してみよう。また、スクラムマスターは、振り返りのTRYができているかを確認してみよう。";
                 break;
 
             case 3 :
@@ -162,7 +223,9 @@
                 document.getElementById("color3").classList.value = "stepflow-red";
                 document.getElementById("color4").classList.value = "stepflow-white";
                 document.getElementById("color5").classList.value = "stepflow-white";
-                selectItem("item3");
+                document.getElementById("itemDisplay").innerHTML="3.スプリントレビュー";
+                document.getElementById("detailDisplay").innerHTML="スプリントレビューとは、スプリントの終了時にインクリメントの検査と、必要であればプロダクトバックログの適応を行うものである。スプリントレビューでは、スクラムチームとステークホルダーがスプリントの成果をレビューする。スプリントの成果とプロダクトバックログの変更を参考にして、価値を最適化するために次に何ができるかを参加者全員で話し合う。これはステータスミーティングではなく、略式のミーティングである。インクリメントを提示することで、フィードバックや協力を引き出すことを目的とする。<br>スプリントが 1 か月の場合、スプリントレビューは最大 4 時間である。スプリントの期間が短ければ、スプリントレビューの時間も短くすることが多い。スクラムマスターはスプリントレビューが確実に開催されるようにして、参加者には目的を理解してもらうようにする。スクラムマスターは関係者全員にタイムボックスを守るように伝える。";
+                document.getElementById("adviceDisplay").innerHTML="";
                 break;
 
             case 4 :
@@ -171,7 +234,9 @@
                 document.getElementById("color3").classList.value = "stepflow-black";
                 document.getElementById("color4").classList.value = "stepflow-red";
                 document.getElementById("color5").classList.value = "stepflow-white";
-                selectItem("item4");
+                document.getElementById("itemDisplay").innerHTML="4.バックログリファイメント";
+                document.getElementById("detailDisplay").innerHTML="プロダクトバックログに含まれるアイテムに対して、詳細の追加、見積り、並び替えをする。";
+                document.getElementById("adviceDisplay").innerHTML="";
                 break;
 
             case 5 :
@@ -180,41 +245,17 @@
                 document.getElementById("color3").classList.value = "stepflow-black";
                 document.getElementById("color4").classList.value = "stepflow-black";
                 document.getElementById("color5").classList.value = "stepflow-red";
-                selectItem("item5");
+                document.getElementById("itemDisplay").innerHTML="5.スプリントレトロスペクティブ";
+                document.getElementById("detailDisplay").innerHTML="スプリントレトロスペクティブは、スクラムチームの検査と次のスプリントの改善計画を作成する機会である。<br>スプリントレトロスペクティブは、スプリントレビューが終わって、次のスプリントプランニングが始まる前に行う。スプリントが 1 か月の場合、スプリントレトロスペクティブは最大 3 時間である。スプリントの期間が短ければ、スプリントレトロスペクティブの時間も短くすることが多い。スクラムマスターは、このイベントが確実に開催されるようにする。また、参加者に目的を理解してもらうようにする。<br>スクラムマスターは、このミーティングがポジティブで生産的になるようにする。スクラムマスターは、全員にタイムボックスを守るように伝える。スクラムマスターは、スクラムのプロセスを説明するために、チームメンバーとして参加する。";
+                document.getElementById("adviceDisplay").innerHTML="振り返りの手法としてKPTやYWTなどがあるので活用してみよう。";
                 break;
 
         }
     }
 
-    function selectItem(itemIndex){
-      switch(itemIndex){
-        case "item1" :
-          document.getElementById("itemDisplay").innerHTML="1.スプリントプランニング";
-          document.getElementById("detailDisplay").innerHTML="スプリントの作業はスプリントプランニングで計画する。これはスクラムチームの共同作業である。スプリントが 1 か月の場合、スプリントプランニングのタイムボックスは最大で 8 時間である。スプリントの期間が短ければ、スプリントプランニングの時間も短くすることが多い。スクラムマスターは、参加者に目的を理解してもらうようにする。スクラムマスターは、スクラムチームにタイムボックスを守るように伝える。";
-          document.getElementById("adviceDisplay").innerHTML="ベロシティの決め方には、[S,M,L]と決める方法以外にもフィボナッチ数列[1,2,3,5...]で決める方法もあるよ。";
-          break;
-        case "item2" :
-          document.getElementById("itemDisplay").innerHTML="2.開発作業";
-          document.getElementById("detailDisplay").innerHTML="開発しよう";
-          document.getElementById("adviceDisplay").innerHTML="開発のスタイルでTDDやモブプロ,ペアプロといった手法もあるので活用してみよう。また、スクラムマスターは、振り返りのTRYができているかを確認してみよう。";
-          break;
-        case "item3" :
-          document.getElementById("itemDisplay").innerHTML="3.スプリントレビュー";
-          document.getElementById("detailDisplay").innerHTML="スプリントレビューとは、スプリントの終了時にインクリメントの検査と、必要であればプロダクトバックログの適応を行うものである。スプリントレビューでは、スクラムチームとステークホルダーがスプリントの成果をレビューする。スプリントの成果とプロダクトバックログの変更を参考にして、価値を最適化するために次に何ができるかを参加者全員で話し合う。これはステータスミーティングではなく、略式のミーティングである。インクリメントを提示することで、フィードバックや協力を引き出すことを目的とする。<br>スプリントが 1 か月の場合、スプリントレビューは最大 4 時間である。スプリントの期間が短ければ、スプリントレビューの時間も短くすることが多い。スクラムマスターはスプリントレビューが確実に開催されるようにして、参加者には目的を理解してもらうようにする。スクラムマスターは関係者全員にタイムボックスを守るように伝える。";
-          document.getElementById("adviceDisplay").innerHTML="";
-          break;
-        case "item4" :
-          document.getElementById("itemDisplay").innerHTML="4.バックログリファイメント";
-          document.getElementById("detailDisplay").innerHTML="プロダクトバックログに含まれるアイテムに対して、詳細の追加、見積り、並び替えをする。";
-          document.getElementById("adviceDisplay").innerHTML="";
-          break;
-        case "item5" :
-          document.getElementById("itemDisplay").innerHTML="5.スプリントレトロスペクティブ";
-          document.getElementById("detailDisplay").innerHTML="スプリントレトロスペクティブは、スクラムチームの検査と次のスプリントの改善計画を作成する機会である。<br>スプリントレトロスペクティブは、スプリントレビューが終わって、次のスプリントプランニングが始まる前に行う。スプリントが 1 か月の場合、スプリントレトロスペクティブは最大 3 時間である。スプリントの期間が短ければ、スプリントレトロスペクティブの時間も短くすることが多い。スクラムマスターは、このイベントが確実に開催されるようにする。また、参加者に目的を理解してもらうようにする。<br>スクラムマスターは、このミーティングがポジティブで生産的になるようにする。スクラムマスターは、全員にタイムボックスを守るように伝える。スクラムマスターは、スクラムのプロセスを説明するために、チームメンバーとして参加する。";
-          document.getElementById("adviceDisplay").innerHTML="振り返りの手法としてKPTやYWTなどがあるので活用してみよう。";
-          break;
-      }
-    }
+
+        
+
 
     // select要素の取得
     var selectMinute = document.minute_second.minute;
