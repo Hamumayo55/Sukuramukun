@@ -4,6 +4,21 @@
     <p><button class="btn btn-outline-info" id="up" onclick="upStep()">Stepを進める</button> <button class="btn btn-outline-info" id="down" onclick="downStep()">Stepを戻す</button> </p>
   </div>
   <ul class="stepflow">
+    <li class="bar-white" id="list0">
+      <div class="stepflow-white" id="color1"></div>
+      <div class="stepflow_label">STEP0</div>
+      <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#sprintPlanning" aria-expanded="false" aria-controls="sprintPlanning">
+        0.タイマーを入力
+      </button>
+      <div class="collapse m-0" id="sprintPlanning">
+        <div class="card card-body">
+          <center>タイマーを入力させる</center> <br>
+          
+          <hr>
+            <center></center> <br>
+        </div>
+      </div>
+    </li>
     <li class="bar-white" id="list1">
       <div class="stepflow-white" id="color1"></div>
       <div class="stepflow_label">STEP1</div>
@@ -170,7 +185,7 @@
         if (cnt<=5){
             cnt+=1;
             if (cnt == 6){
-              cnt = 1
+              cnt = 0
             }
             setCookie(cnt);
             location.reload();
@@ -179,7 +194,7 @@
 
     function downStep()
     {
-        if (cnt>=2){
+        if (cnt>=1){
             cnt-=1;
             setCookie(cnt);
             location.reload();
@@ -194,9 +209,20 @@
 
     function colorChange(num){
         switch(num){
+            case 0 :
+                document.getElementById("color1").classList.value = "stepflow-red";
+                document.getElementById("color2").classList.value = "stepflow-white";
+                document.getElementById("color3").classList.value = "stepflow-white";
+                document.getElementById("color4").classList.value = "stepflow-white";
+                document.getElementById("color5").classList.value = "stepflow-white";
+                document.getElementById("itemDisplay").innerHTML="0.タイマーの設定";
+                document.getElementById("detailDisplay").innerHTML="タイマーを設定する。";
+                document.getElementById("adviceDisplay").innerHTML="";
+                break;
+
             case 1 :
                 document.getElementById("color1").classList.value = "stepflow-red";
-                document.getElementById("color2").classList.value = "stepflow-white";
+                document.getElementById("color2").classList.value = "stepflow-";
                 document.getElementById("color3").classList.value = "stepflow-white";
                 document.getElementById("color4").classList.value = "stepflow-white";
                 document.getElementById("color5").classList.value = "stepflow-white";
