@@ -4,6 +4,21 @@
     <p><button class="btn btn-outline-info" id="up" onclick="upStep()">Stepを進める</button> <button class="btn btn-outline-info" id="down" onclick="downStep()">Stepを戻す</button> </p>
   </div>
   <ul class="stepflow">
+    <li class="bar-white" id="list0">
+      <div class="stepflow-white" id="color0"></div>
+      <div class="stepflow_label">STEP0</div>
+      <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#timer-input" aria-expanded="false" aria-controls="timer-input">
+        0.タイマーを入力
+      </button>
+      <div class="collapse m-0" id="timer-input">
+        <div class="card card-body">
+          <center>タイマーを入力させる</center> <br>
+          
+          <hr>
+            <center></center> <br>
+        </div>
+      </div>
+    </li>
     <li class="bar-white" id="list1">
       <div class="stepflow-white" id="color1"></div>
       <div class="stepflow_label">STEP1</div>
@@ -120,31 +135,27 @@
   </div>
   <div id="watch">
     <p id="timeDisplay">00:00</p>
-    <div id="status"></div>
-    <div id="sw_table"></div>
-    <form name="minute_second">
-    <% case cookies["step"] %>
-    <% when "1" then %>
-      <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
-      <%= select_tag :second, options_for_select((0..59).to_a,5), id:"second" %>秒
-    <% when "2" then %>
-      <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
-      <%= select_tag :second, options_for_select((0..59).to_a,10), id:"second" %>秒
-    <% when "3" then %>
-      <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
-      <%= select_tag :second, options_for_select((0..59).to_a,3), id:"second" %>秒
-    <% when "4" then %>
-      <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
-      <%= select_tag :second, options_for_select((0..59).to_a,7), id:"second" %>秒
-    <% when "5" then %>
-      <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
-      <%= select_tag :second, options_for_select((0..59).to_a,9), id:"second" %>秒
-    <% end %>
-  </form>
     <form name="timerButton">
-        <input type="button" value="スタート" onclick="cntStart()">
-        <input type="button" value="ストップ" onclick="cntStop()">
-        <input type="button" value="リセット" onclick="reSet()">
+      <% case cookies["step"] %>
+      <% when "1" then %>
+        <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
+        <%= select_tag :second, options_for_select((0..59).to_a,5), id:"second" %>秒
+      <% when "2" then %>
+        <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
+        <%= select_tag :second, options_for_select((0..59).to_a,10), id:"second" %>秒
+      <% when "3" then %>
+        <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
+        <%= select_tag :second, options_for_select((0..59).to_a,3), id:"second" %>秒
+      <% when "4" then %>
+        <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
+        <%= select_tag :second, options_for_select((0..59).to_a,7), id:"second" %>秒
+      <% when "5" then %>
+        <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
+        <%= select_tag :second, options_for_select((0..59).to_a,9), id:"second" %>秒
+      <% end %><br>
+      <input type="button" class="btn btn-outline-info" value="スタート" onclick="cntStart()">
+      <input type="button" class="btn btn-outline-info" value="ストップ" onclick="cntStop()">
+      <input type="button" class="btn btn-outline-info" value="リセット" onclick="reSet()">
     </form>
   </div>
 </div>
@@ -156,8 +167,8 @@
     var cookies=document.cookie;
     var cnt=cookies.split("=")[1];
     cnt=parseInt(cnt);
-    if (!cnt){
-      cnt=1;
+    if (isNaN(cnt)){
+      cnt=0;
       setCookie(cnt);
       location.reload();
     }
@@ -170,7 +181,7 @@
         if (cnt<=5){
             cnt+=1;
             if (cnt == 6){
-              cnt = 1
+              cnt = 0
             }
             setCookie(cnt);
             location.reload();
@@ -179,7 +190,7 @@
 
     function downStep()
     {
-        if (cnt>=2){
+        if (cnt>=1){
             cnt-=1;
             setCookie(cnt);
             location.reload();
@@ -194,7 +205,20 @@
 
     function colorChange(num){
         switch(num){
+            case 0 :
+                document.getElementById("color0").classList.value = "stepflow-red";
+                document.getElementById("color1").classList.value = "stepflow-white";
+                document.getElementById("color2").classList.value = "stepflow-white";
+                document.getElementById("color3").classList.value = "stepflow-white";
+                document.getElementById("color4").classList.value = "stepflow-white";
+                document.getElementById("color5").classList.value = "stepflow-white";
+                document.getElementById("itemDisplay").innerHTML="0.タイマーの設定";
+                document.getElementById("detailDisplay").innerHTML="タイマーを設定する。";
+                document.getElementById("adviceDisplay").innerHTML="";
+                break;
+
             case 1 :
+                document.getElementById("color0").classList.value = "stepflow-black";
                 document.getElementById("color1").classList.value = "stepflow-red";
                 document.getElementById("color2").classList.value = "stepflow-white";
                 document.getElementById("color3").classList.value = "stepflow-white";
@@ -206,6 +230,7 @@
                 break;
             
             case 2 :
+                document.getElementById("color0").classList.value = "stepflow-black";
                 document.getElementById("color1").classList.value = "stepflow-black";
                 document.getElementById("color2").classList.value = "stepflow-red";
                 document.getElementById("color3").classList.value = "stepflow-white";
@@ -217,6 +242,7 @@
                 break;
 
             case 3 :
+                document.getElementById("color0").classList.value = "stepflow-black";
                 document.getElementById("color1").classList.value = "stepflow-black";
                 document.getElementById("color2").classList.value = "stepflow-black";
                 document.getElementById("color3").classList.value = "stepflow-red";
@@ -228,6 +254,7 @@
                 break;
 
             case 4 :
+                document.getElementById("color0").classList.value = "stepflow-black";
                 document.getElementById("color1").classList.value = "stepflow-black";
                 document.getElementById("color2").classList.value = "stepflow-black";
                 document.getElementById("color3").classList.value = "stepflow-black";
@@ -239,6 +266,7 @@
                 break;
 
             case 5 :
+                document.getElementById("color0").classList.value = "stepflow-black";
                 document.getElementById("color1").classList.value = "stepflow-black";
                 document.getElementById("color2").classList.value = "stepflow-black";
                 document.getElementById("color3").classList.value = "stepflow-black";
@@ -255,36 +283,37 @@
 
         
 
+    if (cnt!=0){
+      // select要素の取得
+      var selectMinute = document.timerButton.minute;
+      var selectSecond = document.timerButton.second;
 
-    // select要素の取得
-    var selectMinute = document.minute_second.minute;
-    var selectSecond = document.minute_second.second;
+      var indexMinute =  selectMinute.selectedIndex;
+      var indexSecond =  selectSecond.selectedIndex;
+      var minuteData = selectMinute.options[ indexMinute ].innerHTML;
+      var secondData = selectSecond.options[ indexSecond ].innerHTML;
 
-    var indexMinute =  selectMinute.selectedIndex;
-    var indexSecond =  selectSecond.selectedIndex;
-    var minuteData = selectMinute.options[ indexMinute ].innerHTML;
-    var secondData = selectSecond.options[ indexSecond ].innerHTML;
-
-    //select要素のchangeイベントの登録
-    selectMinute.addEventListener('change', function(){
-            //選択されたoption番号を取得
-            indexMinute =  this.selectedIndex;
-            minuteData = this.options[ indexMinute ].innerHTML;
-    });
-    selectSecond.addEventListener('change', function(){
-            //選択されたoption番号を取得
-            indexSecond =  this.selectedIndex;
-            secondData = this.options[ indexSecond ].innerHTML;
-    });
+      //select要素のchangeイベントの登録
+      selectMinute.addEventListener('change', function(){
+              //選択されたoption番号を取得
+              indexMinute =  this.selectedIndex;
+              minuteData = this.options[ indexMinute ].innerHTML;
+      });
+      selectSecond.addEventListener('change', function(){
+              //選択されたoption番号を取得
+              indexSecond =  this.selectedIndex;
+              secondData = this.options[ indexSecond ].innerHTML;
+      });
+    }
 
     var timer1; //タイマーを格納する変数（タイマーID）の宣言
     //カウントダウン関数を1000ミリ秒毎に呼び出す関数
     function cntStart()
     {
-        document.minute_second.elements[0].disabled=true;
-        document.minute_second.elements[1].disabled=true;
         document.timerButton.elements[0].disabled=true;
+        document.timerButton.elements[1].disabled=true;
         document.timerButton.elements[2].disabled=true;
+        document.timerButton.elements[4].disabled=true;
         document.getElementById("up").disabled=true;
         document.getElementById("down").disabled=true;
         if (minuteData < 10 && secondData < 10) {
@@ -301,8 +330,8 @@
     //タイマー停止関数
     function cntStop()
     {
-        document.timerButton.elements[0].disabled=false;
         document.timerButton.elements[2].disabled=false;
+        document.timerButton.elements[4].disabled=false;
         clearInterval(timer1);
     }
     //カウントダウン関数
@@ -354,10 +383,10 @@
     //フォームを初期状態に戻す（リセット）関数
     function reSet()
     {
-        document.minute_second.elements[0].disabled=false;
-        document.minute_second.elements[1].disabled=false;
-        document.timerButton.elements[0].disabled=false;
-        document.timerButton.elements[2].disabled=false;
+      document.timerButton.elements[0].disabled=false;
+      document.timerButton.elements[1].disabled=false;
+      document.timerButton.elements[2].disabled=false;
+      document.timerButton.elements[4].disabled=false;
         document.getElementById("up").disabled=false;
         document.getElementById("down").disabled=false;
         document.getElementById('timeDisplay').innerHTML = "00:00"
