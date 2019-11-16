@@ -5,12 +5,12 @@
   </div>
   <ul class="stepflow">
     <li class="bar-white" id="list0">
-      <div class="stepflow-white" id="color1"></div>
+      <div class="stepflow-white" id="color0"></div>
       <div class="stepflow_label">STEP0</div>
-      <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#sprintPlanning" aria-expanded="false" aria-controls="sprintPlanning">
+      <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#timer-input" aria-expanded="false" aria-controls="timer-input">
         0.タイマーを入力
       </button>
-      <div class="collapse m-0" id="sprintPlanning">
+      <div class="collapse m-0" id="timer-input">
         <div class="card card-body">
           <center>タイマーを入力させる</center> <br>
           
@@ -171,8 +171,8 @@
     var cookies=document.cookie;
     var cnt=cookies.split("=")[1];
     cnt=parseInt(cnt);
-    if (!cnt){
-      cnt=1;
+    if (isNaN(cnt)){
+      cnt=0;
       setCookie(cnt);
       location.reload();
     }
@@ -210,7 +210,8 @@
     function colorChange(num){
         switch(num){
             case 0 :
-                document.getElementById("color1").classList.value = "stepflow-red";
+                document.getElementById("color0").classList.value = "stepflow-red";
+                document.getElementById("color1").classList.value = "stepflow-white";
                 document.getElementById("color2").classList.value = "stepflow-white";
                 document.getElementById("color3").classList.value = "stepflow-white";
                 document.getElementById("color4").classList.value = "stepflow-white";
@@ -221,8 +222,9 @@
                 break;
 
             case 1 :
+                document.getElementById("color0").classList.value = "stepflow-black";
                 document.getElementById("color1").classList.value = "stepflow-red";
-                document.getElementById("color2").classList.value = "stepflow-";
+                document.getElementById("color2").classList.value = "stepflow-white";
                 document.getElementById("color3").classList.value = "stepflow-white";
                 document.getElementById("color4").classList.value = "stepflow-white";
                 document.getElementById("color5").classList.value = "stepflow-white";
@@ -232,6 +234,7 @@
                 break;
             
             case 2 :
+                document.getElementById("color0").classList.value = "stepflow-black";
                 document.getElementById("color1").classList.value = "stepflow-black";
                 document.getElementById("color2").classList.value = "stepflow-red";
                 document.getElementById("color3").classList.value = "stepflow-white";
@@ -243,6 +246,7 @@
                 break;
 
             case 3 :
+                document.getElementById("color0").classList.value = "stepflow-black";
                 document.getElementById("color1").classList.value = "stepflow-black";
                 document.getElementById("color2").classList.value = "stepflow-black";
                 document.getElementById("color3").classList.value = "stepflow-red";
@@ -254,6 +258,7 @@
                 break;
 
             case 4 :
+                document.getElementById("color0").classList.value = "stepflow-black";
                 document.getElementById("color1").classList.value = "stepflow-black";
                 document.getElementById("color2").classList.value = "stepflow-black";
                 document.getElementById("color3").classList.value = "stepflow-black";
@@ -265,6 +270,7 @@
                 break;
 
             case 5 :
+                document.getElementById("color0").classList.value = "stepflow-black";
                 document.getElementById("color1").classList.value = "stepflow-black";
                 document.getElementById("color2").classList.value = "stepflow-black";
                 document.getElementById("color3").classList.value = "stepflow-black";
@@ -281,27 +287,28 @@
 
         
 
+    if (cnt!=0){
+      // select要素の取得
+      var selectMinute = document.minute_second.minute;
+      var selectSecond = document.minute_second.second;
 
-    // select要素の取得
-    var selectMinute = document.minute_second.minute;
-    var selectSecond = document.minute_second.second;
+      var indexMinute =  selectMinute.selectedIndex;
+      var indexSecond =  selectSecond.selectedIndex;
+      var minuteData = selectMinute.options[ indexMinute ].innerHTML;
+      var secondData = selectSecond.options[ indexSecond ].innerHTML;
 
-    var indexMinute =  selectMinute.selectedIndex;
-    var indexSecond =  selectSecond.selectedIndex;
-    var minuteData = selectMinute.options[ indexMinute ].innerHTML;
-    var secondData = selectSecond.options[ indexSecond ].innerHTML;
-
-    //select要素のchangeイベントの登録
-    selectMinute.addEventListener('change', function(){
-            //選択されたoption番号を取得
-            indexMinute =  this.selectedIndex;
-            minuteData = this.options[ indexMinute ].innerHTML;
-    });
-    selectSecond.addEventListener('change', function(){
-            //選択されたoption番号を取得
-            indexSecond =  this.selectedIndex;
-            secondData = this.options[ indexSecond ].innerHTML;
-    });
+      //select要素のchangeイベントの登録
+      selectMinute.addEventListener('change', function(){
+              //選択されたoption番号を取得
+              indexMinute =  this.selectedIndex;
+              minuteData = this.options[ indexMinute ].innerHTML;
+      });
+      selectSecond.addEventListener('change', function(){
+              //選択されたoption番号を取得
+              indexSecond =  this.selectedIndex;
+              secondData = this.options[ indexSecond ].innerHTML;
+      });
+    }
 
     var timer1; //タイマーを格納する変数（タイマーID）の宣言
     //カウントダウン関数を1000ミリ秒毎に呼び出す関数
