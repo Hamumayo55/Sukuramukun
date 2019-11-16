@@ -27,15 +27,24 @@
       </button>
       <div class="collapse m-0" id="sprintPlanning">
         <div class="card card-body">
-          <center>詳細 </center> <br>
+        <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#sprintPlanning-ditail" aria-expanded="false" aria-controls="sprintPlanning-ditail">
+          <center>詳細 </center> 
+        </button>
+        <div class="collapse m-0" id="sprintPlanning-ditail">
             スプリントの作業はスプリントプランニングで計画する。これはスクラムチームの共同作業である。
             スプリントが 1 か月の場合、スプリントプランニングのタイムボックスは最大で 8 時間である。スプリ
             ントの期間が短ければ、スプリントプランニングの時間も短くすることが多い。スクラムマスターは、
             参加者に目的を理解してもらうようにする。スクラムマスターは、スクラムチームにタイムボックスを
             守るように伝える。
-          <hr>
-            <center>アドバイス</center> <br>
+        </div>
+        <hr>
+        <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#sprintPlanning-ad" aria-expanded="false" aria-controls="sprintPlanning-ad">
+            <center>アドバイス</center>
+        </button>
+        <div class="collapse m-0" id="sprintPlanning-ad">
               ベロシティの決め方には、[S,M,L]と決める方法以外にもフィボナッチ数列[1,2,3,5...]で決める方法もあるよ。
+              </div>
+              <hr>
         </div>
       </div>
     </li>
@@ -47,12 +56,21 @@
         </button>
         <div class="collapse m-0" id="developWork">
             <div class="card card-body">
-             <center>詳細 </center> <br>
-                開発しよう 
+            <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#developWork-ditail" aria-expanded="false" aria-controls="developWork-ditail">
+              <center>詳細 </center> 
+            </button>
+            <div class="collapse m-0" id="developWork-ditail">
+              開発しよう 
+            </div>
                 <hr>
-                <center>アドバイス</center> <br>
+              <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#developWork-ad" aria-expanded="false" aria-controls="developWork-ad">
+                <center>アドバイス</center> 
+              </button>
+              <div class="collapse m-0" id="developWork-ad">
                 開発のスタイルでモブプロやペアプロといった手法もあるので活用してみよう。
                 開発のスタイルでTDDやモブプロ,ペアプロといった手法もあるので活用してみよう。また、スクラムマスターは、振り返りのTRYができているかを確認してみよう。
+              </div>
+              <hr>
         </div>
       </div>
     </li>
@@ -64,7 +82,10 @@
         </button>
         <div class="collapse m-0" id="sprintReview">
           <div class="card card-body">
-            <center>詳細 </center> <br>
+          <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#sprintReview-ditail" aria-expanded="false" aria-controls="sprintReview-ditail">
+            <center>詳細 </center>
+          </button>
+          <div class="collapse m-0" id="sprintReview-ditail">
               スプリントレビューとは、スプリントの終了時にインクリメントの検査と、必要であればプロダクトバック
               ログの適応を行うものである。スプリントレビューでは、スクラムチームとステークホルダーがスプリン
               トの成果をレビューする。スプリントの成果とプロダクトバックログの変更を参考にして、価値を最適
@@ -76,7 +97,11 @@
               催されるようにして、参加者には目的を理解してもらうようにする。スクラムマスターは関係者全員
               にタイムボックスを守るように伝える。  
           </div>
+          <hr> 
+          </div>
+          
         </div>
+        
     </li>
     <li class="bar-white" id="list4">
       <div class="stepflow-white" id="color4"></div>
@@ -86,8 +111,12 @@
       </button>
       <div class="collapse m-0" id="BacklogRefinement">
       <div class="card card-body">
-      <center>詳細 </center> <br>
+      <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#BacklogRefinement-ditail" aria-expanded="false" aria-controls="BacklogRefinement-ditail">
+        <center>詳細 </center> 
+      </button>
+      <div class="collapse m-0" id="BacklogRefinement-ditail">
           プロダクトバックログに含まれるアイテムに対して、詳細の追加、見積り、並び替えをする。
+        </div>
           <hr>      
     </li>
     <li class="bar-white" id="list5">
@@ -98,14 +127,23 @@
       </button>
       <div class="collapse m-0" id="retroSpective">
         <div class="card card-body">
-          <center>詳細 </center> <br>
+        <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#retroSpective-ditail" aria-expanded="false" aria-controls="retroSpective-ditail">
+          <center>詳細 </center> 
+        </button>
+        <div class="collapse m-0" id="retroSpective-ditail">
           スプリントレトロスペクティブは、スクラムチームの検査と次のスプリントの改善計画を作成する機会である。<br>スプリントレトロスペクティブは、スプリントレビューが終わって、次のスプリントプランニングが始まる前に行う。
           スプリントが 1 か月の場合、スプリントレトロスペクティブは最大 3 時間である。スプリントの期間が短ければ、スプリントレトロスペクティブの時間も短くすることが多い。スクラムマスターは、このイベントが確実に開催されるようにする。
           また、参加者に目的を理解してもらうようにする。<br>スクラムマスターは、このミーティングがポジティブで生産的になるようにする。スクラムマスターは、全員にタイムボックスを守るように伝える。
           スクラムマスターは、スクラムのプロセスを説明するために、チームメンバーとして参加する。
+          </div>
           <hr>
-            <center>アドバイス</center> <br>
+          <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#retroSpective-ad" aria-expanded="false" aria-controls="retroSpective-ad">
+            <center>アドバイス</center> 
+          </button>
+          <div class="collapse m-0" id="retroSpective-ad">
             振り返りの手法としてKPTやYWTなどがあるので活用してみよう。
+          </div>
+          <hr>
         </div>
       </div>
     </li>
@@ -118,7 +156,10 @@
   </button>
   <div class="collapse m-0" id="stepName">
     <div class="card card-body">
-      <center>詳細 </center> <br>
+    <button type="button" class="btn btn-light text-left" id="itemDisplay" data-toggle="collapse" data-target="#stepName-ditail" aria-expanded="false" aria-controls="stepName-ditail">
+      <center>詳細 </center> 
+    </button>
+    <div class="collapse m-0" id="stepName-ditail">
       <p id="detailDisplay">
         スプリントの作業はスプリントプランニングで計画する。これはスクラムチームの共同作業である。
         スプリントが 1 か月の場合、スプリントプランニングのタイムボックスは最大で 8 時間である。スプリ
@@ -126,11 +167,16 @@
         参加者に目的を理解してもらうようにする。スクラムマスターは、スクラムチームにタイムボックスを
         守るように伝える。
       </p>
+      </div>
       <hr>
-      <center>アドバイス</center> <br>
+      <button type="button" class="btn btn-light text-left" id="itemDisplay" data-toggle="collapse" data-target="#stepName-ad" aria-expanded="false" aria-controls="stepName-ad">
+        <center>アドバイス</center> 
+      </button>
+      <div class="collapse m-0" id="stepName-ad">
       <p id="adviceDisplay">
-        ベロシティの決め方には、[S,M,L]と決める方法以外にもフィボナッチ数列[1,2,3,5...]で決める方法もあるよ。
-      </p>
+          ベロシティの決め方には、[S,M,L]と決める方法以外にもフィボナッチ数列[1,2,3,5...]で決める方法もあるよ。
+        </p>
+      </div>
     </div>
   </div>
   <div id="watch">
