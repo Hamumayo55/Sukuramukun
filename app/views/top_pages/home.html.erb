@@ -135,31 +135,27 @@
   </div>
   <div id="watch">
     <p id="timeDisplay">00:00</p>
-    <div id="status"></div>
-    <div id="sw_table"></div>
-    <form name="minute_second">
-    <% case cookies["step"] %>
-    <% when "1" then %>
-      <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
-      <%= select_tag :second, options_for_select((0..59).to_a,5), id:"second" %>秒
-    <% when "2" then %>
-      <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
-      <%= select_tag :second, options_for_select((0..59).to_a,10), id:"second" %>秒
-    <% when "3" then %>
-      <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
-      <%= select_tag :second, options_for_select((0..59).to_a,3), id:"second" %>秒
-    <% when "4" then %>
-      <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
-      <%= select_tag :second, options_for_select((0..59).to_a,7), id:"second" %>秒
-    <% when "5" then %>
-      <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
-      <%= select_tag :second, options_for_select((0..59).to_a,9), id:"second" %>秒
-    <% end %>
-  </form>
     <form name="timerButton">
-        <input type="button" value="スタート" onclick="cntStart()">
-        <input type="button" value="ストップ" onclick="cntStop()">
-        <input type="button" value="リセット" onclick="reSet()">
+      <% case cookies["step"] %>
+      <% when "1" then %>
+        <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
+        <%= select_tag :second, options_for_select((0..59).to_a,5), id:"second" %>秒
+      <% when "2" then %>
+        <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
+        <%= select_tag :second, options_for_select((0..59).to_a,10), id:"second" %>秒
+      <% when "3" then %>
+        <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
+        <%= select_tag :second, options_for_select((0..59).to_a,3), id:"second" %>秒
+      <% when "4" then %>
+        <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
+        <%= select_tag :second, options_for_select((0..59).to_a,7), id:"second" %>秒
+      <% when "5" then %>
+        <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
+        <%= select_tag :second, options_for_select((0..59).to_a,9), id:"second" %>秒
+      <% end %><br>
+      <input type="button" class="btn btn-outline-info" value="スタート" onclick="cntStart()">
+      <input type="button" class="btn btn-outline-info" value="ストップ" onclick="cntStop()">
+      <input type="button" class="btn btn-outline-info" value="リセット" onclick="reSet()">
     </form>
   </div>
 </div>
@@ -289,8 +285,8 @@
 
     if (cnt!=0){
       // select要素の取得
-      var selectMinute = document.minute_second.minute;
-      var selectSecond = document.minute_second.second;
+      var selectMinute = document.timerButton.minute;
+      var selectSecond = document.timerButton.second;
 
       var indexMinute =  selectMinute.selectedIndex;
       var indexSecond =  selectSecond.selectedIndex;
@@ -314,10 +310,10 @@
     //カウントダウン関数を1000ミリ秒毎に呼び出す関数
     function cntStart()
     {
-        document.minute_second.elements[0].disabled=true;
-        document.minute_second.elements[1].disabled=true;
         document.timerButton.elements[0].disabled=true;
+        document.timerButton.elements[1].disabled=true;
         document.timerButton.elements[2].disabled=true;
+        document.timerButton.elements[4].disabled=true;
         document.getElementById("up").disabled=true;
         document.getElementById("down").disabled=true;
         if (minuteData < 10 && secondData < 10) {
@@ -334,8 +330,8 @@
     //タイマー停止関数
     function cntStop()
     {
-        document.timerButton.elements[0].disabled=false;
         document.timerButton.elements[2].disabled=false;
+        document.timerButton.elements[4].disabled=false;
         clearInterval(timer1);
     }
     //カウントダウン関数
@@ -387,10 +383,10 @@
     //フォームを初期状態に戻す（リセット）関数
     function reSet()
     {
-        document.minute_second.elements[0].disabled=false;
-        document.minute_second.elements[1].disabled=false;
-        document.timerButton.elements[0].disabled=false;
-        document.timerButton.elements[2].disabled=false;
+      document.timerButton.elements[0].disabled=false;
+      document.timerButton.elements[1].disabled=false;
+      document.timerButton.elements[2].disabled=false;
+      document.timerButton.elements[4].disabled=false;
         document.getElementById("up").disabled=false;
         document.getElementById("down").disabled=false;
         document.getElementById('timeDisplay').innerHTML = "00:00"
