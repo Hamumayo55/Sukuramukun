@@ -1,26 +1,35 @@
-<div class="side col-md-3">
-</div>
-<div class="micropost-div col-md-6">
-  <h1 class="text-center mb-5">教えてスクラムマスター!!</h1>
-  <% micropost.each do |mp| %>
-    <div class='micropost mb-3'>
-      <div class="border">
-        <p class="Username m-0"><%= mp.username %></p>
-        <a href='/microposts/<%=mp.id%>' class="micropost-a"><%= mp.content %></a>
-      </div>
-      <p class="sendTime text-right"><%= mp.created_at%></p>
+<div id="grid_system" class="container-fluid p-0">
+  <div class="row">
+    <div class="side col-md-3">
     </div>
-  <% end %>
-
-
-  <footer>
-    <div id='micropost-form'>
-      <%= form_with model: micropost_new, local: true do |form| %>
-        <%= form.text_field :content %>
-        <%= form.hidden_field :username, :value => @username %>
-        <%= form.submit '投稿', class:"btn btn-outline-info", role:"button" %>
+    <div class="micropost-div col-md-6">
+      <h1 class="text-center mb-5">教えてスクラムマスター!!</h1>
+      <% micropost.each do |mp| %>
+        <div class='micropost mb-3'>
+          <div class="border">
+            <p class="Username m-0"><%= mp.username %></p>
+            <a href='/microposts/<%=mp.id%>' class="micropost-a"><%= mp.content %></a>
+          </div>
+          <p class="sendTime text-right"><%= mp.created_at%></p>
+        </div>
       <% end %>
-    </div>
-  </footer>
 
+
+      <footer>
+        <div id='micropost-form'>
+          <%= form_with model: micropost_new, local: true do |form| %>
+            <%= form.text_field :content %>
+            <%= form.hidden_field :username, :value => @username %>
+            <%= form.submit '投稿', class:"btn btn-outline-info", role:"button" %>
+          <% end %>
+        </div>
+      </footer>
+
+    </div>
+    <div class="side col-md-3">
+      <%= image_tag "footer.png",class: "footer-img" %>
+      <%= image_tag "hukidasi.png",class: "footer-msg" %>
+      <p class="default-msg"id="msg-txt">僕、スクラムくん!!</p>
+    </div>
+  </div>
 </div>

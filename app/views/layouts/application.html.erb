@@ -13,7 +13,7 @@
         <% flash.each do |key, value| %>
           <%= content_tag(:div, value, class: "#{key}") %>
         <% end %>
-      <!-- ここまで追加 -->     
+      <!-- ここまで追加 -->
         <header>
             <a href="/" class="m-0"><%= image_tag "header.png", id: "header-img" %></a>
             <div id="header-right" class="text-right">
@@ -27,16 +27,7 @@
                 <% end %>
             </div>
         </header>
-        <div id="grid_system" class="container-fluid p-0">
-            <div class="row">
-                <%= yield %>
-                <div class="side col-md-3">
-                    <%= image_tag "footer.png",class: "footer-img" %>
-                    <%= image_tag "hukidasi.png",class: "footer-msg" %>
-                    <p class="default-msg"id="msg-txt">僕、スクラムくん!!</p>
-                </div>
-            </div>
-        </div>
+        <%= yield %>
     </body>
 </html>
 
