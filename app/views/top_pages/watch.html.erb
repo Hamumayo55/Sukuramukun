@@ -1,17 +1,26 @@
-<div class="side col-md-3">
-</div>
-<div id="watch" class="col-md-6">
+<div id="grid_system" class="container-fluid p-0">
+  <div class="row">
+    <div class="side col-md-3">
+    </div>
+    <div id="watch" class="col-md-6">
 
-    <p id="timeDisplay">00:00</p>
-    <div id="status"></div>
-    <div id="sw_table"></div>
-    <form name="timer">
-        <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
-        <%= select_tag :second, options_for_select((0..59).to_a), id:"second" %>秒 <br>
-        <input type="button" value="スタート" onclick="cntStart()">
-        <input type="button" value="ストップ" onclick="cntStop()">
-        <input type="button" value="リセット" onclick="reSet()">
-    </form>
+        <p id="timeDisplay">00:00</p>
+        <div id="status"></div>
+        <div id="sw_table"></div>
+        <form name="timer">
+            <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
+            <%= select_tag :second, options_for_select((0..59).to_a), id:"second" %>秒 <br>
+            <input type="button" value="スタート" onclick="cntStart()">
+            <input type="button" value="ストップ" onclick="cntStop()">
+            <input type="button" value="リセット" onclick="reSet()">
+        </form>
+    </div>
+    <div class="side col-md-3">
+      <%= image_tag "footer.png",class: "footer-img" %>
+      <%= image_tag "hukidasi.png",class: "footer-msg" %>
+      <p class="default-msg"id="msg-txt">僕、スクラムくん!!</p>
+    </div>
+  </div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/1.0.9/push.min.js"></script>

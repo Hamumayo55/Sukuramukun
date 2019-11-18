@@ -1,208 +1,201 @@
-<div class="side col-md-3">
-  <p id="sub">スプリントの流れ</p>
-  <div class="app">
-    <p><button class="btn btn-outline-info" id="up" onclick="upStep()">Stepを進める</button> <button class="btn btn-outline-info" id="down" onclick="downStep()">Stepを戻す</button> </p>
-  </div>
-  <ul class="stepflow">
-    <li class="bar-white" id="list0">
-      <div class="stepflow-white" id="color0"></div>
-      <div class="stepflow_label">STEP0</div>
-      <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#timer-input" aria-expanded="false" aria-controls="timer-input">
-        0.タイマーを入力
-      </button>
-      <div class="collapse m-0" id="timer-input">
-        <div class="card card-body">
-          <center>タイマーを入力させる</center> <br>
-          
-          <hr>
-            <center></center> <br>
-        </div>
+<div id="grid_system" class="container-fluid p-0">
+  <div class="row">
+    <div class="side col-md-3">
+      <p id="sub">スプリントの流れ</p>
+      <div class="app">
+        <p><button class="btn btn-outline-info" id="up" onclick="upStep()">Stepを進める</button> <button class="btn btn-outline-info" id="down" onclick="downStep()">Stepを戻す</button> </p>
       </div>
-    </li>
-    <li class="bar-white" id="list1">
-      <div class="stepflow-white" id="color1"></div>
-      <div class="stepflow_label">STEP1</div>
-      <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#sprintPlanning" aria-expanded="false" aria-controls="sprintPlanning">
+      <ul class="stepflow">
+        <li class="bar-white" id="list1">
+          <div class="stepflow-white" id="color1"></div>
+          <div class="stepflow_label">STEP1</div>
+          <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#sprintPlanning" aria-expanded="false" aria-controls="sprintPlanning">
+            1.スプリントプランニング
+          </button>
+          <div class="collapse m-0" id="sprintPlanning">
+            <div class="card card-body">
+            <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#sprintPlanning-ditail" aria-expanded="false" aria-controls="sprintPlanning-ditail">
+              <center>詳細 </center> 
+            </button>
+            <div class="collapse m-0" id="sprintPlanning-ditail">
+                スプリントの作業はスプリントプランニングで計画する。これはスクラムチームの共同作業である。
+                スプリントが 1 か月の場合、スプリントプランニングのタイムボックスは最大で 8 時間である。スプリ
+                ントの期間が短ければ、スプリントプランニングの時間も短くすることが多い。スクラムマスターは、
+                参加者に目的を理解してもらうようにする。スクラムマスターは、スクラムチームにタイムボックスを
+                守るように伝える。
+            </div>
+            <hr>
+            <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#sprintPlanning-ad" aria-expanded="false" aria-controls="sprintPlanning-ad">
+                <center>アドバイス</center>
+            </button>
+            <div class="collapse m-0" id="sprintPlanning-ad">
+                  ベロシティの決め方には、[S,M,L]と決める方法以外にもフィボナッチ数列[1,2,3,5...]で決める方法もあるよ。
+                  </div>
+                  <hr>
+            </div>
+          </div>
+        </li>
+        <li class="bar-white" id="list2">
+          <div class="stepflow-white"  id="color2"></div>
+          <div class="stepflow_label">STEP2</div>
+          <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#developWork" aria-expanded="false" aria-controls="developWork">
+            2.開発作業
+            </button>
+            <div class="collapse m-0" id="developWork">
+                <div class="card card-body">
+                <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#developWork-ditail" aria-expanded="false" aria-controls="developWork-ditail">
+                  <center>詳細 </center> 
+                </button>
+                <div class="collapse m-0" id="developWork-ditail">
+                  開発しよう 
+                </div>
+                    <hr>
+                  <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#developWork-ad" aria-expanded="false" aria-controls="developWork-ad">
+                    <center>アドバイス</center> 
+                  </button>
+                  <div class="collapse m-0" id="developWork-ad">
+                    開発のスタイルでモブプロやペアプロといった手法もあるので活用してみよう。
+                    開発のスタイルでTDDやモブプロ,ペアプロといった手法もあるので活用してみよう。また、スクラムマスターは、振り返りのTRYができているかを確認してみよう。
+                  </div>
+                  <hr>
+            </div>
+          </div>
+        </li>
+        <li class="bar-white" id="list3">
+            <div class="stepflow-white" id="color3"></div>
+            <div class="stepflow_label">STEP3</div>
+            <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#sprintReview" aria-expanded="false" aria-controls="sprintReview">
+              3.スプリントレビュー
+            </button>
+            <div class="collapse m-0" id="sprintReview">
+              <div class="card card-body">
+              <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#sprintReview-ditail" aria-expanded="false" aria-controls="sprintReview-ditail">
+                <center>詳細 </center>
+              </button>
+              <div class="collapse m-0" id="sprintReview-ditail">
+                  スプリントレビューとは、スプリントの終了時にインクリメントの検査と、必要であればプロダクトバック
+                  ログの適応を行うものである。スプリントレビューでは、スクラムチームとステークホルダーがスプリン
+                  トの成果をレビューする。スプリントの成果とプロダクトバックログの変更を参考にして、価値を最適
+                  化するために次に何ができるかを参加者全員で話し合う。これはステータスミーティングではなく、
+                  略式のミーティングである。インクリメントを提示することで、フィードバックや協力を引き出すことを
+                  目的とする。
+                  スプリントが 1 か月の場合、スプリントレビューは最大 4 時間である。スプリントの期間が短ければ、
+                  スプリントレビューの時間も短くすることが多い。スクラムマスターはスプリントレビューが確実に開
+                  催されるようにして、参加者には目的を理解してもらうようにする。スクラムマスターは関係者全員
+                  にタイムボックスを守るように伝える。  
+              </div>
+              <hr> 
+              </div>
+              
+            </div>
+            
+        </li>
+        <li class="bar-white" id="list4">
+          <div class="stepflow-white" id="color4"></div>
+          <div class="stepflow_label">STEP４</div>
+          <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#BacklogRefinement" aria-expanded="false" aria-controls="BacklogRefinement">
+            4.バックログリファイメント
+          </button>
+          <div class="collapse m-0" id="BacklogRefinement">
+          <div class="card card-body">
+          <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#BacklogRefinement-ditail" aria-expanded="false" aria-controls="BacklogRefinement-ditail">
+            <center>詳細 </center> 
+          </button>
+          <div class="collapse m-0" id="BacklogRefinement-ditail">
+              プロダクトバックログに含まれるアイテムに対して、詳細の追加、見積り、並び替えをする。
+            </div>
+              <hr>      
+        </li>
+        <li class="bar-white" id="list5">
+          <div class="stepflow-white" id="color5"></div>
+          <div class="stepflow_label">STEP５</div>
+          <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#retroSpective" aria-expanded="false" aria-controls="retroSpective">
+            5.スプリントレトロスペクティブ
+          </button>
+          <div class="collapse m-0" id="retroSpective">
+            <div class="card card-body">
+            <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#retroSpective-ditail" aria-expanded="false" aria-controls="retroSpective-ditail">
+              <center>詳細 </center> 
+            </button>
+            <div class="collapse m-0" id="retroSpective-ditail">
+              スプリントレトロスペクティブは、スクラムチームの検査と次のスプリントの改善計画を作成する機会である。<br>スプリントレトロスペクティブは、スプリントレビューが終わって、次のスプリントプランニングが始まる前に行う。
+              スプリントが 1 か月の場合、スプリントレトロスペクティブは最大 3 時間である。スプリントの期間が短ければ、スプリントレトロスペクティブの時間も短くすることが多い。スクラムマスターは、このイベントが確実に開催されるようにする。
+              また、参加者に目的を理解してもらうようにする。<br>スクラムマスターは、このミーティングがポジティブで生産的になるようにする。スクラムマスターは、全員にタイムボックスを守るように伝える。
+              スクラムマスターは、スクラムのプロセスを説明するために、チームメンバーとして参加する。
+              </div>
+              <hr>
+              <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#retroSpective-ad" aria-expanded="false" aria-controls="retroSpective-ad">
+                <center>アドバイス</center> 
+              </button>
+              <div class="collapse m-0" id="retroSpective-ad">
+                振り返りの手法としてKPTやYWTなどがあるので活用してみよう。
+              </div>
+              <hr>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div id="home" class="col-md-6">
+      <button type="button" class="btn btn-light text-left" id="itemDisplay" data-toggle="collapse" data-target="#stepName" aria-expanded="false" aria-controls="stepName">
         1.スプリントプランニング
       </button>
-      <div class="collapse m-0" id="sprintPlanning">
+      <div class="collapse m-0" id="stepName">
         <div class="card card-body">
-        <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#sprintPlanning-ditail" aria-expanded="false" aria-controls="sprintPlanning-ditail">
+        <button type="button" class="btn btn-light text-left" id="itemDisplay" data-toggle="collapse" data-target="#stepName-ditail" aria-expanded="false" aria-controls="stepName-ditail">
           <center>詳細 </center> 
         </button>
-        <div class="collapse m-0" id="sprintPlanning-ditail">
+        <div class="collapse m-0" id="stepName-ditail">
+          <p id="detailDisplay">
             スプリントの作業はスプリントプランニングで計画する。これはスクラムチームの共同作業である。
             スプリントが 1 か月の場合、スプリントプランニングのタイムボックスは最大で 8 時間である。スプリ
             ントの期間が短ければ、スプリントプランニングの時間も短くすることが多い。スクラムマスターは、
             参加者に目的を理解してもらうようにする。スクラムマスターは、スクラムチームにタイムボックスを
             守るように伝える。
-        </div>
-        <hr>
-        <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#sprintPlanning-ad" aria-expanded="false" aria-controls="sprintPlanning-ad">
-            <center>アドバイス</center>
-        </button>
-        <div class="collapse m-0" id="sprintPlanning-ad">
-              ベロシティの決め方には、[S,M,L]と決める方法以外にもフィボナッチ数列[1,2,3,5...]で決める方法もあるよ。
-              </div>
-              <hr>
-        </div>
-      </div>
-    </li>
-    <li class="bar-white" id="list2">
-      <div class="stepflow-white"  id="color2"></div>
-      <div class="stepflow_label">STEP2</div>
-      <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#developWork" aria-expanded="false" aria-controls="developWork">
-        2.開発作業
-        </button>
-        <div class="collapse m-0" id="developWork">
-            <div class="card card-body">
-            <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#developWork-ditail" aria-expanded="false" aria-controls="developWork-ditail">
-              <center>詳細 </center> 
-            </button>
-            <div class="collapse m-0" id="developWork-ditail">
-              開発しよう 
-            </div>
-                <hr>
-              <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#developWork-ad" aria-expanded="false" aria-controls="developWork-ad">
-                <center>アドバイス</center> 
-              </button>
-              <div class="collapse m-0" id="developWork-ad">
-                開発のスタイルでモブプロやペアプロといった手法もあるので活用してみよう。
-                開発のスタイルでTDDやモブプロ,ペアプロといった手法もあるので活用してみよう。また、スクラムマスターは、振り返りのTRYができているかを確認してみよう。
-              </div>
-              <hr>
-        </div>
-      </div>
-    </li>
-    <li class="bar-white" id="list3">
-        <div class="stepflow-white" id="color3"></div>
-        <div class="stepflow_label">STEP3</div>
-        <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#sprintReview" aria-expanded="false" aria-controls="sprintReview">
-          3.スプリントレビュー
-        </button>
-        <div class="collapse m-0" id="sprintReview">
-          <div class="card card-body">
-          <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#sprintReview-ditail" aria-expanded="false" aria-controls="sprintReview-ditail">
-            <center>詳細 </center>
-          </button>
-          <div class="collapse m-0" id="sprintReview-ditail">
-              スプリントレビューとは、スプリントの終了時にインクリメントの検査と、必要であればプロダクトバック
-              ログの適応を行うものである。スプリントレビューでは、スクラムチームとステークホルダーがスプリン
-              トの成果をレビューする。スプリントの成果とプロダクトバックログの変更を参考にして、価値を最適
-              化するために次に何ができるかを参加者全員で話し合う。これはステータスミーティングではなく、
-              略式のミーティングである。インクリメントを提示することで、フィードバックや協力を引き出すことを
-              目的とする。
-              スプリントが 1 か月の場合、スプリントレビューは最大 4 時間である。スプリントの期間が短ければ、
-              スプリントレビューの時間も短くすることが多い。スクラムマスターはスプリントレビューが確実に開
-              催されるようにして、参加者には目的を理解してもらうようにする。スクラムマスターは関係者全員
-              にタイムボックスを守るように伝える。  
-          </div>
-          <hr> 
-          </div>
-          
-        </div>
-        
-    </li>
-    <li class="bar-white" id="list4">
-      <div class="stepflow-white" id="color4"></div>
-      <div class="stepflow_label">STEP４</div>
-      <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#BacklogRefinement" aria-expanded="false" aria-controls="BacklogRefinement">
-        4.バックログリファイメント
-      </button>
-      <div class="collapse m-0" id="BacklogRefinement">
-      <div class="card card-body">
-      <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#BacklogRefinement-ditail" aria-expanded="false" aria-controls="BacklogRefinement-ditail">
-        <center>詳細 </center> 
-      </button>
-      <div class="collapse m-0" id="BacklogRefinement-ditail">
-          プロダクトバックログに含まれるアイテムに対して、詳細の追加、見積り、並び替えをする。
-        </div>
-          <hr>      
-    </li>
-    <li class="bar-white" id="list5">
-      <div class="stepflow-white" id="color5"></div>
-      <div class="stepflow_label">STEP５</div>
-      <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#retroSpective" aria-expanded="false" aria-controls="retroSpective">
-        5.スプリントレトロスペクティブ
-      </button>
-      <div class="collapse m-0" id="retroSpective">
-        <div class="card card-body">
-        <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#retroSpective-ditail" aria-expanded="false" aria-controls="retroSpective-ditail">
-          <center>詳細 </center> 
-        </button>
-        <div class="collapse m-0" id="retroSpective-ditail">
-          スプリントレトロスペクティブは、スクラムチームの検査と次のスプリントの改善計画を作成する機会である。<br>スプリントレトロスペクティブは、スプリントレビューが終わって、次のスプリントプランニングが始まる前に行う。
-          スプリントが 1 か月の場合、スプリントレトロスペクティブは最大 3 時間である。スプリントの期間が短ければ、スプリントレトロスペクティブの時間も短くすることが多い。スクラムマスターは、このイベントが確実に開催されるようにする。
-          また、参加者に目的を理解してもらうようにする。<br>スクラムマスターは、このミーティングがポジティブで生産的になるようにする。スクラムマスターは、全員にタイムボックスを守るように伝える。
-          スクラムマスターは、スクラムのプロセスを説明するために、チームメンバーとして参加する。
+          </p>
           </div>
           <hr>
-          <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#retroSpective-ad" aria-expanded="false" aria-controls="retroSpective-ad">
+          <button type="button" class="btn btn-light text-left" id="itemDisplay" data-toggle="collapse" data-target="#stepName-ad" aria-expanded="false" aria-controls="stepName-ad">
             <center>アドバイス</center> 
           </button>
-          <div class="collapse m-0" id="retroSpective-ad">
-            振り返りの手法としてKPTやYWTなどがあるので活用してみよう。
+          <div class="collapse m-0" id="stepName-ad">
+          <p id="adviceDisplay">
+              ベロシティの決め方には、[S,M,L]と決める方法以外にもフィボナッチ数列[1,2,3,5...]で決める方法もあるよ。
+            </p>
           </div>
-          <hr>
         </div>
       </div>
-    </li>
-  </ul>
-</div>
-
-<div id="home" class="col-md-6">
-  <button type="button" class="btn btn-light text-left" id="itemDisplay" data-toggle="collapse" data-target="#stepName" aria-expanded="false" aria-controls="stepName">
-    1.スプリントプランニング
-  </button>
-  <div class="collapse m-0" id="stepName">
-    <div class="card card-body">
-    <button type="button" class="btn btn-light text-left" id="itemDisplay" data-toggle="collapse" data-target="#stepName-ditail" aria-expanded="false" aria-controls="stepName-ditail">
-      <center>詳細 </center> 
-    </button>
-    <div class="collapse m-0" id="stepName-ditail">
-      <p id="detailDisplay">
-        スプリントの作業はスプリントプランニングで計画する。これはスクラムチームの共同作業である。
-        スプリントが 1 か月の場合、スプリントプランニングのタイムボックスは最大で 8 時間である。スプリ
-        ントの期間が短ければ、スプリントプランニングの時間も短くすることが多い。スクラムマスターは、
-        参加者に目的を理解してもらうようにする。スクラムマスターは、スクラムチームにタイムボックスを
-        守るように伝える。
-      </p>
-      </div>
-      <hr>
-      <button type="button" class="btn btn-light text-left" id="itemDisplay" data-toggle="collapse" data-target="#stepName-ad" aria-expanded="false" aria-controls="stepName-ad">
-        <center>アドバイス</center> 
-      </button>
-      <div class="collapse m-0" id="stepName-ad">
-      <p id="adviceDisplay">
-          ベロシティの決め方には、[S,M,L]と決める方法以外にもフィボナッチ数列[1,2,3,5...]で決める方法もあるよ。
-        </p>
+      <div id="watch">
+        <p id="timeDisplay">00:00</p>
+        <form name="timerButton">
+          <% case cookies["step"] %>
+          <% when "1" then %>
+            <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
+            <%= select_tag :second, options_for_select((0..59).to_a,5), id:"second" %>秒
+          <% when "2" then %>
+            <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
+            <%= select_tag :second, options_for_select((0..59).to_a,10), id:"second" %>秒
+          <% when "3" then %>
+            <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
+            <%= select_tag :second, options_for_select((0..59).to_a,3), id:"second" %>秒
+          <% when "4" then %>
+            <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
+            <%= select_tag :second, options_for_select((0..59).to_a,7), id:"second" %>秒
+          <% when "5" then %>
+            <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
+            <%= select_tag :second, options_for_select((0..59).to_a,9), id:"second" %>秒
+          <% end %><br>
+          <input type="button" class="btn btn-outline-info" value="スタート" onclick="cntStart()">
+          <input type="button" class="btn btn-outline-info" value="ストップ" onclick="cntStop()">
+          <input type="button" class="btn btn-outline-info" value="リセット" onclick="reSet()">
+        </form>
       </div>
     </div>
-  </div>
-  <div id="watch">
-    <p id="timeDisplay">00:00</p>
-    <form name="timerButton">
-      <% case cookies["step"] %>
-      <% when "1" then %>
-        <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
-        <%= select_tag :second, options_for_select((0..59).to_a,5), id:"second" %>秒
-      <% when "2" then %>
-        <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
-        <%= select_tag :second, options_for_select((0..59).to_a,10), id:"second" %>秒
-      <% when "3" then %>
-        <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
-        <%= select_tag :second, options_for_select((0..59).to_a,3), id:"second" %>秒
-      <% when "4" then %>
-        <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
-        <%= select_tag :second, options_for_select((0..59).to_a,7), id:"second" %>秒
-      <% when "5" then %>
-        <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
-        <%= select_tag :second, options_for_select((0..59).to_a,9), id:"second" %>秒
-      <% end %><br>
-      <input type="button" class="btn btn-outline-info" value="スタート" onclick="cntStart()">
-      <input type="button" class="btn btn-outline-info" value="ストップ" onclick="cntStop()">
-      <input type="button" class="btn btn-outline-info" value="リセット" onclick="reSet()">
-    </form>
+    <div class="side col-md-3">
+      <%= image_tag "footer.png",class: "footer-img" %>
+      <%= image_tag "hukidasi.png",class: "footer-msg" %>
+      <p class="default-msg"id="msg-txt">僕、スクラムくん!!</p>
+    </div>
   </div>
 </div>
 
@@ -214,7 +207,7 @@
     var cnt=cookies.split("=")[1];
     cnt=parseInt(cnt);
     if (isNaN(cnt)){
-      cnt=0;
+      cnt=1;
       setCookie(cnt);
       location.reload();
     }
@@ -227,7 +220,7 @@
         if (cnt<=5){
             cnt+=1;
             if (cnt == 6){
-              cnt = 0
+              cnt = 1
             }
             setCookie(cnt);
             location.reload();
@@ -251,20 +244,8 @@
 
     function colorChange(num){
         switch(num){
-            case 0 :
-                document.getElementById("color0").classList.value = "stepflow-red";
-                document.getElementById("color1").classList.value = "stepflow-white";
-                document.getElementById("color2").classList.value = "stepflow-white";
-                document.getElementById("color3").classList.value = "stepflow-white";
-                document.getElementById("color4").classList.value = "stepflow-white";
-                document.getElementById("color5").classList.value = "stepflow-white";
-                document.getElementById("itemDisplay").innerHTML="0.タイマーの設定";
-                document.getElementById("detailDisplay").innerHTML="タイマーを設定する。";
-                document.getElementById("adviceDisplay").innerHTML="";
-                break;
 
             case 1 :
-                document.getElementById("color0").classList.value = "stepflow-black";
                 document.getElementById("color1").classList.value = "stepflow-red";
                 document.getElementById("color2").classList.value = "stepflow-white";
                 document.getElementById("color3").classList.value = "stepflow-white";
@@ -276,7 +257,6 @@
                 break;
             
             case 2 :
-                document.getElementById("color0").classList.value = "stepflow-black";
                 document.getElementById("color1").classList.value = "stepflow-black";
                 document.getElementById("color2").classList.value = "stepflow-red";
                 document.getElementById("color3").classList.value = "stepflow-white";
@@ -288,7 +268,6 @@
                 break;
 
             case 3 :
-                document.getElementById("color0").classList.value = "stepflow-black";
                 document.getElementById("color1").classList.value = "stepflow-black";
                 document.getElementById("color2").classList.value = "stepflow-black";
                 document.getElementById("color3").classList.value = "stepflow-red";
@@ -300,7 +279,6 @@
                 break;
 
             case 4 :
-                document.getElementById("color0").classList.value = "stepflow-black";
                 document.getElementById("color1").classList.value = "stepflow-black";
                 document.getElementById("color2").classList.value = "stepflow-black";
                 document.getElementById("color3").classList.value = "stepflow-black";
@@ -312,7 +290,6 @@
                 break;
 
             case 5 :
-                document.getElementById("color0").classList.value = "stepflow-black";
                 document.getElementById("color1").classList.value = "stepflow-black";
                 document.getElementById("color2").classList.value = "stepflow-black";
                 document.getElementById("color3").classList.value = "stepflow-black";
@@ -329,28 +306,26 @@
 
         
 
-    if (cnt!=0){
-      // select要素の取得
-      var selectMinute = document.timerButton.minute;
-      var selectSecond = document.timerButton.second;
+    // select要素の取得
+    var selectMinute = document.timerButton.minute;
+    var selectSecond = document.timerButton.second;
 
-      var indexMinute =  selectMinute.selectedIndex;
-      var indexSecond =  selectSecond.selectedIndex;
-      var minuteData = selectMinute.options[ indexMinute ].innerHTML;
-      var secondData = selectSecond.options[ indexSecond ].innerHTML;
+    var indexMinute =  selectMinute.selectedIndex;
+    var indexSecond =  selectSecond.selectedIndex;
+    var minuteData = selectMinute.options[ indexMinute ].innerHTML;
+    var secondData = selectSecond.options[ indexSecond ].innerHTML;
 
-      //select要素のchangeイベントの登録
-      selectMinute.addEventListener('change', function(){
-              //選択されたoption番号を取得
-              indexMinute =  this.selectedIndex;
-              minuteData = this.options[ indexMinute ].innerHTML;
-      });
-      selectSecond.addEventListener('change', function(){
-              //選択されたoption番号を取得
-              indexSecond =  this.selectedIndex;
-              secondData = this.options[ indexSecond ].innerHTML;
-      });
-    }
+    //select要素のchangeイベントの登録
+    selectMinute.addEventListener('change', function(){
+            //選択されたoption番号を取得
+            indexMinute =  this.selectedIndex;
+            minuteData = this.options[ indexMinute ].innerHTML;
+    });
+    selectSecond.addEventListener('change', function(){
+            //選択されたoption番号を取得
+            indexSecond =  this.selectedIndex;
+            secondData = this.options[ indexSecond ].innerHTML;
+    });
 
     var timer1; //タイマーを格納する変数（タイマーID）の宣言
     //カウントダウン関数を1000ミリ秒毎に呼び出す関数

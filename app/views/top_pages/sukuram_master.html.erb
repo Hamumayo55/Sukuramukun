@@ -3,10 +3,7 @@
     <div class="side col-md-3">
     </div>
     <div class="micropost-div col-md-6">
-      <%= form_with model: @micropost, class:"text-center" ,local: true do |form| %>
-        <%= form.text_field :content %>
-        <%= form.submit '保存', class:"btn btn-outline-info", role:"button" %>
-      <% end %>
+      <a class="btn btn-outline-info" href="/home" role="button">スプリントを回してみよう！</a>
     </div>
     <div class="side col-md-3">
       <%= image_tag "footer.png",class: "footer-img" %>
