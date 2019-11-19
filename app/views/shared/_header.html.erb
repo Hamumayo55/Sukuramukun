@@ -1,0 +1,13 @@
+<header>
+  <a href="/" class="m-0"><%= image_tag "header.png", id: "header-img" %></a>
+  <div id="header-right" class="text-right">
+    <a class="header-itmes" href="https://www.scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-Japanese.pdf" target="_blank">ScrumGuide</a>
+    <%= link_to 'Q&A','/q_and_a',target: "_blank", class: "header-itmes"%>
+    <% if user_signed_in? %>
+      <%= link_to 'Chat', microposts_path, class:"header-itmes", target:"_blank"%>
+      <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:"header-itmes" %>
+    <% else %>
+      <%= link_to 'Login', new_user_session_path, class:"header-itmes"%>
+    <% end %>
+  </div>
+</header>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sukuramukun</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <div id="top">
+      <%= image_tag "logo.png",class: "logo-img" %><br>
+      <a class="butto" id="toha-button" href="/sukuram_master" role="button">スクラムマスターとは？</a>
+      <a class="butto" id="ste-button" href="/home" role="button">ステップの管理へ</a>
+    </div>
+  </body>
+</html>
