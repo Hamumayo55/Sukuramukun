@@ -3,7 +3,6 @@
     text-align: center;
     background-color: #426E86;
     height: 100vh;
-
     .butto {
         margin-right: 3vw;
         background-color: transparent;
@@ -18,7 +17,24 @@
 
 }
 #sukuram_master{
-  text-align: center;
   background-color: #ffffff;
   height: 100vh;
+  padding-right: 20vw;
+  padding-left: 20vw;
+  h1{
+    padding-top: 10vh;
+    text-align:center;
+    padding-bottom: 5vh;
+  }
+  p{
+    padding-top:2vh;
+    font-size: 1.3em;
+  }
+  p.sukuram-item{
+    color:#96138b;
+    font-weight: bold;
+  }
+  p.sukuram-example{
+    padding-left:3vw;
+  }
 }
