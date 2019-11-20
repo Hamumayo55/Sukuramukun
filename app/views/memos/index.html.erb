@@ -1,0 +1,7 @@
+<div id="memo">
+  <% @memo.each do |m| %>
+    <p><%= m.username %></p>
+    <a href='/microposts/<%=m.id%>'><%= m.content %></a>
+  <% end %>
+  <div><%= link_to '+', new_memo_path %></div>
+</div>
