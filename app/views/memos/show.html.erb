@@ -1,9 +1,9 @@
 <div>
-  <p><%= @micropost.username %></p>
+  <p><%= @memo.username %></p>
   <%= flash[:notice] %>
-  <%= @micropost.content %>
+  <%= @memo.content %>
 </div>
-<% if @micropost.username == current_user.username %><br>
+<% if @memo.username == current_user.username %><br>
   <%= link_to '投稿を編集する', edit_memo_path(@memo.id), class:"btn btn-outline-info", role:"button" %>
   <%= link_to '投稿を削除する', memo_path(@memo.id), class:"btn btn-outline-info", role:"button", method: :delete %>
 <% end %>

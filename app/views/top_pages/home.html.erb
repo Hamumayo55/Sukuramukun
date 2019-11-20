@@ -193,9 +193,11 @@
       <% if user_signed_in? %>
         <div>
           <% @memo.each do |m| %>
-            <p><%= m.username %></p>
-            <a href='/memos/<%=m.id%>'><%= m.content %></a>
+            <% if m.step_number == cookies['step'].to_i %>
+              <div><a href='/memos/<%=m.id%>'><%= m.content %></a></div>
+            <% end %>
           <% end %>
+          <div><a href="/memos/new?step=<%= cookies['step'] %>">メモ追加</a></div>
         </div>
       <% end %>
     </div>

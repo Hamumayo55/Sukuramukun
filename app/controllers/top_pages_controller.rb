@@ -8,6 +8,8 @@ class TopPagesController < ApplicationController
   end
 
   def home
-    @memo = Memo.where(username: current_user.username)
+    if user_signed_in?
+      @memo = Memo.where(username: current_user.username)
+    end
   end
 end
