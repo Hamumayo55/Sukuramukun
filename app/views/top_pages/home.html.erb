@@ -190,6 +190,14 @@
           <input type="button" class="btn btn-outline-info" value="リセット" onclick="reSet()">
         </form>
       </div>
+      <% if user_signed_in? %>
+        <div>
+          <% @memo.each do |m| %>
+            <p><%= m.username %></p>
+            <a href='/memos/<%=m.id%>'><%= m.content %></a>
+          <% end %>
+        </div>
+      <% end %>
     </div>
     <div class="side col-md-3">
       <%= image_tag "footer.png",class: "footer-img" %>
@@ -302,9 +310,6 @@
 
         }
     }
-
-
-        
 
     // select要素の取得
     var selectMinute = document.timerButton.minute;

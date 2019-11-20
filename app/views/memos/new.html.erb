@@ -1,0 +1,6 @@
+<%= form_with model: @memo, local: true do |form| %>
+  <%= form.text_field :content %>
+  <%= form.hidden_field :username, :value => @username %>
+  <%= form.hidden_field :step_number, :value => params[:step_number] %>
+  <%= form.submit 'Add' %>
+<% end %>

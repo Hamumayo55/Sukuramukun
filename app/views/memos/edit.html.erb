@@ -1,0 +1,4 @@
+<%= form_with model: @memo, class:"text-center" ,local: true do |form| %>
+  <%= form.text_field :content %>
+  <%= form.submit '保存', class:"btn btn-outline-info", role:"button" %>
+<% end %>
