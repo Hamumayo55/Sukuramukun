@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   get '/q_and_a',to: 'top_pages#q_and_a'
   get '/home',to: 'top_pages#home'
   resources :microposts
+  resources :memos
   root 'top_pages#top'
 end
