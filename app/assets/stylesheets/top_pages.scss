@@ -50,10 +50,10 @@ ul.stepflow {
     left: 5px;
 }
 
-.stepflow>li.bar-red:before {
+.stepflow>li.bar-black:before {
     content: "";
     width: 3px;
-    background: rgb(124, 27, 27);
+    background: rgb(0, 0, 0);
     display: block;
     position: absolute;
     top: 28px;
