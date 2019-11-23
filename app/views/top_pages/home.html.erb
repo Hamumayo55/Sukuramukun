@@ -125,23 +125,8 @@
       <div id="watch">
         <p id="timeDisplay">00:00</p>
         <form name="timerButton">
-          <% case cookies["step"] %>
-          <% when "1" then %>
-            <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
-            <%= select_tag :second, options_for_select((0..59).to_a,5), id:"second" %>秒
-          <% when "2" then %>
-            <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
-            <%= select_tag :second, options_for_select((0..59).to_a,10), id:"second" %>秒
-          <% when "3" then %>
-            <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
-            <%= select_tag :second, options_for_select((0..59).to_a,3), id:"second" %>秒
-          <% when "4" then %>
-            <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
-            <%= select_tag :second, options_for_select((0..59).to_a,7), id:"second" %>秒
-          <% when "5" then %>
-            <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
-            <%= select_tag :second, options_for_select((0..59).to_a,9), id:"second" %>秒
-          <% end %><br>
+          <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
+          <%= select_tag :second, options_for_select((0..59).to_a), id:"second" %>秒<br>
           <input type="button" class="btn btn-outline-info" value="スタート" onclick="cntStart()">
           <input type="button" class="btn btn-outline-info" value="ストップ" onclick="cntStop()">
           <input type="button" class="btn btn-outline-info" value="リセット" onclick="reSet()">
@@ -157,6 +142,7 @@
           <div><a href="/memos/new?step=<%= cookies['step'] %>">メモ追加</a></div>
         </div>
       <% end %>
+      <%= audio_tag("/audios/sound.mp3",id:"sound") %>
     </div>
     <div class="side col-md-3">
       <%= image_tag "footer.png",class: "footer-img" %>
@@ -172,6 +158,7 @@
 
     var cookies=document.cookie;
     var cnt=cookies.split("=")[1];
+    var eventname="スプリントプランニング";
     cnt=parseInt(cnt);
     if (isNaN(cnt)){
       cnt=1;
@@ -226,6 +213,7 @@
                 document.getElementById("itemDisplay").innerHTML="スプリントプランニング 　 ▼";
                 document.getElementById("detailDisplay").innerHTML="・スプリントの作業を計画する。<br>・スクラムマスターは、 参加者にスプリントの作業の目的を理解してもらうようにする。";
                 document.getElementById("adviceDisplay").innerHTML="ベロシティの決め方には、[S,M,L]と決める方法以外にもフィボナッチ数列[1,2,3,5...]で決める方法もあるよ。";
+                eventname="スプリントプランニング"
                 break;
             
             case 2 :
@@ -242,6 +230,7 @@
                 document.getElementById("itemDisplay").innerHTML="開発作業   ▼";
                 document.getElementById("detailDisplay").innerHTML="・開発しよう";
                 document.getElementById("adviceDisplay").innerHTML="開発のスタイルでTDDやモブプロ,ペアプロといった手法もあるので活用してみよう。また、スクラムマスターは、振り返りのTRYができているかを確認してみよう。";
+                eventname="開発作業"
                 break;
 
             case 3 :
@@ -258,6 +247,7 @@
                 document.getElementById("itemDisplay").innerHTML="スプリントレビュー 　 ▼";
                 document.getElementById("detailDisplay").innerHTML="・スプリントの終了時にインクリメントの検査と、必要であればプロダクトバックログの適応を行う。<br>・スクラムチームとステークホルダーがスプリン トの成果をレビューする。<br>・スプリントの成果とプロダクトバックログの変更を参考にして、価値を最適 化するために次に何ができるかを参加者全員で話し合う。<br>・インクリメントを提示することで、フィードバックや協力を引き出すことを目的とする。";
                 document.getElementById("adviceDisplay").innerHTML="";
+                eventname="スプリントレビュー";
                 break;
 
             case 4 :
@@ -274,6 +264,7 @@
                 document.getElementById("itemDisplay").innerHTML="バックログリファイメント  　▼";
                 document.getElementById("detailDisplay").innerHTML="・プロダクトバックログに含まれるアイテムに対して、概要の追加、見積り、並び替えをする。";
                 document.getElementById("adviceDisplay").innerHTML="";
+                eventname="バックログリファインメント";
                 break;
 
             case 5 :
@@ -290,12 +281,14 @@
                 document.getElementById("itemDisplay").innerHTML="スプリントレトロスペクティブ  　▼";
                 document.getElementById("detailDisplay").innerHTML="・スクラムチームの検査と次のスプリントの改善計画を作成する。<br>・スプリントレビューが終わって、次のスプリントプランニングが始まる前に行う。<br>・スクラムマスターは、このミーティングがポジティブで生産的になるようにする。";
                 document.getElementById("adviceDisplay").innerHTML="振り返りの手法としてKPTやYWTなどがあるので活用してみよう。";
+                eventname="スプリントレトロスペクティブ";
                 break;
 
         }
     }
 
     // select要素の取得
+    var sound = document.getElementById("sound");
     var selectMinute = document.timerButton.minute;
     var selectSecond = document.timerButton.second;
 
@@ -320,8 +313,10 @@
     //カウントダウン関数を1000ミリ秒毎に呼び出す関数
     function cntStart()
     {
-      ret = confirm("スプリントの準備は宜しいですか？");
-      if (ret == true){
+      sound.load();
+      if(minuteData == 0 && secondData == 0){
+        alert("時刻を設定してください！");
+      }else if (confirm(eventname+"の準備は宜しいですか？")){
         document.timerButton.elements[0].disabled=true;
         document.timerButton.elements[1].disabled=true;
         document.timerButton.elements[2].disabled=true;
@@ -346,35 +341,32 @@
         document.timerButton.elements[2].disabled=false;
         document.timerButton.elements[4].disabled=false;
         clearInterval(timer1);
+        if (minuteData == 0 && secondData == 0){
+            reSet();
+        }
     }
     //カウントダウン関数
     function countDown()
     {
         var min=minuteData;
         var sec=secondData;
-        if( (min==0) && (sec==0) )
-        {
-            alert("時刻を設定してください！");
-            reSet();
-        }
-        else
-        {
-            if (min=="") min=0;
-            min=parseInt(min);
-            if (sec=="") sec=0;
-            sec=parseInt(sec);
-            tmWrite(min*60+sec-1);
-        }
+        if (min=="") min=0;
+        min=parseInt(min);
+        if (sec=="") sec=0;
+        sec=parseInt(sec);
+        tmWrite(min*60+sec-1);
     }
     //残り時間を書き出す関数
     function tmWrite(int)
     {
         int=parseInt(int);
-        if (int<=0)
+        if (int<0)
         {
-            reSet();
-            Push.create("時間です！！");
-            upStep();
+            document.getElementById('timeDisplay').innerHTML = "00:00";
+            if(confirm("時間です")){
+                reSet();
+                upStep();
+            }
         }
         else
         {
@@ -382,7 +374,10 @@
             minuteData=Math.floor(int/60);
             //残り秒数はintを60で割った余り
             secondData=int % 60;
-            if (minuteData < 10 && secondData < 10) {
+            if (minuteData == 0 && secondData == 0){
+                document.getElementById('timeDisplay').innerHTML = "00:00";
+                sound.play();
+            }else if (minuteData < 10 && secondData < 10) {
                 document.getElementById('timeDisplay').innerHTML = "0" + String(minuteData) + ":" + "0" + String(secondData);
             }else if (minuteData < 10) {
                 document.getElementById('timeDisplay').innerHTML = "0" + String(minuteData) + ":" + String(secondData);
@@ -400,14 +395,16 @@
       document.timerButton.elements[1].disabled=false;
       document.timerButton.elements[2].disabled=false;
       document.timerButton.elements[4].disabled=false;
-        document.getElementById("up").disabled=false;
-        document.getElementById("down").disabled=false;
-        document.getElementById('timeDisplay').innerHTML = "00:00"
-        indexMinute = selectMinute.selectedIndex;
-        minuteData = selectMinute.options[ indexMinute ].innerHTML;
-        indexSecond =  selectSecond.selectedIndex;
-        secondData = selectSecond.options[ indexSecond ].innerHTML;
-        clearInterval(timer1);
+      document.getElementById("up").disabled=false;
+      document.getElementById("down").disabled=false;
+      document.getElementById('timeDisplay').innerHTML = "00:00"
+      indexMinute = selectMinute.selectedIndex;
+      minuteData = selectMinute.options[ indexMinute ].innerHTML;
+      indexSecond =  selectSecond.selectedIndex;
+      secondData = selectSecond.options[ indexSecond ].innerHTML;
+      clearInterval(timer1);
+      sound.pause();
+      sound.currentTime = 0;
     }
 
 </script>
