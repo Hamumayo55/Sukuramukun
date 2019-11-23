@@ -331,6 +331,8 @@
     //カウントダウン関数を1000ミリ秒毎に呼び出す関数
     function cntStart()
     {
+      ret = confirm("スプリントの準備は宜しいですか？");
+      if (ret == true){
         document.timerButton.elements[0].disabled=true;
         document.timerButton.elements[1].disabled=true;
         document.timerButton.elements[2].disabled=true;
@@ -347,6 +349,7 @@
             document.getElementById('timeDisplay').innerHTML = String(minuteData) + ":" + String(secondData);
         }
         timer1=setInterval("countDown()",1000);
+      }
     }
     //タイマー停止関数
     function cntStop()
@@ -381,10 +384,8 @@
         if (int<=0)
         {
             reSet();
-            ret = confirm("時間です！！\n次のスプリントへ飛びます。宜しいですか？");
-            if (ret == true){
-              upStep();
-            }
+            Push.create("時間です！！");
+            upStep();
         }
         else
         {
