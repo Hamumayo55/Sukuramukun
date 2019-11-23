@@ -10,3 +10,4 @@ class SendMailer < ApplicationMailer
     mail to: "webstorymail2019@gmail.com"
   end
 end
+# SendMailer.send_mail.deliver
