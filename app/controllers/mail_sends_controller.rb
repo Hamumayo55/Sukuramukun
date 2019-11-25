@@ -2,10 +2,8 @@ class MailSendsController < ApplicationController
   def new
   end
 
-  def edit
-  end
-
   def create
-    SendMailer.send_mail.deliver
+    @email = current_user.email
+    SendMailer.send_mail(@email).deliver
   end
 end
