@@ -157,6 +157,9 @@
           <div><a href="/memos/new?step=<%= cookies['step'] %>">メモ追加</a></div>
         </div>
       <% end %>
+      <% if user_signed_in? %>
+      <%= link_to "(send mail)", new_mail_send_path %>
+      <% end %>
     </div>
     <div class="side col-md-3">
       <%= image_tag "footer.png",class: "footer-img" %>
