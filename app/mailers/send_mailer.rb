@@ -5,9 +5,9 @@ class SendMailer < ApplicationMailer
   #
   #   en.send_mailer.send_mail.subject
   #
-  def send_mail
-    
-    mail to: "webstorymail2019@gmail.com"
+  def send_mail(user)
+    @user = user
+    mail to: user.email
   end
 end
 # SendMailer.send_mail.deliver
