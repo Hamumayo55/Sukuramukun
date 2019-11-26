@@ -29,4 +29,7 @@ https://sukuramukun.herokuapp.com/
 
 ## コアタイム 
 - 土曜日：9:00 ~ 12:00  
-- 火曜日：2限,3限
+- 火曜日：2限,3限  
+
+## LICENSE  
+MIT License.
