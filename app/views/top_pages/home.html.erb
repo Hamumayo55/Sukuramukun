@@ -100,7 +100,9 @@
     </div>
     <div id="home" class="col-md-6">
       <button type="button" class="btn btn-light text-left" id="itemDisplay" data-toggle="collapse" data-target="#stepName" aria-expanded="false" aria-controls="stepName">
-        スプリントプランニング 　 ▼
+        <span id="item_title">スプリントプランニング </span>　
+        <span id="item_sub">~計画を立てよう~</span>
+        <span id="item_sankaku">　　▼</span>
       </button>
       <div class="collapse m-0" id="stepName">
         <div class="card card-body">
@@ -213,7 +215,8 @@
                 document.getElementById("list3").classList.value = "bar-white";
                 document.getElementById("list4").classList.value = "bar-white";
                 document.getElementById("list5").classList.value = "bar-white";
-                document.getElementById("itemDisplay").innerHTML="スプリントプランニング 　 ▼";
+                document.getElementById("item_title").innerHTML="スプリントプランニング";
+                document.getElementById("item_sub").innerHTML="~開発の計画をたてよう~";
                 document.getElementById("detailDisplay").innerHTML="・スプリントの作業を計画する。<br>・スクラムマスターは、 参加者にスプリントの作業の目的を理解してもらうようにする。";
                 document.getElementById("adviceDisplay").innerHTML="ベロシティの決め方には、[S,M,L]と決める方法以外にもフィボナッチ数列[1,2,3,5...]で決める方法もあるよ。";
                 eventname="スプリントプランニング"
@@ -230,8 +233,8 @@
                 document.getElementById("list3").classList.value = "bar-white";
                 document.getElementById("list4").classList.value = "bar-white";
                 document.getElementById("list5").classList.value = "bar-white";
-                document.getElementById("itemDisplay").innerHTML="開発作業   ▼";
-                document.getElementById("detailDisplay").innerHTML="・開発しよう";
+                document.getElementById("item_title").innerHTML="開発作業";
+                document.getElementById("item_sub").innerHTML="　";
                 document.getElementById("adviceDisplay").innerHTML="開発のスタイルでTDDやモブプロ,ペアプロといった手法もあるので活用してみよう。また、スクラムマスターは、振り返りのTRYができているかを確認してみよう。";
                 eventname="開発作業"
                 break;
@@ -247,7 +250,8 @@
                 document.getElementById("list3").classList.value = "bar-white";
                 document.getElementById("list4").classList.value = "bar-white";
                 document.getElementById("list5").classList.value = "bar-white";
-                document.getElementById("itemDisplay").innerHTML="スプリントレビュー 　 ▼";
+                document.getElementById("item_title").innerHTML="スプリントレビュー";
+                document.getElementById("item_sub").innerHTML="~レビューしよう~";
                 document.getElementById("detailDisplay").innerHTML="・スプリントの終了時にインクリメントの検査と、必要であればプロダクトバックログの適応を行う。<br>・スクラムチームとステークホルダーがスプリン トの成果をレビューする。<br>・スプリントの成果とプロダクトバックログの変更を参考にして、価値を最適 化するために次に何ができるかを参加者全員で話し合う。<br>・インクリメントを提示することで、フィードバックや協力を引き出すことを目的とする。";
                 document.getElementById("adviceDisplay").innerHTML="";
                 eventname="スプリントレビュー";
@@ -264,7 +268,8 @@
                 document.getElementById("list3").classList.value = "bar-black";
                 document.getElementById("list4").classList.value = "bar-white";
                 document.getElementById("list5").classList.value = "bar-white";
-                document.getElementById("itemDisplay").innerHTML="バックログリファイメント  　▼";
+                document.getElementById("item_title").innerHTML="バックログリファイメント";
+                document.getElementById("item_sub").innerHTML="〜追加、見積り、並べ替えをしよう〜";
                 document.getElementById("detailDisplay").innerHTML="・プロダクトバックログに含まれるアイテムに対して、概要の追加、見積り、並び替えをする。";
                 document.getElementById("adviceDisplay").innerHTML="";
                 eventname="バックログリファインメント";
@@ -281,7 +286,8 @@
                 document.getElementById("list3").classList.value = "bar-black";
                 document.getElementById("list4").classList.value = "bar-black";
                 document.getElementById("list5").classList.value = "bar-white";
-                document.getElementById("itemDisplay").innerHTML="スプリントレトロスペクティブ  　▼";
+                document.getElementById("item_title").innerHTML="スプリントレトロスペクティブ";
+                document.getElementById("item_sub").innerHTML="〜改善計画をたてよう〜";
                 document.getElementById("detailDisplay").innerHTML="・スクラムチームの検査と次のスプリントの改善計画を作成する。<br>・スプリントレビューが終わって、次のスプリントプランニングが始まる前に行う。<br>・スクラムマスターは、このミーティングがポジティブで生産的になるようにする。";
                 document.getElementById("adviceDisplay").innerHTML="振り返りの手法としてKPTやYWTなどがあるので活用してみよう。";
                 eventname="スプリントレトロスペクティブ";
