@@ -3,6 +3,15 @@
     text-align: center;
     background-color: #426E86;
     height: 100vh;
+
+    .btn {
+      font-size: 1.5em;
+      font-weight: 700;
+      border: 3px solid #fff;
+    }
+    .btn:hover{
+      color:#426E86;
+    }
     .butto {
         margin-right: 3vw;
         background-color: transparent;
@@ -11,6 +20,9 @@
         font-size: 2em;
         line-height: 2em;
       }
+    #ste-button{
+      margin-left: 2vw;
+    }
 
 }
 #sukuram_master{
