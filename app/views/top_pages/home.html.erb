@@ -134,16 +134,6 @@
           <input type="button" class="btn btn-outline-info" value="リセット" onclick="reSet()">
         </form>
       </div>
-      <% if user_signed_in? %>
-        <div>
-          <% @memo.each do |m| %>
-            <% if m.step_number == cookies['step'].to_i %>
-              <div><a href='/memos/<%=m.id%>'><%= m.content %></a></div>
-            <% end %>
-          <% end %>
-          <div><a href="/memos/new?step=<%= cookies['step'] %>">メモ追加</a></div>
-        </div>
-      <% end %>
       <%= audio_tag("/audios/sound.mp3",id:"sound") %>
     </div>
     <div class="side col-md-3">
