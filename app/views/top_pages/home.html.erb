@@ -161,12 +161,11 @@
 
     var cookies=document.cookie;
     var cnt=cookies.split("=")[1];
-    var eventname="スプリントプランニング";
+    var comment="スプリントプランニング";
     cnt=parseInt(cnt);
     if (isNaN(cnt)){
       cnt=1;
       setCookie(cnt);
-      location.reload();
     }
     console.log(cnt);
 
@@ -180,7 +179,7 @@
               cnt = 1
             }
             setCookie(cnt);
-            location.reload();
+            colorChange(cnt);
         }
     }
 
@@ -189,7 +188,7 @@
         if (cnt>1){
             cnt-=1;
             setCookie(cnt);
-            location.reload();
+            colorChange(cnt);
         }
     }
 
@@ -216,7 +215,7 @@
                 document.getElementById("itemDisplay").innerHTML="スプリントプランニング 　 ▼";
                 document.getElementById("detailDisplay").innerHTML="・スプリントの作業を計画する。<br>・スクラムマスターは、 参加者にスプリントの作業の目的を理解してもらうようにする。";
                 document.getElementById("adviceDisplay").innerHTML="ベロシティの決め方には、[S,M,L]と決める方法以外にもフィボナッチ数列[1,2,3,5...]で決める方法もあるよ。";
-                eventname="スプリントプランニング"
+                comment="プロダクトバックログは用意されていますか？"
                 break;
             
             case 2 :
@@ -233,7 +232,7 @@
                 document.getElementById("itemDisplay").innerHTML="開発作業   ▼";
                 document.getElementById("detailDisplay").innerHTML="・開発しよう";
                 document.getElementById("adviceDisplay").innerHTML="開発のスタイルでTDDやモブプロ,ペアプロといった手法もあるので活用してみよう。また、スクラムマスターは、振り返りのTRYができているかを確認してみよう。";
-                eventname="開発作業"
+                comment="準備はよろしいでしょうか？"
                 break;
 
             case 3 :
@@ -250,7 +249,7 @@
                 document.getElementById("itemDisplay").innerHTML="スプリントレビュー 　 ▼";
                 document.getElementById("detailDisplay").innerHTML="・スプリントの終了時にインクリメントの検査と、必要であればプロダクトバックログの適応を行う。<br>・スクラムチームとステークホルダーがスプリン トの成果をレビューする。<br>・スプリントの成果とプロダクトバックログの変更を参考にして、価値を最適 化するために次に何ができるかを参加者全員で話し合う。<br>・インクリメントを提示することで、フィードバックや協力を引き出すことを目的とする。";
                 document.getElementById("adviceDisplay").innerHTML="";
-                eventname="スプリントレビュー";
+                comment="進捗は用意できましたか？";
                 break;
 
             case 4 :
@@ -267,7 +266,7 @@
                 document.getElementById("itemDisplay").innerHTML="バックログリファイメント  　▼";
                 document.getElementById("detailDisplay").innerHTML="・プロダクトバックログに含まれるアイテムに対して、概要の追加、見積り、並び替えをする。";
                 document.getElementById("adviceDisplay").innerHTML="";
-                eventname="バックログリファインメント";
+                comment="メンバーは全員揃っていますか？";
                 break;
 
             case 5 :
@@ -284,7 +283,7 @@
                 document.getElementById("itemDisplay").innerHTML="スプリントレトロスペクティブ  　▼";
                 document.getElementById("detailDisplay").innerHTML="・スクラムチームの検査と次のスプリントの改善計画を作成する。<br>・スプリントレビューが終わって、次のスプリントプランニングが始まる前に行う。<br>・スクラムマスターは、このミーティングがポジティブで生産的になるようにする。";
                 document.getElementById("adviceDisplay").innerHTML="振り返りの手法としてKPTやYWTなどがあるので活用してみよう。";
-                eventname="スプリントレトロスペクティブ";
+                comment="振り返り手法は決まりましたか？";
                 break;
 
         }
@@ -313,13 +312,32 @@
     });
 
     var timer1; //タイマーを格納する変数（タイマーID）の宣言
+    var check=false;
     //カウントダウン関数を1000ミリ秒毎に呼び出す関数
     function cntStart()
     {
       sound.load();
       if(minuteData == 0 && secondData == 0){
         alert("時刻を設定してください！");
-      }else if (confirm(eventname+"の準備は宜しいですか？")){
+      }else if (check == true){
+        document.timerButton.elements[0].disabled=true;
+        document.timerButton.elements[1].disabled=true;
+        document.timerButton.elements[2].disabled=true;
+        document.timerButton.elements[4].disabled=true;
+        document.getElementById("up").disabled=true;
+        document.getElementById("down").disabled=true;
+        if (minuteData < 10 && secondData < 10) {
+            document.getElementById('timeDisplay').innerHTML = "0" + String(minuteData) + ":" + "0" + String(secondData);
+        }else if (minuteData < 10) {
+            document.getElementById('timeDisplay').innerHTML = "0" + String(minuteData) + ":" + String(secondData);
+        }else if (secondData < 10) {
+            document.getElementById('timeDisplay').innerHTML = String(minuteData) + ":" + "0" + String(secondData);
+        }else{
+            document.getElementById('timeDisplay').innerHTML = String(minuteData) + ":" + String(secondData);
+        }
+        timer1=setInterval("countDown()",1000);
+      }else if (confirm(comment)){
+        check=true;
         document.timerButton.elements[0].disabled=true;
         document.timerButton.elements[1].disabled=true;
         document.timerButton.elements[2].disabled=true;
@@ -394,6 +412,7 @@
     //フォームを初期状態に戻す（リセット）関数
     function reSet()
     {
+      check=false;
       document.timerButton.elements[0].disabled=false;
       document.timerButton.elements[1].disabled=false;
       document.timerButton.elements[2].disabled=false;
