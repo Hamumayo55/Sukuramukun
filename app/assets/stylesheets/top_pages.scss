@@ -15,12 +15,17 @@
     #timeDisplay{
         font-size: 5em;
     }
-    height: 130vh;
+    height: 45vh;
     // border-left: solid 15vw #dfdbec;
     // border-right: solid 15vw #dfdbec;
 	font-size: 1.3em;
 	text-align: center;
     padding-top: 10vh;
+}
+
+#memo-form{
+    width: 45vw;
+    height: 40vh;
 }
 
 /*ステップフローのCSS*/

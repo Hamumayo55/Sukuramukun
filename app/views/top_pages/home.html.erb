@@ -135,6 +135,7 @@
         </form>
       </div>
       <%= audio_tag("/audios/sound.mp3",id:"sound") %>
+      <textarea placeholder="メモを入力" name="kanso" rows="4" cols="40" onChange="memo_save()" id="memo-form"></textarea>
     </div>
     <div class="side col-md-3">
       <%= image_tag "footer.png",class: "footer-img" %>
@@ -147,7 +148,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/1.0.9/push.min.js"></script>
 
 <script>
-
+    var e = document.getElementById("memo-form");
     var cookies=document.cookie;
     var cnt=cookies.split("=")[1];
     var comment="スプリントプランニング";
@@ -191,6 +192,7 @@
         switch(num){
 
             case 1 :
+                e.value=localStorage.getItem('key_1');
                 document.getElementById("color1").classList.value = "stepflow-red";
                 document.getElementById("color2").classList.value = "stepflow-white";
                 document.getElementById("color3").classList.value = "stepflow-white";
@@ -209,6 +211,7 @@
                 break;
             
             case 2 :
+                e.value=localStorage.getItem('key_2');
                 document.getElementById("color1").classList.value = "stepflow-black";
                 document.getElementById("color2").classList.value = "stepflow-red";
                 document.getElementById("color3").classList.value = "stepflow-white";
@@ -226,6 +229,7 @@
                 break;
 
             case 3 :
+                e.value=localStorage.getItem('key_3');
                 document.getElementById("color1").classList.value = "stepflow-black";
                 document.getElementById("color2").classList.value = "stepflow-black";
                 document.getElementById("color3").classList.value = "stepflow-red";
@@ -244,6 +248,7 @@
                 break;
 
             case 4 :
+                e.value=localStorage.getItem('key_4');
                 document.getElementById("color1").classList.value = "stepflow-black";
                 document.getElementById("color2").classList.value = "stepflow-black";
                 document.getElementById("color3").classList.value = "stepflow-black";
@@ -262,6 +267,7 @@
                 break;
 
             case 5 :
+                 e.value=localStorage.getItem('key_5');
                 document.getElementById("color1").classList.value = "stepflow-black";
                 document.getElementById("color2").classList.value = "stepflow-black";
                 document.getElementById("color3").classList.value = "stepflow-black";
@@ -421,5 +427,12 @@
       sound.pause();
       sound.currentTime = 0;
     }
+    
+    //メモ機能
+    function memo_save(){
+    memo_contents = e.value;
+    var memo_key = "key_" + String(cnt)
+    localStorage.setItem(memo_key, memo_contents);
 
+  }
 </script>
