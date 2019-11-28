@@ -85,42 +85,6 @@ header{
         right: 8.5vw;
     }
 
-    .hello-msg{
-        font-size:0;
-    }
-    .hello-msg:before {
-        font-size: 1.3vw;
-        position: fixed;
-        bottom: 24.5vw;
-        right: 11vw;
-
-        content: "こんniちは!!!";
-    }
-
-    .haraheri-msg{
-        font-size:0;
-    }
-    .haraheri-msg:before {
-        font-size: 1.3vw;
-        position: fixed;
-        bottom: 24.5vw;
-        right: 9vw;
-
-        content: "お腹すいてない？";
-    }
-
-    .daijoubu-msg{
-        font-size:0;
-    }
-    .daijoubu-msg:before {
-        font-size: 1.3vw;
-        position: fixed;
-        bottom: 24.5vw;
-        right: 11vw;
-
-        content: "元気してる？";
-    }
-
     .col-md-6{
         margin: 3vh 0vh 0vh 0vh;
     }

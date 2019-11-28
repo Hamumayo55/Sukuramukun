@@ -449,27 +449,19 @@ function msg_changer() {
     var hour = now.getHours();
 
     if(cnt==1){
-        // var msg_content = document.getElementById("msg");
-        // msg_content.innerHTML = '5-8';
+      document.getElementById("msg-txt").classList.value = "planning-msg";
     }
     else if(cnt==2){
-        var msg_content = document.getElementById("msg");
-        // msg_content.innerHTML = '9-11';
-        document.getElementById("msg-txt").classList.value = "haraheri-msg";
+        document.getElementById("msg-txt").classList.value = "kaihatu-msg";
     }
     else if(cnt==3){
-        // var msg_content = document.getElementById("msg");
-        document.getElementById("msg-txt").classList.value = "hello-msg";
+        document.getElementById("msg-txt").classList.value = "rebyu-msg";
     }
     else if(cnt==4){
-        // var msg_content = document.getElementById("msg");
-        // msg_content.innerHTML = '14-17';
-        document.getElementById("msg-txt").classList.value = "daijoubu-msg";
+        document.getElementById("msg-txt").classList.value = " backlog-msg";
     }
     else if(cnt==5){
-        // var msg_content = document.getElementById("msg");
-        // msg_content.innerHTML = '18-23';
-        document.getElementById("msg-txt").classList.value = "hello-msg";
+        document.getElementById("msg-txt").classList.value = "retoro-msg";
     }
 }
 
