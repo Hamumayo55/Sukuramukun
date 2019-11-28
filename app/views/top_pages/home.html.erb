@@ -3,7 +3,7 @@
     <div class="side col-md-3">
       <p id="sub">スプリントの流れ</p>
       <div class="app">
-        <p><button class="btn btn-outline-info" id="up" onclick="upStep()">Stepを進める</button> <button class="btn btn-outline-info" id="down" onclick="downStep()">Stepを戻す</button> </p>
+        <p><button class="btn btn-outline-info" id="up" onclick="upStep(),msg_changer()">Stepを進める</button> <button class="btn btn-outline-info" id="down" onclick="downStep(),msg_changer()">Stepを戻す</button> </p>
       </div>
       <ul class="stepflow">
         <li class="bar-white" id="list1">
@@ -435,4 +435,44 @@
     localStorage.setItem(memo_key, memo_contents);
 
   }
+
+
+
+
+
+window.onload = function () {
+    this.msg_changer();
+}
+
+function msg_changer() {
+    var now = new Date();
+    var hour = now.getHours();
+
+    if(cnt==1){
+        // var msg_content = document.getElementById("msg");
+        // msg_content.innerHTML = '5-8';
+    }
+    else if(cnt==2){
+        var msg_content = document.getElementById("msg");
+        // msg_content.innerHTML = '9-11';
+        document.getElementById("msg-txt").classList.value = "haraheri-msg";
+    }
+    else if(cnt==3){
+        // var msg_content = document.getElementById("msg");
+        document.getElementById("msg-txt").classList.value = "hello-msg";
+    }
+    else if(cnt==4){
+        // var msg_content = document.getElementById("msg");
+        // msg_content.innerHTML = '14-17';
+        document.getElementById("msg-txt").classList.value = "daijoubu-msg";
+    }
+    else if(cnt==5){
+        // var msg_content = document.getElementById("msg");
+        // msg_content.innerHTML = '18-23';
+        document.getElementById("msg-txt").classList.value = "hello-msg";
+    }
+}
+
+
+
 </script>
