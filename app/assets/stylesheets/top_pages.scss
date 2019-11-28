@@ -28,6 +28,12 @@
     height: 40vh;
 }
 
+#memo-form:focus{
+    border-color: skyblue;   /* 枠線の色 */
+    background-color: #ffc;  /* 背景色 */
+    outline: none;
+}
+
 /*ステップフローのCSS*/
 ul.stepflow {
     border: none;
