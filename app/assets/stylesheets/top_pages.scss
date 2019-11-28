@@ -128,3 +128,68 @@ ul.stepflow {
 #item_sankaku{
     font-size: 1.5em;
 }
+
+
+/*スクラムくんのおしゃべり機能*/
+
+.kaihatu-msg{
+    font-size:0;
+}
+.kaihatu-msg:before {
+    font-size: 1.3vw;
+    position: fixed;
+    bottom: 24.5vw;
+    right: 5.5vw;
+
+    content: "前回のTryは実践できてる?";
+}
+
+.rebyu-msg{
+    font-size:0;
+}
+.rebyu-msg:before {
+    font-size: 1.3vw;
+    position: fixed;
+    bottom: 24.5vw;
+    right: 5.5vw;
+
+    content: "プロダクトを公開しよう！";
+}
+
+.planning-msg{
+    font-size:0;
+}
+.planning-msg:before {
+    font-size: 1.3vw;
+    position: fixed;
+    bottom: 24.5vw;
+    right: 6vw;
+
+    content: "ベロシティを決めよう！";
+}
+
+
+.backlog-msg{
+    font-size:0;
+}
+.backlog-msg:before {
+    font-size: 1.3vw;
+    position: fixed;
+    bottom: 24.5vw;
+    right: 6vw;
+
+    content: "リファイメントしよう！";
+}
+
+
+.retoro-msg{
+    font-size:0;
+}
+.retoro-msg:before {
+    font-size: 1.3vw;
+    position: fixed;
+    bottom: 24.5vw;
+    right: 5vw;
+
+    content: "みんなで意見を言い合おう！";
+}

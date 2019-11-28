@@ -3,7 +3,7 @@
     <div class="side col-md-3">
       <p id="sub">スプリントの流れ</p>
       <div class="app">
-        <p><button class="btn btn-outline-info" id="up" onclick="upStep()">Stepを進める</button> <button class="btn btn-outline-info" id="down" onclick="downStep()">Stepを戻す</button> </p>
+        <p><button class="btn btn-outline-info" id="up" onclick="upStep(),msg_changer()">Stepを進める</button> <button class="btn btn-outline-info" id="down" onclick="downStep(),msg_changer()">Stepを戻す</button> </p>
       </div>
       <ul class="stepflow">
         <li class="bar-white" id="list1">
@@ -435,4 +435,36 @@
     localStorage.setItem(memo_key, memo_contents);
 
   }
+
+
+
+
+
+window.onload = function () {
+    this.msg_changer();
+}
+
+function msg_changer() {
+    var now = new Date();
+    var hour = now.getHours();
+
+    if(cnt==1){
+      document.getElementById("msg-txt").classList.value = "planning-msg";
+    }
+    else if(cnt==2){
+        document.getElementById("msg-txt").classList.value = "kaihatu-msg";
+    }
+    else if(cnt==3){
+        document.getElementById("msg-txt").classList.value = "rebyu-msg";
+    }
+    else if(cnt==4){
+        document.getElementById("msg-txt").classList.value = " backlog-msg";
+    }
+    else if(cnt==5){
+        document.getElementById("msg-txt").classList.value = "retoro-msg";
+    }
+}
+
+
+
 </script>
