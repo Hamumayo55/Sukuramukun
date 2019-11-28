@@ -24,13 +24,15 @@
 }
 
 #memo-form{
+    border-width: 1px;
+    border-color: #232F3E;
     width: 45vw;
     height: 40vh;
 }
 
 #memo-form:focus{
-    border-color: skyblue;   /* 枠線の色 */
-    background-color: #ffc;  /* 背景色 */
+    
+    background-color:  #f8f8f8;  /* 背景色 */
     outline: none;
 }
 
