@@ -52,10 +52,29 @@ ul.stepflow {
     position: relative;
     padding: 0 0 1.5em 1.8em;
 }
+.stepflow>li.bar-white5:before {
+    content: "";
+    width: 3px;
+    display: block;
+    position: absolute;
+    top: 28px;
+    bottom: 0;
+    left: 5px;
+}
 .stepflow>li.bar-white:before {
     content: "";
     width: 3px;
     background: #cccccc;
+    display: block;
+    position: absolute;
+    top: 28px;
+    bottom: 0;
+    left: 5px;
+}
+
+.stepflow>li.bar-step5:before {
+    content: "";
+    width: 3px;
     display: block;
     position: absolute;
     top: 28px;
