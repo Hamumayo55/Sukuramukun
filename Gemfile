@@ -21,6 +21,9 @@ gem 'uglifier', '>= 1.3.0'
 #環境変数
 gem 'dotenv-rails'
 
+#DelayedJobの追加
+gem 'delayed_job_active_record'
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
