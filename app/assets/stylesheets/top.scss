@@ -1,9 +1,11 @@
 #top{
-    padding-top: 20vh;
+    padding-top: 10vh;
     text-align: center;
     background-color: #426E86;
-    height: 100vh;
-
+    height: 75vh;
+    .logo-img{
+      height:40vh;
+    }
     .btn {
       font-size: 1.5em;
       font-weight: 700;
@@ -28,9 +30,9 @@
 }
 
 .sample {
+  color: #55595c;
   display: flex;
   justify-content: center;
-  margin-top: 2em;
 }
 
 .sample .item {
@@ -54,6 +56,7 @@
 
 
 #sukuram_master{
+  color: #55595c;
   clear: both;
   background-color: #ffffff;
   height: 100vh;
