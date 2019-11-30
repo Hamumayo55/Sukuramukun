@@ -24,7 +24,7 @@
     #timeDisplay{
         font-size: 5em;
     }
-    height: 45vh;
+    height: 350px;
     // border-left: solid 15vw #dfdbec;
     // border-right: solid 15vw #dfdbec;
 	font-size: 1.3em;
@@ -36,15 +36,13 @@
     border-width: 1px;
     border-color: #232F3E;
     width: 45vw;
-    height: 40vh;
+    height: 40vw;
 }
 
 #memo-form:focus{
-    
     background-color:  #f8f8f8;  /* 背景色 */
     outline: none;
 }
-
 .memo-box{
     text-align:center;
 }
