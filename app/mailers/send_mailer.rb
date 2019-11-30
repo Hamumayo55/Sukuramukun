@@ -10,9 +10,13 @@ class SendMailer < ApplicationMailer
     mail to: email
   end
 
-  def send_mail(email_list)
-    for i in email_list do
-      SendMailer.setup_mailer(i).deliver
+  def send_mail
+    if Time.current.include?("Sat")
+      user = User.where(JudgeMail: 1)
+      user.each do |usr|
+        email = usr.email
+        SendMailer.setup_mailer(email).deliver
+      end
     end
   end
 end

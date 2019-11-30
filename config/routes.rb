@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   get '/watch',to: 'top_pages#watch'
   get '/q_and_a',to: 'top_pages#q_and_a'
   get '/home',to: 'top_pages#home'
-  get '/mail_sends/create',to: 'mail_sends#create'
-
+  get '/mail_setting',to: 'top_pages#notification_setting'
+  
   resources :microposts
   resources :memos
   root 'top_pages#top'
