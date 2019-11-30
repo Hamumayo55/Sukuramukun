@@ -187,6 +187,9 @@
             if (cnt == 6){
               cnt = 1;
               progress_num+=1;
+              if (progress_num == 11){
+                progress_num=1;
+              }
               setCookieProgress(progress_num);
               document.getElementById("sprint_bar").value=progress_num;
               document.getElementById("sprint_label").innerHTML="現在"+progress_num+"スプリント目";
