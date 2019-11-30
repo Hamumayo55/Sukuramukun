@@ -9,6 +9,15 @@
 }
 #button{
     font-size: 1.5em;
+    text-align: center;
+}
+#updown-btn{
+    display: flex;
+    justify-content: center;
+}
+
+#down{
+    margin-left: 1.5em
 }
 
 #watch {
