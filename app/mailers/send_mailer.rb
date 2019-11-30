@@ -3,8 +3,7 @@ class SendMailer < ApplicationMailer
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
-  #   en.send_mailer.send_mail.subject
-  #
+  # en.send_mailer.send_mail.subject
   def setup_mailer(email)
     @email = email
     mail to: email
