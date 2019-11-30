@@ -24,8 +24,37 @@
       margin-left: 2vw;
     }
 
+
 }
+
+.sample {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+
+.sample .item {
+  width:20vw;
+  flex: none;
+  margin: 4em;
+  text-align: center;
+}
+.icon-title{
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.icon-ditail{
+  text-align: left;
+}
+
+.icon-img{
+  width: 10vw;
+  height: 10vw;
+}
+
+
 #sukuram_master{
+  clear: both;
   background-color: #ffffff;
   height: 100vh;
   padding-right: 20vw;
