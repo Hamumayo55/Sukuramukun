@@ -135,6 +135,11 @@
         </form>
       </div>
       <%= audio_tag("/audios/sound.mp3",id:"sound") %>
+      
+      <% if user_signed_in? %>
+      <%= link_to "send mail", mail_sends_create_path %>
+      <% end %>
+
       <div class="memo-box">
       <textarea placeholder="メモを入力" name="kanso" rows="4" cols="40" onChange="memo_save()" id="memo-form"></textarea>
       </div>
