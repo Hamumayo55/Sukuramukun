@@ -7,6 +7,6 @@ set :bundle_command, 'bundle exec'
 job_type :runner,  "cd #{Rails.root} && :bundle_command rails runner -e :environment ':task' :output"
 
 
-every 1.day, at: '3:15 pm' do
+every 1.day, at: '6:25 pm' do
     runner "SendMailer.send_mail"
 end

@@ -10,7 +10,7 @@ class SendMailer < ApplicationMailer
   end
 
   def send_mail
-    if Time.current.include?("Sat")
+    if Time.current.include?("Mon")
       user = User.where(JudgeMail: 1)
       user.each do |usr|
         email = usr.email
