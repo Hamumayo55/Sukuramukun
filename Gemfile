@@ -21,6 +21,8 @@ gem 'uglifier', '>= 1.3.0'
 #環境変数
 gem 'dotenv-rails'
 
+gem 'whenever', require: false
+
 #DelayedJobの追加
 gem 'delayed_job_active_record'
 

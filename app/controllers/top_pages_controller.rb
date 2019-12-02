@@ -12,4 +12,10 @@ class TopPagesController < ApplicationController
       @memo = Memo.where(username: current_user.username)
     end
   end
+
+  def notification_setting
+    user = User.where(username: current_user.username)
+    user.update(JudgeMail: 1)
+    redirect_to home_path
+  end
 end
