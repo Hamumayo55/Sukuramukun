@@ -4,10 +4,9 @@ set :environment, rails_env
 set :output, "#{Rails.root}/log/cron.log"
 set :job_template, "/bin/zsh -l -c ':job'"
 set :bundle_command, 'bundle exec'
-set :rails_path, "#{Rails.root}"
-job_type :runner,  "cd #{Rails.root} | :bundle_command rails runner -e :environment ':task' :output"
+job_type :runner,  "cd #{Rails.root} && :bundle_command rails runner -e :environment ':task' :output"
 
 
-every 1.day, at: '3:00 pm' do
+every 1.day, at: '1:43 pm' do
     runner "SendMailer.send_mail"
 end
