@@ -131,9 +131,11 @@
         <form name="timerButton">
           <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
           <%= select_tag :second, options_for_select((0..59).to_a), id:"second" %>秒<br>
-          <input type="button" class="btn btn-outline-info" value="スタート" onclick="cntStart()">
-          <input type="button" class="btn btn-outline-info" value="ストップ" onclick="cntStop()">
-          <input type="button" class="btn btn-outline-info" value="リセット" onclick="reSet()">
+          <div id="watch_button">
+          <input type="button" class="btn btn-outline-info" id="start_button" value="スタート" onclick="cntStart()">
+          <input type="button" class="btn btn-outline-info" id="stop_button" value="ストップ" onclick="cntStop()">
+          <input type="button" class="btn btn-outline-info" id="stop_button"value="リセット" onclick="reSet()">
+          </div>
         </form>
       </div>
       <%= audio_tag("/audios/sound.mp3",id:"sound") %>

@@ -21,10 +21,22 @@
 }
 
 #watch {
+
+    
     #timeDisplay{
         font-size: 5em;
     }
-    height: 350px;
+    #watch_button{
+        margin-top: 1em;
+        margin-bottom: 2em;
+    }
+    #stop_button{
+        margin-left: 0.5em;
+    }
+    #reset_button{
+        margin-left: 0.5em;
+    }
+    height: 400px;
     // border-left: solid 15vw #dfdbec;
     // border-right: solid 15vw #dfdbec;
 	font-size: 1.3em;
