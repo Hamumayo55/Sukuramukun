@@ -209,7 +209,17 @@
             cnt-=1;
             setCookieCnt(cnt);
             colorChange(cnt);
-        }
+        }else{
+            cnt=5;
+            progress_num-=1;
+            if (progress_num == 0){
+              progress_num=10;
+            }
+            document.getElementById("sprint_bar").value=progress_num;
+            document.getElementById("sprint_label").innerHTML="現在"+progress_num+"スプリント目";
+            setCookieCnt(cnt);
+            colorChange(cnt);
+        }
     }
 
     function setCookieCnt(num)
