@@ -5,7 +5,7 @@
       <progress id="sprint_bar" value="0" max="10"></progress>
       <p id="sub">スプリントの流れ</p>
       <div class="app">
-        <p id="updown-btn"><button class="btn btn-outline-info" id="up" onclick="upStep(),msg_changer(),timeHold()">Stepを進める</button> <button class="btn btn-outline-info" id="down" onclick="downStep(),msg_changer(),timeHold()">Stepを戻す</button></p>
+        <p id="updown-btn"><button class="btn btn-outline-info" id="up" onclick="upStep(),msg_changer()">Stepを進める</button> <button class="btn btn-outline-info" id="down" onclick="downStep(),msg_changer()">Stepを戻す</button></p>
       </div>
       <ul class="stepflow">
         <li class="bar-white" id="list1">
@@ -159,6 +159,8 @@
         var second_value = time_cookie[step_number-1].split(":")[1];
         document.getElementById('minute').value = minute_value;
         document.getElementById('second').value = second_value;
+        minuteData = minute_value;
+        secondData = second_value;
     }
 
     function setTime() {
@@ -207,6 +209,7 @@
               }
               setCookieCnt(cnt);
               colorChange(cnt);
+              timeHold()
           }
     }
 
@@ -215,6 +218,7 @@
             cnt-=1;
             setCookieCnt(cnt);
             colorChange(cnt);
+            timeHold()
         } else {
             cnt=5;
             progress_num-=1;
@@ -226,6 +230,7 @@
             document.getElementById("sprint_label").innerHTML="現在"+progress_num+"スプリント目";
             setCookieCnt(cnt);
             colorChange(cnt);
+            timeHold()
         }
     }
 
