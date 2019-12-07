@@ -1,11 +1,11 @@
 <div id="grid_system" class="container-fluid p-0">
   <div class="row">
     <div class="side col-md-3">
-    <p class="m-0" id="sprint_label">現在1スプリント目</p>
-    <progress id="sprint_bar" value="0" max="10"></progress>
+      <p class="m-0" id="sprint_label">現在1スプリント目</p>
+      <progress id="sprint_bar" value="0" max="10"></progress>
       <p id="sub">スプリントの流れ</p>
       <div class="app">
-      <p id="updown-btn"><button class="btn btn-outline-info" id="up" onclick="upStep(),msg_changer()">Stepを進める</button> <button class="btn btn-outline-info" id="down" onclick="downStep(),msg_changer()">Stepを戻す</button></p>
+        <p id="updown-btn"><button class="btn btn-outline-info" id="up" onclick="upStep(),msg_changer(),timeHold()">Stepを進める</button> <button class="btn btn-outline-info" id="down" onclick="downStep(),msg_changer(),timeHold()">Stepを戻す</button></p>
       </div>
       <ul class="stepflow">
         <li class="bar-white" id="list1">
@@ -16,16 +16,13 @@
           </button>
           <div class="collapse m-0" id="sprintPlanning">
             <div class="card card-body">
-
               <center>概要 </center> <br>
               ・スプリントの作業を計画する。<br>
               ・スクラムマスターは、 参加者にスプリントの作業の目的を理解してもらうようにする。
-              
-            <hr>
-              <center>アドバイス</center><br>
-                  ベロシティの決め方には、[S,M,L]と決める方法以外にもフィボナッチ数列[1,2,3,5...]で決める方法もあるよ。
-
-                  <hr>
+              <hr>
+                <center>アドバイス</center><br>
+                ベロシティの決め方には、[S,M,L]と決める方法以外にもフィボナッチ数列[1,2,3,5...]で決める方法もあるよ。
+              <hr>
             </div>
           </div>
         </li>
@@ -34,37 +31,35 @@
           <div class="stepflow_label">STEP2</div>
           <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#developWork" aria-expanded="false" aria-controls="developWork">
             開発作業 　 ▼
-            </button>
-            <div class="collapse m-0" id="developWork">
-                <div class="card card-body">
-                  <center>概要 </center> <br>
-                  ・開発しよう 
-                    <hr>
-                    <center>アドバイス</center> <br>
-                    開発のスタイルでモブプロやペアプロといった手法もあるので活用してみよう。
-                    また、スクラムマスターは、振り返りのTRYができているかを確認してみよう。
-                  <hr>
+          </button>
+          <div class="collapse m-0" id="developWork">
+            <div class="card card-body">
+              <center>概要 </center> <br>
+              ・開発しよう 
+              <hr>
+              <center>アドバイス</center> <br>
+              開発のスタイルでモブプロやペアプロといった手法もあるので活用してみよう。
+              また、スクラムマスターは、振り返りのTRYができているかを確認してみよう。
+              <hr>
             </div>
           </div>
         </li>
         <li class="bar-white" id="list3">
-            <div class="stepflow-white" id="color3"></div>
-            <div class="stepflow_label">STEP3</div>
-            <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#sprintReview" aria-expanded="false" aria-controls="sprintReview">
-              スプリントレビュー 　 ▼
-            </button>
-            <div class="collapse m-0" id="sprintReview">
-              <div class="card card-body">
-                <center>概要 </center><br>
-                ・スプリントの終了時にインクリメントの検査と、必要であればプロダクトバックログの適応を行う。<br>
-                ・スクラムチームとステークホルダーがスプリン トの成果をレビューする。<br>
-                ・スプリントの成果とプロダクトバックログの変更を参考にして、価値を最適 化するために次に何ができるかを参加者全員で話し合う。<br>
-                ・インクリメントを提示することで、フィードバックや協力を引き出すことを目的とする。<br>
-              <hr> 
-              </div>
-              
+          <div class="stepflow-white" id="color3"></div>
+          <div class="stepflow_label">STEP3</div>
+          <button type="button" class="btn btn-light text-left" data-toggle="collapse" data-target="#sprintReview" aria-expanded="false" aria-controls="sprintReview">
+            スプリントレビュー 　 ▼
+          </button>
+          <div class="collapse m-0" id="sprintReview">
+            <div class="card card-body">
+              <center>概要 </center><br>
+              ・スプリントの終了時にインクリメントの検査と、必要であればプロダクトバックログの適応を行う。<br>
+              ・スクラムチームとステークホルダーがスプリン トの成果をレビューする。<br>
+              ・スプリントの成果とプロダクトバックログの変更を参考にして、価値を最適 化するために次に何ができるかを参加者全員で話し合う。<br>
+              ・インクリメントを提示することで、フィードバックや協力を引き出すことを目的とする。<br>
+            <hr> 
             </div>
-            
+          </div>
         </li>
         <li class="bar-white" id="list4">
           <div class="stepflow-white" id="color4"></div>
@@ -73,10 +68,12 @@
             バックログリファイメント 　 ▼
           </button>
           <div class="collapse m-0" id="BacklogRefinement">
-          <div class="card card-body">
-            <center>概要 </center> 
+            <div class="card card-body">
+              <center>概要 </center> 
               ・プロダクトバックログに含まれるアイテムに対して、概要の追加、見積り、並び替えをする。
-              <hr>      
+              <hr>
+            </div>
+          </div>
         </li>
         <li class="bar-step5" id="list5">
           <div class="stepflow-white" id="color5"></div>
@@ -91,9 +88,8 @@
               ・スプリントレビューが終わって、次のスプリントプランニングが始まる前に行う。<br>
               ・スクラムマスターは、このミーティングがポジティブで生産的になるようにする。
               <hr>
-                <center>アドバイス</center> 
-                振り返りの手法としてKPTやYWTなどがあるので活用してみよう。
-
+              <center>アドバイス</center> 
+              振り返りの手法としてKPTやYWTなどがあるので活用してみよう。
               <hr>
             </div>
           </div>
@@ -109,7 +105,6 @@
       <div class="collapse m-0" id="stepName">
         <div class="card card-body">
           <center>概要 </center> 
-
           <p id="detailDisplay">
             スプリントの作業はスプリントプランニングで計画する。これはスクラムチームの共同作業である。
             スプリントが 1 か月の場合、スプリントプランニングのタイムボックスは最大で 8 時間である。スプリ
@@ -117,13 +112,11 @@
             参加者に目的を理解してもらうようにする。スクラムマスターは、スクラムチームにタイムボックスを
             守るように伝える。
           </p>
-
           <hr>
             <center>アドバイス</center> 
           <p id="adviceDisplay">
-              ベロシティの決め方には、[S,M,L]と決める方法以外にもフィボナッチ数列[1,2,3,5...]で決める方法もあるよ。
-            </p>
-
+            ベロシティの決め方には、[S,M,L]と決める方法以外にもフィボナッチ数列[1,2,3,5...]で決める方法もあるよ。
+          </p>
         </div>
       </div>
       <div id="watch">
@@ -132,15 +125,13 @@
           <%= select_tag :minute, options_for_select((0..180).to_a), id:"minute" %>分
           <%= select_tag :second, options_for_select((0..59).to_a), id:"second" %>秒<br>
           <div id="watch_button">
-          <input type="button" class="btn btn-outline-info" id="start_button" value="スタート" onclick="cntStart()">
+          <input type="button" class="btn btn-outline-info" id="start_button" value="スタート" onclick="cntStart(),setTime()">
           <input type="button" class="btn btn-outline-info" id="stop_button" value="ストップ" onclick="cntStop()">
           <input type="button" class="btn btn-outline-info" id="stop_button"value="リセット" onclick="reSet()">
           </div>
         </form>
       </div>
       <%= audio_tag("/audios/sound.mp3",id:"sound") %>
-      
-
       <div class="memo-box">
       　<textarea placeholder="メモを記入" name="kanso" rows="4" cols="40" onChange="memo_save()" id="memo-form"></textarea>
       </div>
@@ -156,64 +147,79 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/1.0.9/push.min.js"></script>
 
 <script>
-    var e = document.getElementById("memo-form");
-    var comment="";
-    var cookies=document.cookie.split("; ");
-    var cnt=0;
-    var progress_num=0;
-
-    if (cookies.length!=2){
-      cnt=1;
-      progress_num=1;
-      setCookieCnt(cnt);
-      setCookieProgress(progress_num);
+    //stepを進める・戻すボタンのonclick
+    function timeHold() {
+      fetchTime()
+    }
+    // cookieのtimeのvalueを取得
+    function fetchTime() {
+        var step_number = chooseCookie("step");
+        var time_cookie = JSON.parse(chooseCookie("time"));
+        var minute_value = time_cookie[step_number-1].split(":")[0];
+        var second_value = time_cookie[step_number-1].split(":")[1];
+        document.getElementById('minute').value = minute_value;
+        document.getElementById('second').value = second_value;
     }
 
-    for (i=0;i<cookies.length;i++){
-      if (cookies[i].includes("step")){
-        cnt=cookies[i].split("=")[1]
-      }else if (cookies[i].includes("sprint")){
-        progress_num=cookies[i].split("=")[1]
+    function setTime() {
+      // selectタグ(minute)のvalueを取得
+      var select_minute = document.timerButton.minute;
+      var minute_num = select_minute.selectedIndex;
+      var minute_str = select_minute.options[minute_num].value;
+      // selectタグ(second)のvalueを取得
+      var select_second = document.timerButton.second;
+      var second_num = select_second.selectedIndex;
+      var second_str = select_second.options[second_num].value;
+      // cookieの取り出し
+      var step_time = `${minute_str}:${second_str}`;
+      var step_number = chooseCookie("step");
+      var time_cookie = JSON.parse(chooseCookie("time"));
+      time_cookie[step_number-1] = step_time;
+      // cookie(time)に書き込み
+      time_map = JSON.stringify([...time_cookie])
+      document.cookie = `time=${time_map}`
+    }
+    //cookieのkeyに対するvalueを返す
+    function chooseCookie(key) {
+      var cookies=document.cookie.split("; ");
+      var value = "";
+      for(var c of cookies){
+        var cArray = c.split('=');
+        if( cArray[0] == key){
+          value = cArray[1];
+        }
       }
+      return value
     }
 
-    cnt=parseInt(cnt);
-    progress_num=parseInt(progress_num);
-
-    colorChange(cnt);
-    document.getElementById("sprint_bar").value=progress_num;
-    document.getElementById("sprint_label").innerHTML="現在"+progress_num+"スプリント目";
-
-    function upStep()
-    {
-        if (cnt<=5){
-            cnt+=1;
+    function upStep() {
+        if (cnt <= 5){
+            cnt += 1;
             if (cnt == 6){
-              cnt = 1;
-              progress_num+=1;
-              if (progress_num == 11){
-                progress_num=1;
+                cnt = 1;
+                progress_num += 1;
+                if (progress_num == 11){
+                    progress_num = 1;
+                }
+                setCookieProgress(progress_num);
+                document.getElementById("sprint_bar").value=progress_num;
+                document.getElementById("sprint_label").innerHTML="現在"+progress_num+"スプリント目";
               }
-              setCookieProgress(progress_num);
-              document.getElementById("sprint_bar").value=progress_num;
-              document.getElementById("sprint_label").innerHTML="現在"+progress_num+"スプリント目";
-            }
-            setCookieCnt(cnt);
-            colorChange(cnt);
-        }
+              setCookieCnt(cnt);
+              colorChange(cnt);
+          }
     }
 
-    function downStep()
-    {
+    function downStep() {
         if (cnt>1){
-            cnt-=1;
+            cnt-=1;
             setCookieCnt(cnt);
             colorChange(cnt);
-        }else{
+        } else {
             cnt=5;
             progress_num-=1;
             if (progress_num == 0){
-              progress_num=10;
+                progress_num=10;
             }
             setCookieProgress(progress_num);
             document.getElementById("sprint_bar").value=progress_num;
@@ -223,128 +229,283 @@
         }
     }
 
-    function setCookieCnt(num)
-    {
-      num=String(num);
-      document.cookie="step="+num;
+    function setCookieCnt(num) {
+        num=String(num);
+        document.cookie="step="+num;
     }
 
-    function setCookieProgress(num)
-    {
-      num=String(num);
-      document.cookie="sprint="+num;
+    function setCookieProgress(num) {
+        num=String(num);
+        document.cookie="sprint="+num;
     }
 
     function colorChange(num){
-        switch(num){
-
-            case 1 :
-                e.value=localStorage.getItem('key_1');
-                document.getElementById("color1").classList.value = "stepflow-red";
-                document.getElementById("color2").classList.value = "stepflow-white";
-                document.getElementById("color3").classList.value = "stepflow-white";
-                document.getElementById("color4").classList.value = "stepflow-white";
-                document.getElementById("color5").classList.value = "stepflow-white";
-                document.getElementById("list1").classList.value = "bar-white";
-                document.getElementById("list2").classList.value = "bar-white";
-                document.getElementById("list3").classList.value = "bar-white";
-                document.getElementById("list4").classList.value = "bar-white";
-                document.getElementById("list5").classList.value = "bar-step5";
-                document.getElementById("item_title").innerHTML="スプリントプランニング";
-                document.getElementById("item_sub").innerHTML="~開発の計画をたてよう~";
-                document.getElementById("detailDisplay").innerHTML="・スプリントの作業を計画する。<br>・スクラムマスターは、 参加者にスプリントの作業の目的を理解してもらうようにする。";
-                document.getElementById("adviceDisplay").innerHTML="ベロシティの決め方には、[S,M,L]と決める方法以外にもフィボナッチ数列[1,2,3,5...]で決める方法もあるよ。";
-                comment="プロダクトバックログは用意されていますか？"
-                break;
-            
-            case 2 :
-                e.value=localStorage.getItem('key_2');
-                document.getElementById("color1").classList.value = "stepflow-black";
-                document.getElementById("color2").classList.value = "stepflow-red";
-                document.getElementById("color3").classList.value = "stepflow-white";
-                document.getElementById("color4").classList.value = "stepflow-white";
-                document.getElementById("color5").classList.value = "stepflow-white";
-                document.getElementById("list1").classList.value = "bar-black";
-                document.getElementById("list2").classList.value = "bar-white";
-                document.getElementById("list3").classList.value = "bar-white";
-                document.getElementById("list4").classList.value = "bar-white";
-                document.getElementById("list5").classList.value = "bar-step5";
-                document.getElementById("item_title").innerHTML="開発作業";
-                document.getElementById("item_sub").innerHTML="　";
-                document.getElementById("adviceDisplay").innerHTML="開発のスタイルでTDDやモブプロ,ペアプロといった手法もあるので活用してみよう。また、スクラムマスターは、振り返りのTRYができているかを確認してみよう。";
-                comment="準備はよろしいでしょうか？"
-                break;
-
-            case 3 :
-                e.value=localStorage.getItem('key_3');
-                document.getElementById("color1").classList.value = "stepflow-black";
-                document.getElementById("color2").classList.value = "stepflow-black";
-                document.getElementById("color3").classList.value = "stepflow-red";
-                document.getElementById("color4").classList.value = "stepflow-white";
-                document.getElementById("color5").classList.value = "stepflow-white";
-                document.getElementById("list1").classList.value = "bar-black";
-                document.getElementById("list2").classList.value = "bar-black";
-                document.getElementById("list3").classList.value = "bar-white";
-                document.getElementById("list4").classList.value = "bar-white";
-                document.getElementById("list5").classList.value = "bar-step5";
-                document.getElementById("item_title").innerHTML="スプリントレビュー";
-                document.getElementById("item_sub").innerHTML="~レビューしよう~";
-                document.getElementById("detailDisplay").innerHTML="・スプリントの終了時にインクリメントの検査と、必要であればプロダクトバックログの適応を行う。<br>・スクラムチームとステークホルダーがスプリン トの成果をレビューする。<br>・スプリントの成果とプロダクトバックログの変更を参考にして、価値を最適 化するために次に何ができるかを参加者全員で話し合う。<br>・インクリメントを提示することで、フィードバックや協力を引き出すことを目的とする。";
-                document.getElementById("adviceDisplay").innerHTML="";
-                comment="進捗は用意できましたか？";
-                break;
-
-            case 4 :
-                e.value=localStorage.getItem('key_4');
-                document.getElementById("color1").classList.value = "stepflow-black";
-                document.getElementById("color2").classList.value = "stepflow-black";
-                document.getElementById("color3").classList.value = "stepflow-black";
-                document.getElementById("color4").classList.value = "stepflow-red";
-                document.getElementById("color5").classList.value = "stepflow-white";
-                document.getElementById("list1").classList.value = "bar-black";
-                document.getElementById("list2").classList.value = "bar-black";
-                document.getElementById("list3").classList.value = "bar-black";
-                document.getElementById("list4").classList.value = "bar-white";
-                document.getElementById("list5").classList.value = "bar-step5";
-                document.getElementById("item_title").innerHTML="バックログリファイメント";
-                document.getElementById("item_sub").innerHTML="〜追加、見積り、並べ替えをしよう〜";
-                document.getElementById("detailDisplay").innerHTML="・プロダクトバックログに含まれるアイテムに対して、概要の追加、見積り、並び替えをする。";
-                document.getElementById("adviceDisplay").innerHTML="";
-                comment="メンバーは全員揃っていますか？";
-                break;
-
-            case 5 :
-                 e.value=localStorage.getItem('key_5');
-                document.getElementById("color1").classList.value = "stepflow-black";
-                document.getElementById("color2").classList.value = "stepflow-black";
-                document.getElementById("color3").classList.value = "stepflow-black";
-                document.getElementById("color4").classList.value = "stepflow-black";
-                document.getElementById("color5").classList.value = "stepflow-red";
-                document.getElementById("list1").classList.value = "bar-black";
-                document.getElementById("list2").classList.value = "bar-black";
-                document.getElementById("list3").classList.value = "bar-black";
-                document.getElementById("list4").classList.value = "bar-black";
-                document.getElementById("list5").classList.value = "bar-step5";
-                document.getElementById("item_title").innerHTML="スプリントレトロスペクティブ";
-                document.getElementById("item_sub").innerHTML="〜改善計画をたてよう〜";
-                document.getElementById("detailDisplay").innerHTML="・スクラムチームの検査と次のスプリントの改善計画を作成する。<br>・スプリントレビューが終わって、次のスプリントプランニングが始まる前に行う。<br>・スクラムマスターは、このミーティングがポジティブで生産的になるようにする。";
-                document.getElementById("adviceDisplay").innerHTML="振り返りの手法としてKPTやYWTなどがあるので活用してみよう。";
-                comment="振り返り手法は決まりましたか？";
-                break;
-
-        }
+        switch(num){
+        case 1 :
+            e.value=localStorage.getItem('key_1');
+            document.getElementById("color1").classList.value = "stepflow-red";
+            document.getElementById("color2").classList.value = "stepflow-white";
+            document.getElementById("color3").classList.value = "stepflow-white";
+            document.getElementById("color4").classList.value = "stepflow-white";
+            document.getElementById("color5").classList.value = "stepflow-white";
+            document.getElementById("list1").classList.value = "bar-white";
+            document.getElementById("list2").classList.value = "bar-white";
+            document.getElementById("list3").classList.value = "bar-white";
+            document.getElementById("list4").classList.value = "bar-white";
+            document.getElementById("list5").classList.value = "bar-step5";
+            document.getElementById("item_title").innerHTML="スプリントプランニング";
+            document.getElementById("item_sub").innerHTML="~開発の計画をたてよう~";
+            document.getElementById("detailDisplay").innerHTML="・スプリントの作業を計画する。<br>・スクラムマスターは、 参加者にスプリントの作業の目的を理解してもらうようにする。";
+            document.getElementById("adviceDisplay").innerHTML="ベロシティの決め方には、[S,M,L]と決める方法以外にもフィボナッチ数列[1,2,3,5...]で決める方法もあるよ。";
+            comment="プロダクトバックログは用意されていますか？"
+            break;      
+        case 2 :
+            e.value=localStorage.getItem('key_2');
+            document.getElementById("color1").classList.value = "stepflow-black";
+            document.getElementById("color2").classList.value = "stepflow-red";
+            document.getElementById("color3").classList.value = "stepflow-white";
+            document.getElementById("color4").classList.value = "stepflow-white";
+            document.getElementById("color5").classList.value = "stepflow-white";
+            document.getElementById("list1").classList.value = "bar-black";
+            document.getElementById("list2").classList.value = "bar-white";
+            document.getElementById("list3").classList.value = "bar-white";
+            document.getElementById("list4").classList.value = "bar-white";
+            document.getElementById("list5").classList.value = "bar-step5";
+            document.getElementById("item_title").innerHTML="開発作業";
+            document.getElementById("item_sub").innerHTML="　";
+            document.getElementById("adviceDisplay").innerHTML="開発のスタイルでTDDやモブプロ,ペアプロといった手法もあるので活用してみよう。また、スクラムマスターは、振り返りのTRYができているかを確認してみよう。";
+            comment="準備はよろしいでしょうか？"
+            break;
+        case 3 :
+            e.value=localStorage.getItem('key_3');
+            document.getElementById("color1").classList.value = "stepflow-black";
+            document.getElementById("color2").classList.value = "stepflow-black";
+            document.getElementById("color3").classList.value = "stepflow-red";
+            document.getElementById("color4").classList.value = "stepflow-white";
+            document.getElementById("color5").classList.value = "stepflow-white";
+            document.getElementById("list1").classList.value = "bar-black";
+            document.getElementById("list2").classList.value = "bar-black";
+            document.getElementById("list3").classList.value = "bar-white";
+            document.getElementById("list4").classList.value = "bar-white";
+            document.getElementById("list5").classList.value = "bar-step5";
+            document.getElementById("item_title").innerHTML="スプリントレビュー";
+            document.getElementById("item_sub").innerHTML="~レビューしよう~";
+            document.getElementById("detailDisplay").innerHTML="・スプリントの終了時にインクリメントの検査と、必要であればプロダクトバックログの適応を行う。<br>・スクラムチームとステークホルダーがスプリン トの成果をレビューする。<br>・スプリントの成果とプロダクトバックログの変更を参考にして、価値を最適 化するために次に何ができるかを参加者全員で話し合う。<br>・インクリメントを提示することで、フィードバックや協力を引き出すことを目的とする。";
+            document.getElementById("adviceDisplay").innerHTML="";
+            comment="進捗は用意できましたか？";
+            break;
+        case 4 :
+            e.value=localStorage.getItem('key_4');
+            document.getElementById("color1").classList.value = "stepflow-black";
+            document.getElementById("color2").classList.value = "stepflow-black";
+            document.getElementById("color3").classList.value = "stepflow-black";
+            document.getElementById("color4").classList.value = "stepflow-red";
+            document.getElementById("color5").classList.value = "stepflow-white";
+            document.getElementById("list1").classList.value = "bar-black";
+            document.getElementById("list2").classList.value = "bar-black";
+            document.getElementById("list3").classList.value = "bar-black";
+            document.getElementById("list4").classList.value = "bar-white";
+            document.getElementById("list5").classList.value = "bar-step5";
+            document.getElementById("item_title").innerHTML="バックログリファイメント";
+            document.getElementById("item_sub").innerHTML="〜追加、見積り、並べ替えをしよう〜";
+            document.getElementById("detailDisplay").innerHTML="・プロダクトバックログに含まれるアイテムに対して、概要の追加、見積り、並び替えをする。";
+            document.getElementById("adviceDisplay").innerHTML="";
+            comment="メンバーは全員揃っていますか？";
+            break;
+        case 5 :
+            e.value=localStorage.getItem('key_5');
+            document.getElementById("color1").classList.value = "stepflow-black";
+            document.getElementById("color2").classList.value = "stepflow-black";
+            document.getElementById("color3").classList.value = "stepflow-black";
+            document.getElementById("color4").classList.value = "stepflow-black";
+            document.getElementById("color5").classList.value = "stepflow-red";
+            document.getElementById("list1").classList.value = "bar-black";
+            document.getElementById("list2").classList.value = "bar-black";
+            document.getElementById("list3").classList.value = "bar-black";
+            document.getElementById("list4").classList.value = "bar-black";
+            document.getElementById("list5").classList.value = "bar-step5";
+            document.getElementById("item_title").innerHTML="スプリントレトロスペクティブ";
+            document.getElementById("item_sub").innerHTML="〜改善計画をたてよう〜";
+            document.getElementById("detailDisplay").innerHTML="・スクラムチームの検査と次のスプリントの改善計画を作成する。<br>・スプリントレビューが終わって、次のスプリントプランニングが始まる前に行う。<br>・スクラムマスターは、このミーティングがポジティブで生産的になるようにする。";
+            document.getElementById("adviceDisplay").innerHTML="振り返りの手法としてKPTやYWTなどがあるので活用してみよう。";
+            comment="振り返り手法は決まりましたか？";
+            break;
+        }
+    }
+    //カウントダウン関数を1000ミリ秒毎に呼び出す関数
+    function cntStart() {
+        sound.load();
+        if(minuteData == 0 && secondData == 0) {
+            alert("時刻を設定してください！");
+        } else if (check == true) {
+            document.timerButton.elements[0].disabled=true;
+            document.timerButton.elements[1].disabled=true;
+            document.timerButton.elements[2].disabled=true;
+            document.timerButton.elements[4].disabled=true;
+            document.getElementById("up").disabled=true;
+            document.getElementById("down").disabled=true;
+            if (minuteData < 10 && secondData < 10) {
+                document.getElementById('timeDisplay').innerHTML = "0" + String(minuteData) + ":" + "0" + String(secondData);
+            }else if (minuteData < 10) {
+                document.getElementById('timeDisplay').innerHTML = "0" + String(minuteData) + ":" + String(secondData);
+            }else if (secondData < 10) {
+                document.getElementById('timeDisplay').innerHTML = String(minuteData) + ":" + "0" + String(secondData);
+            }else{
+                document.getElementById('timeDisplay').innerHTML = String(minuteData) + ":" + String(secondData);
+            }
+            timer1=setInterval("countDown()",1000);
+        } else if (confirm(comment)) {
+            check=true;
+            document.timerButton.elements[0].disabled=true;
+            document.timerButton.elements[1].disabled=true;
+            document.timerButton.elements[2].disabled=true;
+            document.timerButton.elements[4].disabled=true;
+            document.getElementById("up").disabled=true;
+            document.getElementById("down").disabled=true;
+            if (minuteData < 10 && secondData < 10) {
+                document.getElementById('timeDisplay').innerHTML = "0" + String(minuteData) + ":" + "0" + String(secondData);
+            }else if (minuteData < 10) {
+                document.getElementById('timeDisplay').innerHTML = "0" + String(minuteData) + ":" + String(secondData);
+            }else if (secondData < 10) {
+                document.getElementById('timeDisplay').innerHTML = String(minuteData) + ":" + "0" + String(secondData);
+            }else{
+                document.getElementById('timeDisplay').innerHTML = String(minuteData) + ":" + String(secondData);
+            }
+            timer1=setInterval("countDown()",1000);
+        }
+    }
+    //タイマー停止関数
+    function cntStop() {
+        document.timerButton.elements[2].disabled=false;
+        document.timerButton.elements[4].disabled=false;
+        clearInterval(timer1);
+        if (minuteData == 0 && secondData == 0){
+            reSet();
+        }
+    }
+    //カウントダウン関数
+    function countDown() {
+        var min=minuteData;
+        var sec=secondData;
+        if (min=="") min=0;
+        min=parseInt(min);
+        if (sec=="") sec=0;
+        sec=parseInt(sec);
+        tmWrite(min*60+sec-1);
+    }
+    //残り時間を書き出す関数
+    function tmWrite(int) {
+        int=parseInt(int);
+        if (int<0) {
+            document.getElementById('timeDisplay').innerHTML = "00:00";
+            if(confirm("時間です")) {
+                reSet();
+                upStep();
+            }
+        } else {
+            //残り分数はintを60で割って切り捨てる
+            minuteData=Math.floor(int/60);
+            //残り秒数はintを60で割った余り
+            secondData=int % 60;
+            if (minuteData == 0 && secondData == 0){
+                document.getElementById('timeDisplay').innerHTML = "00:00";
+                sound.play();
+            } else if (minuteData < 10 && secondData < 10) {
+                document.getElementById('timeDisplay').innerHTML = "0" + String(minuteData) + ":" + "0" + String(secondData);
+            } else if (minuteData < 10) {
+                document.getElementById('timeDisplay').innerHTML = "0" + String(minuteData) + ":" + String(secondData);
+            } else if (secondData < 10) {
+                document.getElementById('timeDisplay').innerHTML = String(minuteData) + ":" + "0" + String(secondData);
+            } else{
+                document.getElementById('timeDisplay').innerHTML = String(minuteData) + ":" + String(secondData);
+            }
+        }
+    }
+    //フォームを初期状態に戻す（リセット）関数
+    function reSet() {
+        check=false;
+        document.timerButton.elements[0].disabled=false;
+        document.timerButton.elements[1].disabled=false;
+        document.timerButton.elements[2].disabled=false;
+        document.timerButton.elements[4].disabled=false;
+        document.getElementById("up").disabled=false;
+        document.getElementById("down").disabled=false;
+        document.getElementById('timeDisplay').innerHTML = "00:00"
+        indexMinute = selectMinute.selectedIndex;
+        minuteData = selectMinute.options[ indexMinute ].innerHTML;
+        indexSecond =  selectSecond.selectedIndex;
+        secondData = selectSecond.options[ indexSecond ].innerHTML;
+        clearInterval(timer1);
+        sound.pause();
+        sound.currentTime = 0;
+    }
+    //メモ機能
+    function memo_save() {
+        memo_contents = e.value;
+        var memo_key = "key_" + String(cnt)
+        localStorage.setItem(memo_key, memo_contents);
+    }
+    //stepごとにsukuramukunのメッセージを変化させる
+    function msg_changer() {
+        var now = new Date();
+        var hour = now.getHours();
+        if(cnt==1) {
+          document.getElementById("msg-txt").classList.value = "planning-msg";
+        }
+        else if(cnt==2) {
+            document.getElementById("msg-txt").classList.value = "kaihatu-msg";
+        }
+        else if(cnt==3) {
+            document.getElementById("msg-txt").classList.value = "rebyu-msg";
+        }
+        else if(cnt==4) {
+            document.getElementById("msg-txt").classList.value = " backlog-msg";
+        }
+        else if(cnt==5) {
+            document.getElementById("msg-txt").classList.value = "retoro-msg";
+        }
     }
 
+    var e = document.getElementById("memo-form");
+    var comment="";
+    var cookies=document.cookie.split("; ");
+    var cnt=0;
+    var progress_num=0;
+    var sprint_check =document.cookie
+    var default_time = chooseCookie("time")
+    if (default_time) {
+      fetchTime()
+    } else {
+      var time_map = ["0:0","0:0","0:0","0:0","0:0"];
+      time_map = JSON.stringify([...time_map])
+      document.cookie = `time=${time_map}`
+    }
+    if (!sprint_check.includes("sprint=")){
+      cnt=1;
+      progress_num=1;
+      setCookieCnt(cnt);
+      setCookieProgress(progress_num);
+    }
+    for (i=0;i<cookies.length;i++){
+      if (cookies[i].includes("step")){
+        cnt=cookies[i].split("=")[1]
+      }else if (cookies[i].includes("sprint")){
+        progress_num=cookies[i].split("=")[1]
+      }
+    }
+    cnt=parseInt(cnt);
+    progress_num=parseInt(progress_num);
+    colorChange(cnt);
+    document.getElementById("sprint_bar").value=progress_num;
+    document.getElementById("sprint_label").innerHTML="現在"+progress_num+"スプリント目";
     // select要素の取得
     var sound = document.getElementById("sound");
     var selectMinute = document.timerButton.minute;
     var selectSecond = document.timerButton.second;
-
     var indexMinute =  selectMinute.selectedIndex;
     var indexSecond =  selectSecond.selectedIndex;
     var minuteData = selectMinute.options[ indexMinute ].innerHTML;
     var secondData = selectSecond.options[ indexSecond ].innerHTML;
-
     //select要素のchangeイベントの登録
     selectMinute.addEventListener('change', function(){
             //選択されたoption番号を取得
@@ -356,156 +517,10 @@
             indexSecond =  this.selectedIndex;
             secondData = this.options[ indexSecond ].innerHTML;
     });
-
     var timer1; //タイマーを格納する変数（タイマーID）の宣言
     var check=false;
-    //カウントダウン関数を1000ミリ秒毎に呼び出す関数
-    function cntStart()
-    {
-      sound.load();
-      if(minuteData == 0 && secondData == 0){
-        alert("時刻を設定してください！");
-      }else if (check == true){
-        document.timerButton.elements[0].disabled=true;
-        document.timerButton.elements[1].disabled=true;
-        document.timerButton.elements[2].disabled=true;
-        document.timerButton.elements[4].disabled=true;
-        document.getElementById("up").disabled=true;
-        document.getElementById("down").disabled=true;
-        if (minuteData < 10 && secondData < 10) {
-            document.getElementById('timeDisplay').innerHTML = "0" + String(minuteData) + ":" + "0" + String(secondData);
-        }else if (minuteData < 10) {
-            document.getElementById('timeDisplay').innerHTML = "0" + String(minuteData) + ":" + String(secondData);
-        }else if (secondData < 10) {
-            document.getElementById('timeDisplay').innerHTML = String(minuteData) + ":" + "0" + String(secondData);
-        }else{
-            document.getElementById('timeDisplay').innerHTML = String(minuteData) + ":" + String(secondData);
-        }
-        timer1=setInterval("countDown()",1000);
-      }else if (confirm(comment)){
-        check=true;
-        document.timerButton.elements[0].disabled=true;
-        document.timerButton.elements[1].disabled=true;
-        document.timerButton.elements[2].disabled=true;
-        document.timerButton.elements[4].disabled=true;
-        document.getElementById("up").disabled=true;
-        document.getElementById("down").disabled=true;
-        if (minuteData < 10 && secondData < 10) {
-            document.getElementById('timeDisplay').innerHTML = "0" + String(minuteData) + ":" + "0" + String(secondData);
-        }else if (minuteData < 10) {
-            document.getElementById('timeDisplay').innerHTML = "0" + String(minuteData) + ":" + String(secondData);
-        }else if (secondData < 10) {
-            document.getElementById('timeDisplay').innerHTML = String(minuteData) + ":" + "0" + String(secondData);
-        }else{
-            document.getElementById('timeDisplay').innerHTML = String(minuteData) + ":" + String(secondData);
-        }
-        timer1=setInterval("countDown()",1000);
-      }
-    }
-    //タイマー停止関数
-    function cntStop()
-    {
-        document.timerButton.elements[2].disabled=false;
-        document.timerButton.elements[4].disabled=false;
-        clearInterval(timer1);
-        if (minuteData == 0 && secondData == 0){
-            reSet();
-        }
-    }
-    //カウントダウン関数
-    function countDown()
-    {
-        var min=minuteData;
-        var sec=secondData;
-        if (min=="") min=0;
-        min=parseInt(min);
-        if (sec=="") sec=0;
-        sec=parseInt(sec);
-        tmWrite(min*60+sec-1);
-    }
-    //残り時間を書き出す関数
-    function tmWrite(int)
-    {
-        int=parseInt(int);
-        if (int<0)
-        {
-            document.getElementById('timeDisplay').innerHTML = "00:00";
-            if(confirm("時間です")){
-                reSet();
-                upStep();
-            }
-        }
-        else
-        {
-            //残り分数はintを60で割って切り捨てる
-            minuteData=Math.floor(int/60);
-            //残り秒数はintを60で割った余り
-            secondData=int % 60;
-            if (minuteData == 0 && secondData == 0){
-                document.getElementById('timeDisplay').innerHTML = "00:00";
-                sound.play();
-            }else if (minuteData < 10 && secondData < 10) {
-                document.getElementById('timeDisplay').innerHTML = "0" + String(minuteData) + ":" + "0" + String(secondData);
-            }else if (minuteData < 10) {
-                document.getElementById('timeDisplay').innerHTML = "0" + String(minuteData) + ":" + String(secondData);
-            }else if (secondData < 10) {
-                document.getElementById('timeDisplay').innerHTML = String(minuteData) + ":" + "0" + String(secondData);
-            }else{
-                document.getElementById('timeDisplay').innerHTML = String(minuteData) + ":" + String(secondData);
-            }
-        }
-    }
-    //フォームを初期状態に戻す（リセット）関数
-    function reSet()
-    {
-      check=false;
-      document.timerButton.elements[0].disabled=false;
-      document.timerButton.elements[1].disabled=false;
-      document.timerButton.elements[2].disabled=false;
-      document.timerButton.elements[4].disabled=false;
-      document.getElementById("up").disabled=false;
-      document.getElementById("down").disabled=false;
-      document.getElementById('timeDisplay').innerHTML = "00:00"
-      indexMinute = selectMinute.selectedIndex;
-      minuteData = selectMinute.options[ indexMinute ].innerHTML;
-      indexSecond =  selectSecond.selectedIndex;
-      secondData = selectSecond.options[ indexSecond ].innerHTML;
-      clearInterval(timer1);
-      sound.pause();
-      sound.currentTime = 0;
-    }
-    
-    //メモ機能
-    function memo_save(){
-    memo_contents = e.value;
-    var memo_key = "key_" + String(cnt)
-    localStorage.setItem(memo_key, memo_contents);
 
-  }
-
-
-  window.onload = function () {
-    this.msg_changer();
-  }
-
-  function msg_changer() {
-      var now = new Date();
-      var hour = now.getHours();
-      if(cnt==1){
-        document.getElementById("msg-txt").classList.value = "planning-msg";
-      }
-      else if(cnt==2){
-          document.getElementById("msg-txt").classList.value = "kaihatu-msg";
-      }
-      else if(cnt==3){
-          document.getElementById("msg-txt").classList.value = "rebyu-msg";
-      }
-      else if(cnt==4){
-          document.getElementById("msg-txt").classList.value = " backlog-msg";
-      }
-      else if(cnt==5){
-          document.getElementById("msg-txt").classList.value = "retoro-msg";
-      }
-  }
-  
+    window.onload = function () {
+        this.msg_changer();
+    }
 </script>
