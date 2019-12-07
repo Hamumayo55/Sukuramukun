@@ -160,12 +160,6 @@
         var second_value = time_cookie[step_number-1].split(":")[1];
         document.getElementById('minute').value = minute_value;
         document.getElementById('second').value = second_value;
-        // var selectMinute = document.timerButton.minute;
-        // var selectSecond = document.timerButton.second;
-        // var indexMinute = selectMinute.selectedIndex;
-        // var indexSecond = selectSecond.selectedIndex;
-        // var minuteData = selectMinute.options[ indexMinute ].innerHTML;
-        // var secondData = selectSecond.options[ indexSecond ].innerHTML;
     }
 
     function testSelect() {
@@ -186,6 +180,7 @@
       time_map = JSON.stringify([...time_cookie])
       document.cookie = `time=${time_map}`
     }
+
     //cookieのkeyに対するvalueを返す
     function chooseCookie(key) {
       var cookies=document.cookie.split("; ");
@@ -206,11 +201,10 @@
     var cnt=0;
     var progress_num=0;
     var default_time = chooseCookie("time")
-
     if (default_time) {
       fetchTime()
     } else {
-      var time_map = ["0.0","0.0","0.0","0.0","0.0"];
+      var time_map = ["0:0","0:0","0:0","0:0","0:0"];
       time_map = JSON.stringify([...time_map])
       document.cookie = `time=${time_map}`
     }
