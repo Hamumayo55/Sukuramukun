@@ -5,7 +5,7 @@
       <progress id="sprint_bar" value="0" max="10"></progress>
       <p id="sub">スプリントの流れ</p>
       <div class="app">
-        <p id="updown-btn"><button class="btn btn-outline-info" id="up" onclick="upStep(),msg_changer(),timeHold()">Stepを進める</button> <button class="btn btn-outline-info" id="down" onclick="downStep(),msg_changer(),timeHold()">Stepを戻す</button></p>
+        <p id="updown-btn"><button class="btn btn-outline-info" id="up" onclick="upStep(),msg_changer()">Stepを進める</button> <button class="btn btn-outline-info" id="down" onclick="downStep(),msg_changer()">Stepを戻す</button></p>
       </div>
       <ul class="stepflow">
         <li class="bar-white" id="list1">
@@ -209,6 +209,7 @@
               }
               setCookieCnt(cnt);
               colorChange(cnt);
+              timeHold()
           }
     }
 
