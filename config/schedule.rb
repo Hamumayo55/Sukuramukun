@@ -7,5 +7,5 @@ set :bundle_command, 'bundle exec'
 job_type :rake, "export PATH=\"$HOME/.rbenv/bin:$PATH\"; eval \"$(rbenv init -)\"; cd #{Rails.root} && :environment_variable=:environment bundle exec rake :task :output"
 
 every 1.day, at: '7:00 pm' do
-   #  rake "send_email:setup_mail"
+    rake "send_email:setup_mail"
 end
