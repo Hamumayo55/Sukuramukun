@@ -218,6 +218,7 @@
             cnt-=1;
             setCookieCnt(cnt);
             colorChange(cnt);
+            timeHold()
         } else {
             cnt=5;
             progress_num-=1;
@@ -229,6 +230,7 @@
             document.getElementById("sprint_label").innerHTML="現在"+progress_num+"スプリント目";
             setCookieCnt(cnt);
             colorChange(cnt);
+            timeHold()
         }
     }
 
