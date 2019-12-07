@@ -7,7 +7,7 @@
       <%= link_to 'チャット', microposts_path, class:"header-itmes", target:"_blank"%>
       <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"header-itmes" %>
     <% else %>
-      <%= link_to 'ログイン', new_user_session_path, class:"header-itmes"%>
+      <%= link_to 'チャット', new_user_session_path, class:"header-itmes"%>
     <% end %>
   </div>
 </header>
