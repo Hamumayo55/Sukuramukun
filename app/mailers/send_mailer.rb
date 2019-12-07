@@ -4,15 +4,6 @@ class SendMailer < ApplicationMailer
   # with the following lookup:
   #
   # en.send_mailer.send_mail.subject
-  def setup_mailer
-    if Time.current.include?("Mon")
-      user = User.where(JudgeMail: 1)
-      user.each do |usr|
-        email = usr.email
-        SendMailer.send_mail(email).deliver
-      end
-    end
-  end
 
   def send_mail(email)
     @email = email
