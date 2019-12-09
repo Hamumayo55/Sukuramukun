@@ -1,8 +1,8 @@
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/Hamumayo55/Sukuramukun/blob/master/LICENSE)  
 # スクラムくん  
 
-## プロダクト名 
-![product_name](https://github.com/Hamumayo55/Sukuramukun/blob/master/app/assets/images/logo.png)
+## プロダクト  
+![product_name](https://github.com/Hamumayo55/Sukuramukun/blob/feature/add_image/app/assets/images/product_readme.png)
 ## エレベータピッチ 
 ```
 [ スクラムチームのスプリントを円滑にまわしたい ]   
