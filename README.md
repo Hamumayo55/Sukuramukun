@@ -1,7 +1,5 @@
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/Hamumayo55/Sukuramukun/blob/master/LICENSE)  
 # スクラムくん  
-## チーム名 
-WeB STORY 
 
 ## プロダクト名 
 ![product_name](https://github.com/Hamumayo55/Sukuramukun/blob/master/app/assets/images/logo.png)
@@ -20,8 +18,8 @@ WeB STORY
 https://trello.com/b/jTdiNbiy/webstory-todoリスト仮  
 
 ## アプリURL  
-https://sukuramukun.herokuapp.com/
-  
+https://sukuramukun.herokuapp.com/  
+   
 ## 開発環境 
 - Ruby：2.6.3
 - Rails：5.2.3  
