@@ -214,12 +214,12 @@ ul.stepflow {
     font-size:0;
 }
 .planning-msg:before {
-    font-size: 1.3vw;
+    font-size: 1.0vw;
     position: fixed;
     bottom: 24.5vw;
-    right: 6vw;
+    right: 4.5vw;
 
-    content: "ベロシティを決めよう！";
+    content: "スプリントゴールは明確になっている？";
 }
 
 
@@ -227,12 +227,12 @@ ul.stepflow {
     font-size:0;
 }
 .backlog-msg:before {
-    font-size: 1.3vw;
+    font-size: 1.2vw;
     position: fixed;
     bottom: 24.5vw;
     right: 6vw;
 
-    content: "リファイメントしよう！";
+    content: "みんな活発に発言している？";
 }
 
 
