@@ -4,7 +4,7 @@
 WeB STORY 
 
 ## サービス名 
-<img align="center" width="800px" src="https://github.com/Hamumayo55/Sukuramukun/blob/master/app/assets/images/logo.png">  
+<img align="center" width="750px" src="https://github.com/Hamumayo55/Sukuramukun/blob/master/app/assets/images/logo.png">  
 
 ## エレベータピッチ 
 ```
