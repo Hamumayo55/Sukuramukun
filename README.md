@@ -1,11 +1,10 @@
-[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/Hamumayo55/Sukuramukun/blob/master/LICENSE)
-# スクラムくん
-
+[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/Hamumayo55/Sukuramukun/blob/master/LICENSE)  
+# スクラムくん  
 ## チーム名 
 WeB STORY 
 
 ## サービス名 
-スクラムマスター支援ツール：**スクラムくん** 
+<img align="center" width="800px" src="https://github.com/Hamumayo55/Sukuramukun/blob/master/app/assets/images/logo.png">  
 
 ## エレベータピッチ 
 ```
