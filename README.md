@@ -3,9 +3,8 @@
 ## チーム名 
 WeB STORY 
 
-## サービス名 
-<img align="center" width="750px" src="https://github.com/Hamumayo55/Sukuramukun/blob/master/app/assets/images/logo.png">  
-
+## プロダクト名 
+![product_name](https://github.com/Hamumayo55/Sukuramukun/blob/master/app/assets/images/logo.png)
 ## エレベータピッチ 
 ```
 [ スクラムチームのスプリントを円滑にまわしたい ]   
