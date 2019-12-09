@@ -2,7 +2,7 @@
 # スクラムくん  
 
 ## プロダクト  
-![product_name](https://github.com/Hamumayo55/Sukuramukun/blob/feature/add_image/app/assets/images/product_readme.png)
+![product_name](https://github.com/Hamumayo55/Sukuramukun/blob/master/app/assets/images/product_readme.png)
 ## エレベータピッチ 
 ```
 [ スクラムチームのスプリントを円滑にまわしたい ]   
