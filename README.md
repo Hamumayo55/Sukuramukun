@@ -1,7 +1,5 @@
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/Hamumayo55/Sukuramukun/blob/master/LICENSE)  
-# スクラムくん  
-
-## プロダクト  
+# スクラムくん   
 [![product_name](https://github.com/Hamumayo55/Sukuramukun/blob/master/app/assets/images/product_readme.png)](https://sukuramukun.herokuapp.com/ )  
 ## エレベータピッチ 
 ```
