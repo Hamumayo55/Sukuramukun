@@ -13,7 +13,7 @@
 ```
 
 ## アプリURL  
-https://sukuramukun.herokuapp.com/  
+[スクラムくん](https://sukuramukun.herokuapp.com/)  
    
 ## 開発環境 
 - Ruby：2.6.3
