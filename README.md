@@ -12,9 +12,6 @@
 [ スプリントイベントの確認やメモ、時間の管理を一括で行うことができ、円滑にスプリントをまわす事ができます.]   
 ```
 
-## タスク管理
-https://trello.com/b/jTdiNbiy/webstory-todoリスト仮  
-
 ## アプリURL  
 https://sukuramukun.herokuapp.com/  
    
@@ -22,6 +19,10 @@ https://sukuramukun.herokuapp.com/
 - Ruby：2.6.3
 - Rails：5.2.3  
 - MacOS Mojave 10.14.6  
+
+## タスク管理
+https://trello.com/b/jTdiNbiy/webstory-todoリスト仮  
+
 
 ## コアタイム 
 - 土曜日：9:00 ~ 12:00  
