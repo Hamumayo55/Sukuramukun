@@ -2,6 +2,7 @@
   <a href="/" class="m-0"><%= image_tag "header.png", id: "header-img" %></a>
   <div id="header-right" class="text-right">
     <a class="header-itmes" href="https://www.scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-Japanese.pdf" target="_blank">スクラムガイド</a>
+    <%= link_to '関連ツール','/tool',target: "_blank", class: "header-itmes"%>
     <%= link_to 'よくある質問','/q_and_a',target: "_blank", class: "header-itmes"%>
     <% if user_signed_in? %>
       <%= link_to 'チャット', microposts_path, class:"header-itmes", target:"_blank"%>
