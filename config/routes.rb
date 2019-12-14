@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   get '/q_and_a',to: 'top_pages#q_and_a'
   get '/home',to: 'top_pages#home'
   get '/mail_setting',to: 'top_pages#notification_setting'
-  
+  get '/tool',to: 'top_pages#tool'
+
   resources :microposts
   resources :memos
   root 'top_pages#top'
