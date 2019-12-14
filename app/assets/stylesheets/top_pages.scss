@@ -247,3 +247,52 @@ ul.stepflow {
 
     content: "みんなで意見を言い合おう！";
 }
+
+
+.rarely-kaihatu-msg{
+    font-size:0;
+}
+.rarely-kaihatu-msg:before {
+    font-size: 1.3vw;
+    position: fixed;
+    bottom: 24.5vw;
+    right: 5.5vw;
+
+    content: "開発で困っている人はいない？";
+}
+
+.rarely-rebyu-msg{
+    font-size:0;
+}
+.rarely-rebyu-msg:before {
+    font-size: 1.3vw;
+    position: fixed;
+    bottom: 24.5vw;
+    right: 5vw;
+
+    content: "本当に価値は最大化されてる？";
+}
+
+.rarely-planning-msg{
+    font-size:0;
+}
+.rarely-planning-msg:before {
+    font-size: 1.3vw;
+    position: fixed;
+    bottom: 24.5vw;
+    right: 5vw;
+
+    content: "スプリントゴールは明確になっている？";
+}
+
+.rarely-retoro-msg{
+    font-size:0;
+}
+.rarely-retoro-msg:before {
+    font-size: 1.3vw;
+    position: fixed;
+    bottom: 24.5vw;
+    right: 5vw;
+
+    content: "今の振り返りに飽きてない？";
+}

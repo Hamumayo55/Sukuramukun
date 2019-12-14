@@ -451,19 +451,35 @@
         var now = new Date();
         var hour = now.getHours();
         if(cnt==1) {
-          document.getElementById("msg-txt").classList.value = "planning-msg";
+          if (Math.floor( Math.random() * 10 )<=1){
+            document.getElementById("msg-txt").classList.value = "rarely-planning-msg";
+          }else{
+            document.getElementById("msg-txt").classList.value = "planning-msg";
+          }
         }
         else if(cnt==2) {
+          if (Math.floor( Math.random() * 10 )<=1){
+            document.getElementById("msg-txt").classList.value = "rarely-kaihatu-msg";
+          }else{
             document.getElementById("msg-txt").classList.value = "kaihatu-msg";
+          }
         }
         else if(cnt==3) {
+          if (Math.floor( Math.random() * 10 )<=1){
+            document.getElementById("msg-txt").classList.value = "rarely-rebyu-msg";
+          }else{
             document.getElementById("msg-txt").classList.value = "rebyu-msg";
+          }
         }
         else if(cnt==4) {
-            document.getElementById("msg-txt").classList.value = " backlog-msg";
+          document.getElementById("msg-txt").classList.value = "backlog-msg";
         }
         else if(cnt==5) {
+          if (Math.floor( Math.random() * 10 )<=1){
+            document.getElementById("msg-txt").classList.value = "rarely-retoro-msg";
+          }else{
             document.getElementById("msg-txt").classList.value = "retoro-msg";
+          }
         }
     }
 
