@@ -10,7 +10,7 @@
             <p class="Username m-0"><%= mp.username %></p>
             <a href='/microposts/<%=mp.id%>' class="micropost-a"><%= mp.content %></a>
           </div>
-          <p class="sendTime text-right"><%= mp.created_at%></p>
+          <p class="sendTime text-right"><%= mp.created_at.strftime("%Y年 %m月 %d日") %></p>
         </div>
       <% end %>
       <footer>

@@ -1,14 +1,18 @@
 .micropost-div {
+    h1 {
+        color: #214355;
+    }
     .micropost-a {
         color: #414141;
         text-decoration: none;
+        font-size: 1.3em;
     }
     .micropost-a:hover {
         color: #333333;
         text-decoration: underline;
     }
     .Username{
-        background-color: rgba(192, 196, 199, 0.603);
+        background-color: #AECADB;
         font-size: 1.2em;
     }
     .sendTime{
