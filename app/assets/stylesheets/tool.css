@@ -1,0 +1,20 @@
+#tool h1 {
+  text-align: center;
+  padding-bottom: 5vh;
+  color: #214355;
+}
+
+#tool p {
+  padding-top: 2vh;
+  font-size: 1.3em;
+}
+
+#tool p.tool-item {
+  color: #165E83;
+  font-weight: bold;
+}
+
+#tool p.tool-example {
+  padding-left: 3vw;
+}
+/*# sourceMappingURL=tool.css.map */
