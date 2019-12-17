@@ -1,0 +1,108 @@
+#top {
+  padding-top: 17vh;
+  text-align: center;
+  background-color: #426E86;
+  height: 87vh;
+}
+
+#top .logo-img {
+  width: 70vw;
+  height: 40vh;
+}
+
+#top .btn {
+  margin-top: 4vh;
+  font-size: 1.5em;
+  font-weight: 700;
+  border: 3px solid #fff;
+}
+
+#top .btn:hover {
+  color: #426E86;
+}
+
+#top .butto {
+  margin-right: 3vw;
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 2em;
+  line-height: 2em;
+}
+
+#top #ste-button {
+  margin-left: 2vw;
+}
+
+.sample {
+  margin-top: -3vh;
+  color: #55595c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.sample .item {
+  width: 20vw;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  margin: 4em;
+  text-align: center;
+}
+
+.icon-title {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.icon-ditail {
+  text-align: left;
+}
+
+.icon-img {
+  width: 10vw;
+  height: 10vw;
+}
+
+#sukuram_master {
+  color: #55595c;
+  clear: both;
+  background-color: #eeeeee;
+  padding-right: 20vw;
+  padding-left: 20vw;
+}
+
+#sukuram_master h1 {
+  padding-top: 10vh;
+  text-align: center;
+  font-weight: bold;
+  padding-bottom: 5vh;
+}
+
+#sukuram_master p {
+  padding-top: 2vh;
+  font-size: 1.3em;
+}
+
+#sukuram_master p.sukuram-item {
+  color: #96138b;
+  font-weight: bold;
+}
+
+#sukuram_master p.sukuram-example {
+  padding-left: 3vw;
+}
+
+#circleci {
+  font-weight: 600;
+  color: #333;
+}
+
+h1 {
+  color: #333;
+}
+/*# sourceMappingURL=top.css.map */
