@@ -22,11 +22,6 @@
 
 ## タスク管理
 https://trello.com/b/jTdiNbiy/webstory-todoリスト仮  
-
-
-## コアタイム 
-- 土曜日：9:00 ~ 12:00  
-- 火曜日：2限,3限  
-
+ 
 ## LICENSE  
 MIT License.
